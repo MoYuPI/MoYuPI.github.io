@@ -1,0 +1,1009 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="UBuntu,开发环境," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="兜兜转转还是用回了自由的ubuntu系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu的爱">
+<meta property="og:url" content="http://www.lizorn.com/2016/03/06/ubuntu_env/index.html">
+<meta property="og:site_name" content="lizorn">
+<meta property="og:description" content="兜兜转转还是用回了自由的ubuntu系统">
+<meta property="og:updated_time" content="2016-10-30T11:05:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu的爱">
+<meta name="twitter:description" content="兜兜转转还是用回了自由的ubuntu系统">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.lizorn.com/2016/03/06/ubuntu_env/"/>
+
+
+  <title> Ubuntu的爱 | lizorn </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1c798eaf80ffa31d9a4c27b209ffb502";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">lizorn</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">子非鱼</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-talks">
+          <a href="/talks" rel="section">
+            
+            talks
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Ubuntu的爱
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-06T00:00:00+08:00" content="2016-03-06">
+              2016-03-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/开发者手册/" itemprop="url" rel="index">
+                    <span itemprop="name">开发者手册</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/06/ubuntu_env/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="/2016/03/06/ubuntu_env/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/03/06/ubuntu_env/" class="leancloud_visitors" data-flag-title="Ubuntu的爱">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>今年听闻ubuntu要发布16 LTS，于是win10弃坑，兜兜转转还是再次用回了自由的ubuntu系统，环境记录下。几个ide在ubuntu依然是不尽人意的，要解放鼠标还是得定制，得折腾，最终还不如使用mac或者emacs/vim等。</p>
+<h2 id="基础设置"><a href="#基础设置" class="headerlink" title="基础设置"></a>基础设置</h2><h3 id="设置快捷键"><a href="#设置快捷键" class="headerlink" title="设置快捷键"></a>设置快捷键</h3><blockquote>
+<p>System Settings -&gt; Keyboard -&gt; Shortcuts -&gt; Launcher -&gt; Launcher terminal，设成Super(Win) + R.</p>
+</blockquote>
+<h3 id="设置字体"><a href="#设置字体" class="headerlink" title="设置字体"></a>设置字体</h3><blockquote>
+<p>System Settings——》Universal Access——》Large Text——》on</p>
+</blockquote>
+<h3 id="输入法"><a href="#输入法" class="headerlink" title="输入法"></a>输入法</h3><p>方式1. 自带的ibus中文输入不是很好用，使用搜狗输入法：<a href="http://pinyin.sogou.com/linux/" target="_blank" rel="external">http://pinyin.sogou.com/linux/</a><br>在Language Support将输入法系统切换到fcitx，在text entry中隐藏掉ibus界面。</p>
+<p>方式2. emacs /etc/apt/sources.list.d/ubuntukylin.list文件，加入ubuntu kylin的apt源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">deb http://archive.ubuntukylin.com:10006/ubuntukylin trusty main</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install sogoupinyin</div></pre></td></tr></table></figure>
+<h3 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h3><p><code>wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb</code></p>
+<h3 id="安装迅雷："><a href="#安装迅雷：" class="headerlink" title="安装迅雷："></a>安装迅雷：</h3><p><a href="https://github.com/Xinkai/XwareDesktop" target="_blank" rel="external">XwareDesktop</a></p>
+<h3 id="压缩工具"><a href="#压缩工具" class="headerlink" title="压缩工具"></a>压缩工具</h3><p><code>sudo apt-get install unrar</code></p>
+<h3 id="安装jdk"><a href="#安装jdk" class="headerlink" title="安装jdk"></a>安装jdk</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:webupd8team/java</div><div class="line">sudo apt-get update  </div><div class="line">sudo apt-get install oracle-java8-installer</div><div class="line">sudo update-alternatives --config java</div></pre></td></tr></table></figure>
+<h3 id="安装CMaker"><a href="#安装CMaker" class="headerlink" title="安装CMaker"></a>安装CMaker</h3><p><code>sudo apt-get install cmake qtcreator</code></p>
+<h2 id="python"><a href="#python" class="headerlink" title="python"></a>python</h2><p>alternatives机制实现python2和pyhton3的共享和切换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python3-pip</div><div class="line">sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 100</div><div class="line">sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 150</div></pre></td></tr></table></figure>
+<p>默认使用python3可能会导致ubuntu软件中心异常，此时需要切换到python2.</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>ruby etc.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install ruby rake</div><div class="line">gem sources --remove https://rubygems.org/</div><div class="line">gem sources -a http://ruby.taobao.org/</div><div class="line">gem install jekyll rdiscount</div></pre></td></tr></table></figure>
+<h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><p>现在编译器之多，眼花缭乱，曾几何时一直都是捧着source insight，一做就是6年，呜呼哀哉.</p>
+<h3 id="emacs"><a href="#emacs" class="headerlink" title="emacs"></a>emacs</h3><p><code>sudo apt-get install emacs24</code><br><a href="https://github.com/purcell/emacs.d" target="_blank" rel="external">配置</a></p>
+<h3 id="sublime-text"><a href="#sublime-text" class="headerlink" title="sublime text"></a>sublime text</h3><p>涉猎的语言太多(c/c++/java/python/php/ruby/javascript/c#/swift/lisp etc.)，实施的机会又越来越少.痛定思痛，决定梳理专精一门。</p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:webupd8team/sublime-text-3    </div><div class="line">sudo apt-get update    </div><div class="line">sudo apt-get install sublime-text</div></pre></td></tr></table></figure>
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><ol>
+<li><p><strong>package control</strong>.<br>安装包管理器，view-&gt;show console执行以下代码.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2,os;pf=<span class="string">'Package Control.sublime-package'</span>;ipp=sublime.installed_packages_path();os.makedirs(ipp) <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(ipp) <span class="keyword">else</span> <span class="keyword">None</span>;open(os.path.join(ipp,pf),<span class="string">'wb'</span>).write(urllib2.urlopen(<span class="string">'http://sublime.wbond.net/'</span>+pf.replace(<span class="string">' '</span>,<span class="string">'%20'</span>)).read())</div></pre></td></tr></table></figure>
+<p>以下的插件均用ctrl+shift+p安装。</p>
+</li>
+<li><p><strong>SublimeREPL</strong></p>
+</li>
+<li><p><strong>SideBarEnhancements</strong></p>
+</li>
+</ol>
+<blockquote>
+<p>扩展了侧边栏中菜单选项的数量，从而提升你的工作效率</p>
+</blockquote>
+<ol>
+<li><p><strong>Anaconda</strong></p>
+<blockquote>
+<p>  Anaconda 是一个终极 Python 插件。它为 ST3 增添了多项 IDE 类似的功能，例如：</p>
+<ul>
+<li>Autocompletion 自动完成，该选项默认开启，同时提供多种配置选项。<br>Code linting 使用支持 pep8 标准的 PyLint 或者 PyFlakes。因为我个人使用的是另外的 linting 工具，所以我会在 Anaconda 的配置文件 Anaconda.sublime-settings 中将 linting 完全禁用。操作如下: Sublime &gt; Preferences &gt; Package Settings &gt; Anaconda &gt; Settings – User： {“anaconda_linting”: false}</li>
+<li>McCabe code complexity checker 让你可以在特定的文件中使用 <a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity" target="_blank" rel="external">软件复杂度检查</a>.</li>
+<li>Goto Definitions 能够在你的整个工程中查找并且显示任意一个变量，函数，或者类的定义。</li>
+<li>Find Usage 能够快速的查找某个变量，函数或者类在某个特定文件中的什么地方被使用了。</li>
+<li>Show Documentation： 能够显示一个函数或者类的说明性字符串</li>
+</ul>
+</blockquote>
+</li>
+<li><p><strong>Djaneiro</strong></p>
+<blockquote>
+<p>Django.</p>
+</blockquote>
+</li>
+<li><p><strong>SublimeLinter</strong></p>
+<blockquote>
+<p>代码静态检查工具框架(linter),对于 Python 的代码静态检查器，我使用 <a href="https://packagecontrol.io/packages/SublimeLinter-pep8" target="_blank" rel="external">SublimeLinter-pep8</a>。<br>其他还有SublimeLinter-jshint, SublimeLinter-pyyaml, SublimeLinter-csslint，SublimeLinter-html-tidy，以及 SublimeLinter-json。</p>
+</blockquote>
+</li>
+<li><p><strong>PEP8 Autoformat</strong></p>
+<blockquote>
+<p>按PEP8自动格式化代码的。快捷键 CTRL+SHIFT+R 自动格式化python代码.<br>常用配置</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;auto_complete&quot;: false,</div><div class="line">    &quot;caret_style&quot;: &quot;solid&quot;,</div><div class="line">    &quot;ensure_newline_at_eof_on_save&quot;: true,</div><div class="line">    &quot;find_selected_text&quot;: true,</div><div class="line">    &quot;font_size&quot;: 11.0,</div><div class="line">    &quot;highlight_modified_tabs&quot;: true,</div><div class="line">    &quot;line_padding_bottom&quot;: 0,</div><div class="line">    &quot;line_padding_top&quot;: 0,</div><div class="line">    &quot;scroll_past_end&quot;: false,</div><div class="line">    &quot;show_minimap&quot;: false,</div><div class="line">    &quot;tab_size&quot;: 4,</div><div class="line">    &quot;translate_tabs_to_spaces&quot;: true,</div><div class="line">    &quot;trim_trailing_white_space_on_save&quot;: true,</div><div class="line">    &quot;wide_caret&quot;: true,</div><div class="line">    &quot;word_wrap&quot;: true,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>GitGutter</strong></p>
+</li>
+<li><p><strong>Emmet</strong></p>
+<blockquote>
+<p> 大名鼎鼎的Emmet</p>
+</blockquote>
+</li>
+<li><p><strong>Markdown Preview</strong></p>
+<blockquote>
+<p>markdown 预览</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="atom"><a href="#atom" class="headerlink" title="atom"></a>atom</h3><p><a href="https://atom.io/" target="_blank" rel="external">下载</a>, github血统，偶尔用来写markdown(shift + ctrl + m)</p>
+<h3 id="pycharm"><a href="#pycharm" class="headerlink" title="pycharm"></a>pycharm</h3><p><a href="https://www.jetbrains.com/pycharm/" target="_blank" rel="external">下载</a>，python全栈ide.<br>注册时选择 License server, 填写<a href="http://idea.lanyus.com" target="_blank" rel="external">http://idea.lanyus.com</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/UBuntu/" rel="tag">#UBuntu</a>
+          
+            <a href="/tags/开发环境/" rel="tag">#开发环境</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/06/the-mythical-man-month/" rel="next" title="人月神话">
+                <i class="fa fa-chevron-left"></i> 人月神话
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/10/email_management/" rel="prev" title="邮件管理,outlook的邮箱设置">
+                邮件管理,outlook的邮箱设置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="/2016/03/06/ubuntu_env/"
+           data-title="Ubuntu的爱" data-url="http://www.lizorn.com//2016/03/06/ubuntu_env/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/res/avatar.jpg"
+               alt="lizorn" />
+          <p class="site-author-name" itemprop="name">lizorn</p>
+          <p class="site-description motion-element" itemprop="description">思从深而行从简</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">47</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">68</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/about/" target="_blank" title="关于我">
+                  
+                    <i class="fa fa-fw fa-user"></i>
+                  
+                  关于我
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/LiZoRN/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/res/weixin.jpg" target="_blank" title="微信">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  微信
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础设置"><span class="nav-number">1.</span> <span class="nav-text">基础设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置快捷键"><span class="nav-number">1.1.</span> <span class="nav-text">设置快捷键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置字体"><span class="nav-number">1.2.</span> <span class="nav-text">设置字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入法"><span class="nav-number">1.3.</span> <span class="nav-text">输入法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器"><span class="nav-number">1.4.</span> <span class="nav-text">浏览器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装迅雷："><span class="nav-number">1.5.</span> <span class="nav-text">安装迅雷：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#压缩工具"><span class="nav-number">1.6.</span> <span class="nav-text">压缩工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装jdk"><span class="nav-number">1.7.</span> <span class="nav-text">安装jdk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装CMaker"><span class="nav-number">1.8.</span> <span class="nav-text">安装CMaker</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python"><span class="nav-number">2.</span> <span class="nav-text">python</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">2.1.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IDE"><span class="nav-number">3.</span> <span class="nav-text">IDE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#emacs"><span class="nav-number">3.1.</span> <span class="nav-text">emacs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sublime-text"><span class="nav-number">3.2.</span> <span class="nav-text">sublime text</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">3.2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置"><span class="nav-number">3.2.2.</span> <span class="nav-text">配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#atom"><span class="nav-number">3.3.</span> <span class="nav-text">atom</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pycharm"><span class="nav-number">3.4.</span> <span class="nav-text">pycharm</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lizorn</span>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zfeiyu"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("rQ8OGfe9xd0QnUQQJLpYksWo-gzGzoHsz", "vEqVehf8ixuyXHHzTBIbmBo8");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>
