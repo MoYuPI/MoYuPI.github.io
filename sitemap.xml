@@ -72,7 +72,21 @@
   </url>
   
   <url>
-    <loc>http://www.lizorn.com//2016/03/04/why_nations_fail/</loc>
+    <loc>http://www.lizorn.com//2016/03/06/ubuntu_env/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.lizorn.com//2016/02/24/the_hard_thing_about_hard_things/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.lizorn.com//2016/03/10/learning-jquery-lesson/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -80,13 +94,6 @@
   
   <url>
     <loc>http://www.lizorn.com//2016/03/06/the-mythical-man-month/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.lizorn.com//2016/03/06/ubuntu_env/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -114,7 +121,7 @@
   </url>
   
   <url>
-    <loc>http://www.lizorn.com//2016/03/10/learning-jquery-lesson/</loc>
+    <loc>http://www.lizorn.com//2016/03/12/how-to-lie-with-stastics/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -128,7 +135,7 @@
   </url>
   
   <url>
-    <loc>http://www.lizorn.com//2016/03/12/how-to-lie-with-stastics/</loc>
+    <loc>http://www.lizorn.com//2016/04/05/visual-studio-code-user-manual/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -136,13 +143,6 @@
   
   <url>
     <loc>http://www.lizorn.com//2016/03/12/songci-3/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.lizorn.com//2016/04/05/visual-studio-code-user-manual/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -177,13 +177,6 @@
   </url>
   
   <url>
-    <loc>http://www.lizorn.com//2016/06/30/Shortest-History-of-Europe/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.lizorn.com//2016/08/08/blockbuster-Founding-of-the-Republic/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
@@ -198,6 +191,13 @@
   </url>
   
   <url>
+    <loc>http://www.lizorn.com//2016/06/30/Shortest-History-of-Europe/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.lizorn.com//2016/08/10/Steven-Allan-Spielberg/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
@@ -205,7 +205,7 @@
   </url>
   
   <url>
-    <loc>http://www.lizorn.com//2016/08/13/vivir-para-contarla/</loc>
+    <loc>http://www.lizorn.com//2016/08/30/readmemo/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -213,13 +213,6 @@
   
   <url>
     <loc>http://www.lizorn.com//2005/10/05/hope-lost/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.lizorn.com//2016/08/30/readmemo/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -240,6 +233,13 @@
   </url>
   
   <url>
+    <loc>http://www.lizorn.com//2016/08/13/vivir-para-contarla/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.lizorn.com//2016/09/02/the-words-on-my-skin/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
@@ -248,6 +248,13 @@
   
   <url>
     <loc>http://www.lizorn.com//2016/09/12/readmemo/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.lizorn.com//2016/09/26/readmemo/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -268,35 +275,7 @@
   </url>
   
   <url>
-    <loc>http://www.lizorn.com//2016/09/26/readmemo/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.lizorn.com//2016/09/27/docker-manual/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.lizorn.com//2007/05/16/anonymity-2007/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.lizorn.com//2009/03/09/potato-killer/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.lizorn.com//2011/12/08/stand-by-the-first-winner/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -310,7 +289,28 @@
   </url>
   
   <url>
+    <loc>http://www.lizorn.com//2007/05/16/anonymity-2007/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.lizorn.com//2016/10/27/hadoop-quick-start/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.lizorn.com//2011/12/08/stand-by-the-first-winner/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.lizorn.com//2009/03/09/potato-killer/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -324,7 +324,7 @@
   </url>
   
   <url>
-    <loc>http://www.lizorn.com//2016/01/05/book-list/</loc>
+    <loc>http://www.lizorn.com//2016/02/15/data_crush/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -338,7 +338,7 @@
   </url>
   
   <url>
-    <loc>http://www.lizorn.com//2016/01/05/chan/</loc>
+    <loc>http://www.lizorn.com//2016/01/05/book-list/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -373,7 +373,7 @@
   </url>
   
   <url>
-    <loc>http://www.lizorn.com//2016/02/15/data_crush/</loc>
+    <loc>http://www.lizorn.com//2016/01/05/chan/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -394,7 +394,7 @@
   </url>
   
   <url>
-    <loc>http://www.lizorn.com//2016/02/15/big_data/</loc>
+    <loc>http://www.lizorn.com//2016/03/04/why_nations_fail/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -408,7 +408,7 @@
   </url>
   
   <url>
-    <loc>http://www.lizorn.com//2016/02/24/the_hard_thing_about_hard_things/</loc>
+    <loc>http://www.lizorn.com//2016/02/15/big_data/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
