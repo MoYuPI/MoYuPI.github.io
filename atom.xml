@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.lizorn.com/"/>
-  <updated>2016-11-19T01:44:22.000Z</updated>
+  <updated>2017-05-20T08:18:48.000Z</updated>
   <id>http://www.lizorn.com/</id>
   
   <author>
@@ -14,6 +14,74 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Zabbix使用指南</title>
+    <link href="http://www.lizorn.com//2017/05/20/zabbix-guide/"/>
+    <id>http://www.lizorn.com//2017/05/20/zabbix-guide/</id>
+    <published>2017-05-20T08:38:30.000Z</published>
+    <updated>2017-05-20T08:18:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ubuntu 14.04</div><div class="line">mysql-5.6</div><div class="line">php-5.5</div><div class="line">zabbix-3.2</div></pre></td></tr></table></figure>
+<h2 id="安装LAMP"><a href="#安装LAMP" class="headerlink" title="安装LAMP"></a>安装LAMP</h2><h3 id="安装Apache2和PHP"><a href="#安装Apache2和PHP" class="headerlink" title="安装Apache2和PHP"></a>安装Apache2和PHP</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt install apache2</div><div class="line">sudo apt-get install php5  php5-mysql  libapache2-mod-auth-mysql</div></pre></td></tr></table></figure>
+<p>查找date字符串，修改date.timezone及添加后面的字段 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">date.timezone = Asia/Shanghai </div><div class="line">max_input_time = 600 </div><div class="line">max_execution_time= 600 </div><div class="line">post_max_size = 32M</div></pre></td></tr></table></figure>
+<p>重启apache2 <code>/etc/init.d/apache2 restart</code></p>
+<h3 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install mysql-server</div><div class="line">sudo apt isntall mysql-client</div><div class="line">sudo apt install libmysqlclient-dev </div><div class="line"></div><div class="line">sudo apt-get install phpmyadmin</div><div class="line">sudo apt-get install php-mbstring</div><div class="line">sudo apt-get install php-gettext</div><div class="line">sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin</div></pre></td></tr></table></figure>
+<h2 id="安装Zabbix"><a href="#安装Zabbix" class="headerlink" title="安装Zabbix"></a>安装Zabbix</h2><h3 id="增加zabbix用户和组"><a href="#增加zabbix用户和组" class="headerlink" title="增加zabbix用户和组"></a>增加zabbix用户和组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">groupadd zabbix</div><div class="line">useradd -g zabbix -m zabbix</div></pre></td></tr></table></figure>
+<h3 id="安装依赖环境："><a href="#安装依赖环境：" class="headerlink" title="安装依赖环境："></a>安装依赖环境：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">apt-get update</div><div class="line">sudo apt-get install build-essential</div><div class="line">sudo apt-get -y install make</div><div class="line">sudo apt-get -y install gcc</div><div class="line">sudo apt-get -y install libghc-hsql-mysql-dev</div><div class="line">sudo apt-get install libmysqlclient18</div><div class="line">sudo apt-get -y install libxml2-dev</div><div class="line">sudo apt-get install libcurl3-dev</div><div class="line">sudo apt-get install libsnmp-dev</div></pre></td></tr></table></figure>
+<h3 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">### 创建zabbix表</div><div class="line">create database zabbix character set utf8;</div><div class="line">### 创建mysql帐号：zabbix，密码：zabbix </div><div class="line">grant all on zabbix.* to &apos;zabbix&apos;@&apos;localhost&apos; identified by &apos;zabbix&apos;;</div></pre></td></tr></table></figure>
+<p>( 源码包下的路径：zabbix –&gt; database –&gt; mysql –&gt; *.sql )</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mysql -uzabbix -pzabbix zabbix &lt; schema.sql</div><div class="line">mysql -uzabbix -pzabbix zabbix &lt; images.sql </div><div class="line">mysql -uzabbix -pzabbix zabbix &lt; data.sql</div></pre></td></tr></table></figure>
+<h3 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">./configure --enable-server --enable-agent --with-mysql --enable-ipv6 --with-net-snmp --with-libcurl --with-libxml2</div><div class="line"></div><div class="line">make install</div></pre></td></tr></table></figure>
+<h3 id="安装中文字体"><a href="#安装中文字体" class="headerlink" title="安装中文字体"></a>安装中文字体</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install language-pack-zh-hans</div></pre></td></tr></table></figure>
+<h3 id="启动zabbix-server"><a href="#启动zabbix-server" class="headerlink" title="启动zabbix_server"></a>启动zabbix_server</h3><p><code>/etc/init.d/zabbix-server start</code></p>
+<p>访问<a href="http://127.0.0.1/zabbix/" target="_blank" rel="external">zabbix frontend</a>,用户名密码<code>admin/zabbix</code></p>
+<h1 id="添加Zabbix-agent-active模式-监控主机"><a href="#添加Zabbix-agent-active模式-监控主机" class="headerlink" title="添加Zabbix agent(active模式)监控主机"></a>添加Zabbix agent(active模式)监控主机</h1><p>active模式：agent主机主动上报采集数据。</p>
+<p>克隆一个模板</p>
+<p><img src="/res/img/zabbix/template.png" alt=""></p>
+<p>修改为Agent active模式</p>
+<p><img src="/res/img/zabbix/activemode.png" alt=""></p>
+<p>更新监控项</p>
+<p><img src="/res/img/zabbix/update.png" alt=""></p>
+<p>创建主机</p>
+<p><img src="/res/img/zabbix/create_host.png" alt=""></p>
+<p>选择模板</p>
+<p><img src="/res/img/zabbix/temp_choose.png" alt=""></p>
+<h2 id="安装-zabbix-agent"><a href="#安装-zabbix-agent" class="headerlink" title="安装 zabbix agent"></a>安装 zabbix agent</h2><ol>
+<li>将zabbix文件夹解压后放在<code>C：\</code></li>
+<li>C:\zabbix\下 新建一个<code>zabbix_agent.log</code>文件</li>
+<li><p>配置zabbix_agentd.win.conf文件（位于<code>C:\zabbix\conf\</code>），需要修改的地方分别为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Logfile= C:\zabbix\zabbix_agent.log</div><div class="line">        Server=X.X.X.X</div><div class="line">        Hostname=X.X.X.X</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p> 注：</p>
+<ol>
+<li>Server是zabbix服务器的IP地址</li>
+<li>LogFile为<code>zabbix_agentd.log</code>文件的位置，用于记录事件，这里的zabbix_agentd.log填写你新建log文件的位置</li>
+<li>Hostname需要和服务器端配置主机填入的主机名称一致，不然日志中将会报“host{主机名}not found”的错误</li>
+</ol>
+<h3 id="打开CMD命令行，注意文件路径执行："><a href="#打开CMD命令行，注意文件路径执行：" class="headerlink" title="打开CMD命令行，注意文件路径执行："></a>打开CMD命令行，注意文件路径执行：</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">C:\zabbix\bin\win32\zabbix_agentd.exe -c C:\zabbix\conf\zabbix_agentd.win.conf -i</div><div class="line">C:\zabbix\bin\win32\zabbix_agentd.exe -c C:\zabbix\conf\zabbix_agentd.win.conf -s</div></pre></td></tr></table></figure>
+</code></pre><h2 id="查看监控项"><a href="#查看监控项" class="headerlink" title="查看监控项"></a>查看监控项</h2><p><img src="/res/img/zabbix/monitor.png" alt=""></p>
+<h1 id="数据库监控"><a href="#数据库监控" class="headerlink" title="数据库监控"></a>数据库监控</h1><ol>
+<li>oracle监控插件:<a href="http://www.smartmarmot.com/wiki/index.php?title=Orabbix" target="_blank" rel="external">orabbix</a></li>
+<li>mysql：官方自带mysql监控模板，agent端运行mysql监控脚本<br>todo</li>
+</ol>
+<h1 id="CLI"><a href="#CLI" class="headerlink" title="CLI"></a>CLI</h1><p>todo</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Install&quot;&gt;&lt;a href=&quot;#Install&quot; class=&quot;headerlink&quot; title=&quot;Install&quot;&gt;&lt;/a&gt;Install&lt;/h1&gt;&lt;h2 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; title=&quot;环
+    
+    </summary>
+    
+      <category term="转" scheme="http://www.lizorn.com/categories/%E8%BD%AC/"/>
+    
+    
+      <category term="运维" scheme="http://www.lizorn.com/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+  </entry>
   
   <entry>
     <title>中文技术文档写作规范</title>
@@ -957,36 +1025,6 @@
   </entry>
   
   <entry>
-    <title>My little trouble</title>
-    <link href="http://www.lizorn.com//2016/09/22/my-little-upset/"/>
-    <id>http://www.lizorn.com//2016/09/22/my-little-upset/</id>
-    <published>2016-09-21T16:00:00.000Z</published>
-    <updated>2016-10-30T11:05:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>碎片化的时代,获取了太多的垃圾信息,最近又想的太多.于是最近就变得比较焦虑,异常的焦虑.</p>
-<p>两年前回到宁波,这里的好企业真的太少了,尤其是技术类的.最后进入互联网的领域,web,app大部分都毫无技术含量,发现已于<code>研发</code>越走越远.</p>
-<p>反复思考自己的职业规划,思考自己想要什么.近几年换工作比较频繁,切换了不同的领域,由于具备通用的专业能力,知识的转化率都还算高.眼界虽宽了很多,但还是缺乏某一个领域深度,没有享受到领域知识的时间复利,一直处于开荒状态,不能进行有效的farm.</p>
-<p>我觉得必须开始经营自己的品牌:</p>
-<ol>
-<li>精进一项核心技能</li>
-<li>混圈子</li>
-<li>持续的自我进化</li>
-</ol>
-<p>于是问题来了,这次换还是不换呢?</p>
-]]></content>
-    
-    <summary type="html">
-    
-      人不是混圈子才会牛逼，而是牛逼了才会有圈子
-    
-    </summary>
-    
-      <category term="随笔" scheme="http://www.lizorn.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>IONIC2使用感想</title>
     <link href="http://www.lizorn.com//2016/09/22/ionic2-/"/>
     <id>http://www.lizorn.com//2016/09/22/ionic2-/</id>
@@ -1014,6 +1052,36 @@
       <category term="移动开发" scheme="http://www.lizorn.com/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
     
       <category term="混合开发" scheme="http://www.lizorn.com/tags/%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>My little trouble</title>
+    <link href="http://www.lizorn.com//2016/09/22/my-little-upset/"/>
+    <id>http://www.lizorn.com//2016/09/22/my-little-upset/</id>
+    <published>2016-09-21T16:00:00.000Z</published>
+    <updated>2016-10-30T11:05:50.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>碎片化的时代,获取了太多的垃圾信息,最近又想的太多.于是最近就变得比较焦虑,异常的焦虑.</p>
+<p>两年前回到宁波,这里的好企业真的太少了,尤其是技术类的.最后进入互联网的领域,web,app大部分都毫无技术含量,发现已于<code>研发</code>越走越远.</p>
+<p>反复思考自己的职业规划,思考自己想要什么.近几年换工作比较频繁,切换了不同的领域,由于具备通用的专业能力,知识的转化率都还算高.眼界虽宽了很多,但还是缺乏某一个领域深度,没有享受到领域知识的时间复利,一直处于开荒状态,不能进行有效的farm.</p>
+<p>我觉得必须开始经营自己的品牌:</p>
+<ol>
+<li>精进一项核心技能</li>
+<li>混圈子</li>
+<li>持续的自我进化</li>
+</ol>
+<p>于是问题来了,这次换还是不换呢?</p>
+]]></content>
+    
+    <summary type="html">
+    
+      人不是混圈子才会牛逼，而是牛逼了才会有圈子
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://www.lizorn.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
     
   </entry>
   
@@ -1469,60 +1537,6 @@
       <category term="博闻" scheme="http://www.lizorn.com/tags/%E5%8D%9A%E9%97%BB/"/>
     
       <category term="梵高" scheme="http://www.lizorn.com/tags/%E6%A2%B5%E9%AB%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>建国大业</title>
-    <link href="http://www.lizorn.com//2016/08/08/blockbuster-Founding-of-the-Republic/"/>
-    <id>http://www.lizorn.com//2016/08/08/blockbuster-Founding-of-the-Republic/</id>
-    <published>2016-08-07T16:00:00.000Z</published>
-    <updated>2016-10-30T11:05:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>‘念奴娇·昆仑</p>
-<p>横空出世，莽昆仑，阅尽人间春色。</p>
-<p>飞起玉龙三百万，搅得周天寒彻。</p>
-<p>夏日消溶，江河横溢，人或为鱼鳖。</p>
-<p>千秋功罪，谁人曾与评说?</p>
-<p>而今我谓昆仑：不要这高，不要这多雪。</p>
-<p>安得倚天抽宝剑，把汝裁为三截?</p>
-<p>一截遗欧，一截赠美，一截还东国。</p>
-<p>太平世界，环球同此凉热。’</p>
-<p>终于读完了这几本书,本意是一周完成的专题阅读,无奈工作过于操心,迟迟未能完成.上面的诗是在长征途中所写，毛泽东登上岷山峰顶，远望青海一带苍茫的昆仑山脉有感而作。整首诗气势磅礴,放眼天下.长征确定了老毛的领袖地位,长征更是宣传书,是宣传队,共产党是播种机.</p>
-<p>传记系列的书我本不想涉及,因为传记太虚,虚了那远不如看小说了,而且大部分的自传都是写成他传,他传就是自传,总是会带有一些目的性.尤其是这几人的官方传记,更是具有强烈的政治诉求.所幸挑的这几版书均是国外名人所写,应当还具有一定的客观性吧.</p>
-<p>一口气看完这四本书,20世纪的中国从暗潮汹涌,到动荡不安,到建国立业,经历太多.看完后恍如隔世,国外写的传记并未毁三观,大事件还是那几个大事件,想来历史是照妖镜总不至于过于捏造.</p>
-<p>几本书都对’大跃进’描述比较少,应该是资料较少的缘故,善长宣传的共产党保密工作确实做的不错.对几个敏感事件也没有太明晰的描述,比如类似89年天安门事件,是谁下令开的枪?并未明说!觉得可能是译者的原因吧,毕竟是要在中国出版的,虽不至于造神但还是有些避讳的,于是翻墙Google了原版,均要收费,无果.</p>
-<h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><p>以史为鉴,20世纪的中国动荡不安,经历了辛亥革命-&gt;五四运动-&gt;国民党成立-&gt;共产党成立-&gt;国共第一次合作-&gt;北伐全国一统一-&gt;剿共-&gt;九一八事变-&gt;西安事变-&gt;国共联合抗日-&gt;抗日胜利-&gt;国共内战-&gt;中华人民共和国成立-&gt;百花齐放-&gt;大跃进-&gt;文化大革命-&gt;四人帮事件-&gt;天安门事件-&gt;中国经济起飞.</p>
-<p>从几大事件看来,蒋公失天下是必然的,作为一个政治家和政治领袖,蒋介石是一个战术家而不是战略家,虽然他善于玩弄权术并牢牢的控制了中国人口的大多数,但他实际上不了解整个政权的社会基础.蒋介石是个悲剧人物,他的悲剧是他自己造成的,虽然他有勇气,有精力,有领袖品质,但他缺乏战略眼光,在关键的时刻做了不该做的决定,该攘外的时候坚持按内,该剿匪扫荡的时候又做的不够彻底,丢了民心丢了权利.</p>
-<p>而老毛不同,毛虽没有喝过洋墨水,但他有非常高的战略眼光,他从农民中来到农民中去,毛泽东给了农民最想要的东西：“土地和同多年来压迫他们的地主们算帐的机会。”</p>
-<p>他来自中国’受虐待的一方’,他所知道是贫困,堕落,剥削和非正义,这些东西他花费了一生在做搏斗.他具备强大的政治野心和执行力,他把改造世界的愿望从教室里带到政治竞技场,在解放人民方面他是光辉的,但在管理复杂的政治军事方面他是不成功的.老毛喜欢斗争,所以他的周围都在斗争中度过.老毛缺乏治理能力,思想极度左倾,而新中国在动荡中最终得以站稳,这都是下面两位的功劳.</p>
-<p>周恩来原先在日本留学,五四运动的时候回到上海,随后又到法国求学,回来领导了上海的几次大罢工,早早就成为了中共关键领导人.周的视野比较开阔,有非常大的包容性.他对共产主义的信仰是真诚的,正如他对中国的感情和他那持久的任性也是发自内心的一样.然而他却是典型的儒家政治家,做事比较温和,缺乏领导能力,无法掌舵中国这艘大船,所以最后只能做个大副.周在毛统治的阶段小心翼翼的不进行政治站队,在几次大事件相安无事,充当着调和员和补救者的角色.他并未留恋权利,连子嗣都没有留下,一心辅佐毛,治理中国,对他选择的道路,我们内心感到欣慰,对他身后的中国,我们充满了希望.</p>
-<h1 id="lt-lt-邓小平传-gt-gt-英-理查德-伊文思"><a href="#lt-lt-邓小平传-gt-gt-英-理查德-伊文思" class="headerlink" title="&lt;&lt;邓小平传&gt;&gt; (英)理查德.伊文思"></a>&lt;&lt;邓小平传&gt;&gt; <em>(英)理查德.伊文思</em></h1><p><img src="https://img1.doubanio.com/lpic/s25117258.jpg" alt=""><br>伊文思是英国驻中国大使,同时也是一位中国社会问题研究专家,他在20世纪50年代,60年代,80年代先后在中国呆了8年,同时也直接参与了英国问题的谈判,他始终关注着中国,关注着邓小平.他已相对客观公平的眼光展示和解读了邓小平波澜壮阔的一生.</p>
-<h1 id="lt-lt-毛泽东传-gt-gt-英-迪克-威尔逊"><a href="#lt-lt-毛泽东传-gt-gt-英-迪克-威尔逊" class="headerlink" title="&lt;&lt;毛泽东传&gt;&gt; (英)迪克.威尔逊"></a>&lt;&lt;毛泽东传&gt;&gt; <em>(英)迪克.威尔逊</em></h1><p><img src="https://img3.doubanio.com/lpic/s6783554.jpg" alt=""></p>
-<h1 id="lt-lt-周恩来传-gt-gt-英-迪克-威尔逊"><a href="#lt-lt-周恩来传-gt-gt-英-迪克-威尔逊" class="headerlink" title="&lt;&lt;周恩来传&gt;&gt; (英)迪克.威尔逊"></a>&lt;&lt;周恩来传&gt;&gt; <em>(英)迪克.威尔逊</em></h1><p><img src="https://img1.doubanio.com/lpic/s6886397.jpg" alt=""></p>
-<h1 id="lt-lt-蒋介石传-gt-gt-美-布兰恩-克洛泽"><a href="#lt-lt-蒋介石传-gt-gt-美-布兰恩-克洛泽" class="headerlink" title="&lt;&lt;蒋介石传&gt;&gt; (美)布兰恩.克洛泽"></a>&lt;&lt;蒋介石传&gt;&gt; <em>(美)布兰恩.克洛泽</em></h1><p><img src="https://img3.doubanio.com/lpic/s4143764.jpg" alt=""></p>
-]]></content>
-    
-    <summary type="html">
-    
-      传记系列的书我本不想涉及,因为传记太虚,虚了那远不如看小说了,而且大部分的自传都是写成他传,他传就是自传,总是会带有一些目的性.尤其是这几人的官方传记,更是具有强烈的政治诉求.所幸挑的这几版书均是国外名人所写,应道还具有一定的客观性吧.
-    
-    </summary>
-    
-      <category term="读书笔记" scheme="http://www.lizorn.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="博闻" scheme="http://www.lizorn.com/tags/%E5%8D%9A%E9%97%BB/"/>
-    
-      <category term="传记" scheme="http://www.lizorn.com/tags/%E4%BC%A0%E8%AE%B0/"/>
-    
-      <category term="毛泽东" scheme="http://www.lizorn.com/tags/%E6%AF%9B%E6%B3%BD%E4%B8%9C/"/>
-    
-      <category term="邓小平" scheme="http://www.lizorn.com/tags/%E9%82%93%E5%B0%8F%E5%B9%B3/"/>
-    
-      <category term="周恩来" scheme="http://www.lizorn.com/tags/%E5%91%A8%E6%81%A9%E6%9D%A5/"/>
-    
-      <category term="蒋介石" scheme="http://www.lizorn.com/tags/%E8%92%8B%E4%BB%8B%E7%9F%B3/"/>
     
   </entry>
   
