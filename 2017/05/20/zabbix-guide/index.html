@@ -58,31 +58,22 @@
 
 
 
-<meta name="description" content="Install环境1234ubuntu 14.04mysql-5.6php-5.5zabbix-3.2
-安装LAMP安装Apache2和PHP12sudo apt install apache2sudo apt-get install php5  php5-mysql  libapache2-mod-auth-mysql
-查找date字符串，修改date.timezone及添加后面的字段 
-123">
+<meta name="description" content="zabbix可监控服务器资源以及数据库资源，同时有开放的api接口可以方便的在它的基础上做二次开发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Zabbix使用指南">
 <meta property="og:url" content="http://www.lizorn.com/2017/05/20/zabbix-guide/index.html">
 <meta property="og:site_name" content="lizorn">
-<meta property="og:description" content="Install环境1234ubuntu 14.04mysql-5.6php-5.5zabbix-3.2
-安装LAMP安装Apache2和PHP12sudo apt install apache2sudo apt-get install php5  php5-mysql  libapache2-mod-auth-mysql
-查找date字符串，修改date.timezone及添加后面的字段 
-123">
+<meta property="og:description" content="zabbix可监控服务器资源以及数据库资源，同时有开放的api接口可以方便的在它的基础上做二次开发">
 <meta property="og:image" content="http://www.lizorn.com/res/img/zabbix/template.png">
 <meta property="og:image" content="http://www.lizorn.com/res/img/zabbix/activemode.png">
 <meta property="og:image" content="http://www.lizorn.com/res/img/zabbix/update.png">
 <meta property="og:image" content="http://www.lizorn.com/res/img/zabbix/create_host.png">
 <meta property="og:image" content="http://www.lizorn.com/res/img/zabbix/temp_choose.png">
 <meta property="og:image" content="http://www.lizorn.com/res/img/zabbix/monitor.png">
-<meta property="og:updated_time" content="2017-05-20T08:18:48.000Z">
+<meta property="og:updated_time" content="2017-05-20T08:27:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Zabbix使用指南">
-<meta name="twitter:description" content="Install环境1234ubuntu 14.04mysql-5.6php-5.5zabbix-3.2
-安装LAMP安装Apache2和PHP12sudo apt install apache2sudo apt-get install php5  php5-mysql  libapache2-mod-auth-mysql
-查找date字符串，修改date.timezone及添加后面的字段 
-123">
+<meta name="twitter:description" content="zabbix可监控服务器资源以及数据库资源，同时有开放的api接口可以方便的在它的基础上做二次开发">
 <meta name="twitter:image" content="http://www.lizorn.com/res/img/zabbix/template.png">
 
 
@@ -294,8 +285,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/转/" itemprop="url" rel="index">
-                    <span itemprop="name">转</span>
+                  <a href="/categories/开发者工具/" itemprop="url" rel="index">
+                    <span itemprop="name">开发者工具</span>
                   </a>
                 </span>
 
@@ -343,7 +334,8 @@
       
 
       
-        <h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ubuntu 14.04</div><div class="line">mysql-5.6</div><div class="line">php-5.5</div><div class="line">zabbix-3.2</div></pre></td></tr></table></figure>
+        <p>zabbix可监控服务器资源以及数据库资源，同时有开放的api接口可以方便的在它的基础上做二次开发，可作为数据中心建设的备选方案。</p>
+<h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ubuntu 14.04</div><div class="line">mysql-5.6</div><div class="line">php-5.5</div><div class="line">zabbix-3.2</div></pre></td></tr></table></figure>
 <h2 id="安装LAMP"><a href="#安装LAMP" class="headerlink" title="安装LAMP"></a>安装LAMP</h2><h3 id="安装Apache2和PHP"><a href="#安装Apache2和PHP" class="headerlink" title="安装Apache2和PHP"></a>安装Apache2和PHP</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt install apache2</div><div class="line">sudo apt-get install php5  php5-mysql  libapache2-mod-auth-mysql</div></pre></td></tr></table></figure>
 <p>查找date字符串，修改date.timezone及添加后面的字段 </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">date.timezone = Asia/Shanghai </div><div class="line">max_input_time = 600 </div><div class="line">max_execution_time= 600 </div><div class="line">post_max_size = 32M</div></pre></td></tr></table></figure>
