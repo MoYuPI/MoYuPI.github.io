@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.lizorn.com/"/>
-  <updated>2017-05-20T08:27:52.000Z</updated>
+  <updated>2017-05-20T08:31:52.000Z</updated>
   <id>http://www.lizorn.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.lizorn.com//2017/05/20/zabbix-guide/"/>
     <id>http://www.lizorn.com//2017/05/20/zabbix-guide/</id>
     <published>2017-05-20T08:38:30.000Z</published>
-    <updated>2017-05-20T08:27:52.000Z</updated>
+    <updated>2017-05-20T08:31:52.000Z</updated>
     
     <content type="html"><![CDATA[<p>zabbix可监控服务器资源以及数据库资源，同时有开放的api接口可以方便的在它的基础上做二次开发，可作为数据中心建设的备选方案。</p>
 <h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ubuntu 14.04</div><div class="line">mysql-5.6</div><div class="line">php-5.5</div><div class="line">zabbix-3.2</div></pre></td></tr></table></figure>
@@ -529,11 +529,11 @@
     
       <category term="开发环境" scheme="http://www.lizorn.com/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
     
-      <category term="hadoop" scheme="http://www.lizorn.com/tags/hadoop/"/>
-    
       <category term="docker" scheme="http://www.lizorn.com/tags/docker/"/>
     
       <category term="docker base image" scheme="http://www.lizorn.com/tags/docker-base-image/"/>
+    
+      <category term="hadoop" scheme="http://www.lizorn.com/tags/hadoop/"/>
     
       <category term="spark" scheme="http://www.lizorn.com/tags/spark/"/>
     
@@ -1026,36 +1026,6 @@
   </entry>
   
   <entry>
-    <title>My little trouble</title>
-    <link href="http://www.lizorn.com//2016/09/22/my-little-upset/"/>
-    <id>http://www.lizorn.com//2016/09/22/my-little-upset/</id>
-    <published>2016-09-21T16:00:00.000Z</published>
-    <updated>2016-10-30T11:05:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>碎片化的时代,获取了太多的垃圾信息,最近又想的太多.于是最近就变得比较焦虑,异常的焦虑.</p>
-<p>两年前回到宁波,这里的好企业真的太少了,尤其是技术类的.最后进入互联网的领域,web,app大部分都毫无技术含量,发现已于<code>研发</code>越走越远.</p>
-<p>反复思考自己的职业规划,思考自己想要什么.近几年换工作比较频繁,切换了不同的领域,由于具备通用的专业能力,知识的转化率都还算高.眼界虽宽了很多,但还是缺乏某一个领域深度,没有享受到领域知识的时间复利,一直处于开荒状态,不能进行有效的farm.</p>
-<p>我觉得必须开始经营自己的品牌:</p>
-<ol>
-<li>精进一项核心技能</li>
-<li>混圈子</li>
-<li>持续的自我进化</li>
-</ol>
-<p>于是问题来了,这次换还是不换呢?</p>
-]]></content>
-    
-    <summary type="html">
-    
-      人不是混圈子才会牛逼，而是牛逼了才会有圈子
-    
-    </summary>
-    
-      <category term="随笔" scheme="http://www.lizorn.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>IONIC2使用感想</title>
     <link href="http://www.lizorn.com//2016/09/22/ionic2-/"/>
     <id>http://www.lizorn.com//2016/09/22/ionic2-/</id>
@@ -1083,6 +1053,36 @@
       <category term="移动开发" scheme="http://www.lizorn.com/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
     
       <category term="混合开发" scheme="http://www.lizorn.com/tags/%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>My little trouble</title>
+    <link href="http://www.lizorn.com//2016/09/22/my-little-upset/"/>
+    <id>http://www.lizorn.com//2016/09/22/my-little-upset/</id>
+    <published>2016-09-21T16:00:00.000Z</published>
+    <updated>2016-10-30T11:05:50.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>碎片化的时代,获取了太多的垃圾信息,最近又想的太多.于是最近就变得比较焦虑,异常的焦虑.</p>
+<p>两年前回到宁波,这里的好企业真的太少了,尤其是技术类的.最后进入互联网的领域,web,app大部分都毫无技术含量,发现已于<code>研发</code>越走越远.</p>
+<p>反复思考自己的职业规划,思考自己想要什么.近几年换工作比较频繁,切换了不同的领域,由于具备通用的专业能力,知识的转化率都还算高.眼界虽宽了很多,但还是缺乏某一个领域深度,没有享受到领域知识的时间复利,一直处于开荒状态,不能进行有效的farm.</p>
+<p>我觉得必须开始经营自己的品牌:</p>
+<ol>
+<li>精进一项核心技能</li>
+<li>混圈子</li>
+<li>持续的自我进化</li>
+</ol>
+<p>于是问题来了,这次换还是不换呢?</p>
+]]></content>
+    
+    <summary type="html">
+    
+      人不是混圈子才会牛逼，而是牛逼了才会有圈子
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://www.lizorn.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
     
   </entry>
   
