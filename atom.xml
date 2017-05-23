@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zfeiyu.com/"/>
-  <updated>2017-05-20T08:31:52.000Z</updated>
+  <updated>2017-05-23T07:46:09.000Z</updated>
   <id>http://zfeiyu.com/</id>
   
   <author>
@@ -14,6 +14,77 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hadoop教程(一)</title>
+    <link href="http://zfeiyu.com/2017/05/22/hadoop-quick-start-1/"/>
+    <id>http://zfeiyu.com/2017/05/22/hadoop-quick-start-1/</id>
+    <published>2017-05-22T04:53:48.000Z</published>
+    <updated>2017-05-23T07:46:09.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Docker形式的Hadoop"><a href="#Docker形式的Hadoop" class="headerlink" title="Docker形式的Hadoop"></a><a href="http://zfeiyu.com/2016/10/27/hadoop-quick-start/">Docker形式的Hadoop</a></h1><h1 id="Hadoop环境搭建"><a href="#Hadoop环境搭建" class="headerlink" title="Hadoop环境搭建"></a>Hadoop环境搭建</h1><h2 id="创建hadoop用户"><a href="#创建hadoop用户" class="headerlink" title="创建hadoop用户"></a>创建hadoop用户</h2><p>增加hadoop用户，授予管理员权限，并登录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ sudo useradd -m hadoop</div><div class="line">$ sudo passwd hadoop</div><div class="line">$ sudo adduser hadoop sudo</div><div class="line">$ sudo su hadoop</div></pre></td></tr></table></figure>
+<h2 id="安装配置SSH"><a href="#安装配置SSH" class="headerlink" title="安装配置SSH"></a>安装配置SSH</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install openssh-server</div><div class="line">$ sudo /etc/init.d/ssh start</div></pre></td></tr></table></figure>
+<p>设置免密码登录，生成私钥和公钥,并将公钥追加到 authorized_keys中，它为用户保存所有允许登录到ssh客户端用户的公钥内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -P &quot;&quot;</div><div class="line">$  cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</div><div class="line">$  chmod 0600 ~/.ssh/authorized_keys</div></pre></td></tr></table></figure>
+<p>在SSH安装之后，对SSH进行测试<code>$ssh localhost</code></p>
+<h2 id="安装Hadhoop"><a href="#安装Hadhoop" class="headerlink" title="安装Hadhoop"></a>安装Hadhoop</h2><h3 id="安装Java环境"><a href="#安装Java环境" class="headerlink" title="安装Java环境"></a>安装Java环境</h3><p><code>sudo apt-get install openjdk-7-jdk</code></p>
+<p>配置 JAVA_HOME， 获取java安装目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hadoop@78dd25fb63f7:/usr/local/hadoop$ update-alternatives --config java</div><div class="line">There is only one alternative in link group java (providing /usr/bin/java): /usr</div><div class="line">/lib/jvm/java-7-openjdk-amd64/jre/bin/java</div><div class="line">Nothing to configure.</div><div class="line">hadoop@78dd25fb63f7:/usr/local/hadoop$</div></pre></td></tr></table></figure>
+<p>配置环境变量<code>$ emacs ~/.bashrc</code>并export JAVA_HOME=JDK安装路径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ source ~/.bashrc</div></pre></td></tr></table></figure>
+<h2 id="安装Hadoop2-7"><a href="#安装Hadoop2-7" class="headerlink" title="安装Hadoop2.7"></a>安装Hadoop2.7</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">wget http://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/hadoop-2.7.3/hadoop-2.7.3.tar.gz</div><div class="line"></div><div class="line">sudo tar xzf hadoop-2.7.3.tar.gz</div><div class="line">sudo mv hadoop-2.7.3 /usr/local/hadoop</div><div class="line">sudo chmod 777 /usr/local/hadoop</div><div class="line">update-alternatives --config java</div></pre></td></tr></table></figure>
+<p>添加以下环境变量:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">#HADOOP VARIABLES START</div><div class="line"></div><div class="line">export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64</div><div class="line"></div><div class="line">export HADOOP_HOME=/usr/local/hadoop</div><div class="line">export HADOOP_INSTALL=$HADOOP_HOME</div><div class="line">export YARN_HOME=$HADOOP_HOME</div><div class="line">export PATH=$PATH:$HADOOP_HOME/bin</div><div class="line">export PATH=$PATH:$HADOOP_HOME/sbin</div><div class="line">export HADOOP_MAPRED_HOME=$HADOOP_HOME</div><div class="line">export HADOOP_COMMON_HOME=$HADOOP_HOME</div><div class="line">export HADOOP_HDFS_HOME=$HADOOP_HOME</div><div class="line">export YARN_HOME=$HADOOP_HOME</div><div class="line">export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native</div><div class="line">export HADOOP_OPTS= &quot;-Djava.library.path=$HADOOP_HOME/lib:$HADOOP_COMMON_LIB_NATIVE_DIR&quot;</div><div class="line"></div><div class="line">#HADOOP VARIABLES END</div></pre></td></tr></table></figure>
+<p>查看Hadhoop版本，验证是否成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">hadoop version</div><div class="line"></div><div class="line">hadoop@VM-160-8-ubuntu:~$ hadoop version</div><div class="line">Hadoop 2.7.3</div><div class="line">Subversion https://git-wip-us.apache.org/repos/asf/hadoop.git -r baa91f7c6bc9cb92be5982de4719c1c8af91ccff</div><div class="line">Compiled by root on 2016-08-18T01:41Z</div><div class="line">Compiled with protoc 2.5.0</div><div class="line">From source with checksum 2e4ce5f957ea4db193bce3734ff29ff4</div><div class="line">This command was run using /usr/local/hadoop/share/hadoop/common/hadoop-common-2.7.3.jar</div></pre></td></tr></table></figure>
+<h2 id="运行测试程序"><a href="#运行测试程序" class="headerlink" title="运行测试程序"></a>运行测试程序</h2><h3 id="步骤-1"><a href="#步骤-1" class="headerlink" title="步骤 1"></a>步骤 1</h3><p>创建一个临时的Input目录，将需要处理的文件copy到input文件夹下。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ mkdir input </div><div class="line">$ cp $HADOOP_HOME/*.txt input</div><div class="line">$ ls -l input </div><div class="line"></div><div class="line">-rw-r--r-- 1 root root 15164 Feb 21 10:14 LICENSE.txt</div><div class="line">-rw-r--r-- 1 root root   101 Feb 21 10:14 NOTICE.txt</div><div class="line">-rw-r--r-- 1 root root  1366 Feb 21 10:14 README.txt</div></pre></td></tr></table></figure></p>
+<h3 id="步骤-2"><a href="#步骤-2" class="headerlink" title="步骤 2"></a>步骤 2</h3><p>利用Hadoop进行单词计数处理，统计input文件夹中所有文件中含有单词的次数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hadoop jar /usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.3.jar  wordcount input output</div></pre></td></tr></table></figure>
+<p>查看</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">hadoop@VM-160-8-ubuntu:~$ cat output/*</div><div class="line">cryptography    1</div><div class="line">cure    3</div><div class="line">currently    1</div><div class="line">customarily    3</div><div class="line">customary    1</div><div class="line">d)    1</div><div class="line">damage    1</div><div class="line">damages    7</div><div class="line">damages,    3</div><div class="line">damages.    2</div><div class="line">data    3</div><div class="line">data,    1</div><div class="line">date    7</div><div class="line">day    4</div><div class="line">days    4</div><div class="line">de    1</div><div class="line">deal    5</div><div class="line">declaratory    2</div><div class="line">decoding    1</div><div class="line">decompression    4</div><div class="line">deemed    2</div><div class="line">defend    2</div><div class="line">defend,    1</div><div class="line">defense    1</div><div class="line">defined    5</div><div class="line">definition,    4</div><div class="line">delete    2</div><div class="line">deleted    2</div><div class="line">deletion    2</div><div class="line">deliberate    1</div><div class="line">den    1</div><div class="line">dependencies    8</div><div class="line">depends    13</div><div class="line">derivative    5</div><div class="line">......</div></pre></td></tr></table></figure>
+<h1 id="Hadoop伪分布式安装"><a href="#Hadoop伪分布式安装" class="headerlink" title="Hadoop伪分布式安装"></a>Hadoop伪分布式安装</h1><h2 id="core-site-xml"><a href="#core-site-xml" class="headerlink" title="core-site.xml"></a>core-site.xml</h2><p>core-site.xml文件中包含Hadoop实例的端口号信息, 文件系统的内存分配信息，存储数据的内存限制，读/写缓冲区的容量等信息。 打开<code>core-site.xml</code>文件，并在, 标签之间添加以下属性信息。<br>cd $HADOOP_HOME/etc/hadoop</p>
+<h2 id="hdfs-site-xml"><a href="#hdfs-site-xml" class="headerlink" title="hdfs-site.xml"></a>hdfs-site.xml</h2><p><code>hdfs-site.xml</code>文件包括本地文件系统中复制数据，主节点路径，数据节点路径等信息，该文件主要储存Hadoop基础设施。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;configuration&gt;</div><div class="line">   &lt;property&gt;</div><div class="line">      &lt;name&gt;dfs.replication&lt;/name&gt;</div><div class="line">      &lt;value&gt;1&lt;/value&gt;</div><div class="line">   &lt;/property&gt; </div><div class="line">   &lt;property&gt;</div><div class="line">      &lt;name&gt;dfs.name.dir&lt;/name&gt;</div><div class="line">      &lt;value&gt;file:///home/hadoop/hadoopinfra/hdfs/namenode&lt;/value&gt;</div><div class="line">   &lt;/property&gt;  </div><div class="line">   &lt;property&gt;</div><div class="line">      &lt;name&gt;dfs.data.dir&lt;/name&gt; </div><div class="line">      &lt;value&gt;file:///home/hadoop/hadoopinfra/hdfs/datanode&lt;/value&gt; </div><div class="line">   &lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure>
+<h2 id="yarn-site-xml"><a href="#yarn-site-xml" class="headerlink" title="yarn-site.xml"></a>yarn-site.xml</h2><p>在以上文件中，所有的属性值都是用户定义的，可以通过改变属性值Hadoop基础构架，yarn-site.xml能够配置Hadoop的yarn，打开yarn-site.xml文件，在, 标签之间添加属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;configuration&gt;</div><div class="line">    &lt;property&gt;</div><div class="line">      &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;</div><div class="line">      &lt;value&gt;mapreduce_shuffle&lt;/value&gt; </div><div class="line">   &lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure>
+<h2 id="mapred-site-xml"><a href="#mapred-site-xml" class="headerlink" title="mapred-site.xml"></a>mapred-site.xml</h2><p><code>mapred-site.xml</code>文件说明哪一个MapReduce框架正在被使用。在默认状态下，Hadoop包含一个yarn-site.xml模板。 首先，需要使用cp命令复制mapred-site,xml.template到mapred-site.xml文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cp mapred-site.xml.template mapred-site.xml</div></pre></td></tr></table></figure>
+<p>打开mapred-site.xml文件，并在, 标签之间添加属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;configuration&gt;</div><div class="line">    &lt;property&gt; </div><div class="line">      &lt;name&gt;mapreduce.framework.name&lt;/name&gt;</div><div class="line">      &lt;value&gt;yarn&lt;/value&gt;</div><div class="line">   &lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure>
+<h2 id="Hadoop启动"><a href="#Hadoop启动" class="headerlink" title="Hadoop启动"></a>Hadoop启动</h2><h3 id="建立主节点"><a href="#建立主节点" class="headerlink" title="建立主节点"></a>建立主节点</h3><p>建立主节点使用<code>hdfs namenode -format</code>命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ cd ~</div><div class="line">$ hdfs namenode -format</div><div class="line">打开hadoop-env.sh，增加</div><div class="line">export  HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native</div><div class="line">export  HADOOP_HOME=/usr/local/hadoop</div><div class="line">export  HADOOP_OPTS=&quot;-Djava.library.path=$HADOOP_HOME/lib:$HADOOP_COMMON_LIB_NATIVE_DIR&quot;</div></pre></td></tr></table></figure>
+<p>命令正确执行后，可以得到以下的输出结果。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">hadoop@VM-160-8-ubuntu:/usr/local/hadoop/etc/hadoop$ hdfs namenode -format</div><div class="line">17/05/21 12:12:04 INFO namenode.NameNode: STARTUP_MSG:</div><div class="line">/************************************************************</div><div class="line">STARTUP_MSG: Starting NameNode</div><div class="line">STARTUP_MSG:   host = VM-160-8-ubuntu/127.0.0.1</div><div class="line">STARTUP_MSG:   args = [-format]</div><div class="line">STARTUP_MSG:   version = 2.7.3</div><div class="line">......</div><div class="line">......</div><div class="line">17/05/21 12:12:06 INFO namenode.NameNode: SHUTDOWN_MSG:</div><div class="line">/************************************************************</div><div class="line">SHUTDOWN_MSG: Shutting down NameNode at VM-160-8-ubuntu/127.0.0.1</div><div class="line">************************************************************/</div></pre></td></tr></table></figure>
+<h3 id="启动Hadoop的dfs文件系统"><a href="#启动Hadoop的dfs文件系统" class="headerlink" title="启动Hadoop的dfs文件系统"></a>启动Hadoop的dfs文件系统</h3><p>以下命令用来启动dfs，启动Hadoop文件系统。(2.7需将 /etc/hadoop/hadoop-env.sh中的 JAVA_HOME设为绝对路径)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">hadoop@VM-160-8-ubuntu:~$ start-dfs.sh</div><div class="line">17/05/21 12:23:54 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable</div><div class="line">Incorrect configuration: namenode address dfs.namenode.servicerpc-address or dfs.namenode.rpc-address is not configured.</div><div class="line">Starting namenodes on []</div><div class="line">localhost: starting namenode, logging to /usr/local/hadoop/logs/hadoop-hadoop-namenode-VM-160-8-ubuntu.out</div><div class="line">localhost: starting datanode, logging to /usr/local/hadoop/logs/hadoop-hadoop-datanode-VM-160-8-ubuntu.out</div><div class="line">Starting secondary namenodes [0.0.0.0]</div><div class="line">0.0.0.0: starting secondarynamenode, logging to /usr/local/hadoop/logs/hadoop-hadoop-secondarynamenode-VM-160-8-ubuntu.out</div><div class="line">17/05/21 12:24:13 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable</div></pre></td></tr></table></figure>
+<h3 id="启动Yarn脚本"><a href="#启动Yarn脚本" class="headerlink" title="启动Yarn脚本"></a>启动Yarn脚本</h3><p>以下命令启动yarn script，执行这个命令将会启动yarn daemons程序。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ start-yarn.sh</div><div class="line">hadoop@VM-160-8-ubuntu:~$ start-yarn.sh</div><div class="line">starting yarn daemons</div><div class="line">starting resourcemanager, logging to /usr/local/hadoop/logs/yarn-hadoop-resourcemanager-VM-160-8-ubuntu.out</div><div class="line">localhost: starting nodemanager, logging to /usr/local/hadoop/logs/yarn-hadoop-nodemanager-VM-160-8-ubuntu.out</div></pre></td></tr></table></figure>
+<p>通过浏览器访问Hadoop</p>
+<p>Hadoop默认的端口号是50070，使用以下命令访问Hadoop服务。<code>http://localhost:50070/</code></p>
+<p>图1-Hadoop服务</p>
+<p><img src="/res/img/hadoop/dsf_overview.jpg" alt=""></p>
+<h3 id="启动集群中所有的应用程序"><a href="#启动集群中所有的应用程序" class="headerlink" title="启动集群中所有的应用程序"></a>启动集群中所有的应用程序</h3><p>默认的端口号8088能够访问所有的应用程序，使用以下url能够访问这个服务。<code>http://localhost:8088/</code></p>
+<p>图2-Hadoop应用程序</p>
+<p><img src="/res/img/hadoop/8088.jpg" alt=""></p>
+<p>出现以上图片表明Hadoop程序已经完成部署。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      hadoop单站配置
+    
+    </summary>
+    
+      <category term="开发者手册" scheme="http://zfeiyu.com/categories/%E5%BC%80%E5%8F%91%E8%80%85%E6%89%8B%E5%86%8C/"/>
+    
+    
+      <category term="大数据" scheme="http://zfeiyu.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="hadoop" scheme="http://zfeiyu.com/tags/hadoop/"/>
+    
+  </entry>
   
   <entry>
     <title>Zabbix使用指南</title>
@@ -529,11 +600,11 @@
     
       <category term="开发环境" scheme="http://zfeiyu.com/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
     
-      <category term="hadoop" scheme="http://zfeiyu.com/tags/hadoop/"/>
-    
       <category term="docker" scheme="http://zfeiyu.com/tags/docker/"/>
     
       <category term="docker base image" scheme="http://zfeiyu.com/tags/docker-base-image/"/>
+    
+      <category term="hadoop" scheme="http://zfeiyu.com/tags/hadoop/"/>
     
       <category term="spark" scheme="http://zfeiyu.com/tags/spark/"/>
     
@@ -1026,6 +1097,36 @@
   </entry>
   
   <entry>
+    <title>My little trouble</title>
+    <link href="http://zfeiyu.com/2016/09/22/my-little-upset/"/>
+    <id>http://zfeiyu.com/2016/09/22/my-little-upset/</id>
+    <published>2016-09-21T16:00:00.000Z</published>
+    <updated>2016-10-30T11:05:50.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>碎片化的时代,获取了太多的垃圾信息,最近又想的太多.于是最近就变得比较焦虑,异常的焦虑.</p>
+<p>两年前回到宁波,这里的好企业真的太少了,尤其是技术类的.最后进入互联网的领域,web,app大部分都毫无技术含量,发现已于<code>研发</code>越走越远.</p>
+<p>反复思考自己的职业规划,思考自己想要什么.近几年换工作比较频繁,切换了不同的领域,由于具备通用的专业能力,知识的转化率都还算高.眼界虽宽了很多,但还是缺乏某一个领域深度,没有享受到领域知识的时间复利,一直处于开荒状态,不能进行有效的farm.</p>
+<p>我觉得必须开始经营自己的品牌:</p>
+<ol>
+<li>精进一项核心技能</li>
+<li>混圈子</li>
+<li>持续的自我进化</li>
+</ol>
+<p>于是问题来了,这次换还是不换呢?</p>
+]]></content>
+    
+    <summary type="html">
+    
+      人不是混圈子才会牛逼，而是牛逼了才会有圈子
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://zfeiyu.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>IONIC2使用感想</title>
     <link href="http://zfeiyu.com/2016/09/22/ionic2-/"/>
     <id>http://zfeiyu.com/2016/09/22/ionic2-/</id>
@@ -1053,36 +1154,6 @@
       <category term="移动开发" scheme="http://zfeiyu.com/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
     
       <category term="混合开发" scheme="http://zfeiyu.com/tags/%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>My little trouble</title>
-    <link href="http://zfeiyu.com/2016/09/22/my-little-upset/"/>
-    <id>http://zfeiyu.com/2016/09/22/my-little-upset/</id>
-    <published>2016-09-21T16:00:00.000Z</published>
-    <updated>2016-10-30T11:05:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>碎片化的时代,获取了太多的垃圾信息,最近又想的太多.于是最近就变得比较焦虑,异常的焦虑.</p>
-<p>两年前回到宁波,这里的好企业真的太少了,尤其是技术类的.最后进入互联网的领域,web,app大部分都毫无技术含量,发现已于<code>研发</code>越走越远.</p>
-<p>反复思考自己的职业规划,思考自己想要什么.近几年换工作比较频繁,切换了不同的领域,由于具备通用的专业能力,知识的转化率都还算高.眼界虽宽了很多,但还是缺乏某一个领域深度,没有享受到领域知识的时间复利,一直处于开荒状态,不能进行有效的farm.</p>
-<p>我觉得必须开始经营自己的品牌:</p>
-<ol>
-<li>精进一项核心技能</li>
-<li>混圈子</li>
-<li>持续的自我进化</li>
-</ol>
-<p>于是问题来了,这次换还是不换呢?</p>
-]]></content>
-    
-    <summary type="html">
-    
-      人不是混圈子才会牛逼，而是牛逼了才会有圈子
-    
-    </summary>
-    
-      <category term="随笔" scheme="http://zfeiyu.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
     
   </entry>
   
@@ -1483,61 +1554,6 @@
       <category term="博闻" scheme="http://zfeiyu.com/tags/%E5%8D%9A%E9%97%BB/"/>
     
       <category term="电影" scheme="http://zfeiyu.com/tags/%E7%94%B5%E5%BD%B1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>渴望生活</title>
-    <link href="http://zfeiyu.com/2016/08/09/lust-for-life/"/>
-    <id>http://zfeiyu.com/2016/08/09/lust-for-life/</id>
-    <published>2016-08-08T16:00:00.000Z</published>
-    <updated>2016-10-30T11:05:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://img3.doubanio.com/lpic/s27775990.jpg" alt=""></p>
-<blockquote>
-<p>开启不同于前人的艺术，启发后人的艺术，这就是梵高作品的伟大之处。</p>
-</blockquote>
-<p>梵高.温森特励志成为一名福音传教士,由于他并未完成传教士的学业,于是屈就到博里那日的矿区传教.他感受到了博里那日煤矿工人生活的艰辛和他们的朴实,然而在一次矿井坍塌事故中,矿产公司的残忍,福音教会的傲慢偏执和不作为,让他开始质疑上帝的存在,上帝放弃了这些朴实和卑微的旷工.他也因此失去了成为传教士的资格,失去了上帝,失去了自己.</p>
-<blockquote>
-<p>他明白了有些上帝的话,不过是孩子气的借口和托词,是一个吓坏了的孤独的人在寒冷,漫长的黑夜中,由于绝望而散布编造的谎言.没有什么上帝,事情就是这么简单.压根就没有上帝,只有混乱–悲惨的,痛苦的,残忍的,莫名其妙的,无止无休的混乱.</p>
-</blockquote>
-<p><em>吃土豆的人,1885</em><br><img src="/res/img/lustforlife/The-Potato-Eaters.jpg" alt="吃土豆的人"></p>
-<p>梵高在上帝退场后,终于投入了绘画的怀抱.他并没有绘画的基础,虽然他的画比例失调,但他的画有一些说不清道不明的东西…… 梵高过于迷恋绘画,显然他周围的人都无法理解,’有谁会盯着一颗树,顶着一头烈日,画一天的画呢’.在他穷困潦倒的一生里全靠他的弟弟提奥资助过活.在经常饿着肚子,发着烧,身无分文的情况下,梵高完成一副又一副的作品,他对绘画的热爱是狂热的,犹如他对爱情的渴望那样,虽然他的爱情总是不顺的.</p>
-<blockquote>
-<p>人的行为,非常像画画.整个透视关系随着眼睛的变化而变化,起决定作用的并不是被绘画的对象,而是正在看它的人.</p>
-</blockquote>
-<p><em>塞纳河上的桥,1886</em><br><img src="/res/img/lustforlife/Bridges-across-the-Seine-at-Asnières.jpg" alt="塞纳河上的桥"></p>
-<p>梵高早期在荷兰自学绘画,最后到了巴黎–这座艺术的天堂,他才受到了艺术的召唤,他的艺术形态开始形成.在那他受到了前所未有的冲击,他的画是那么的与众不同,不同到差点让他放弃绘画生涯,梵高的画色彩强烈，色调明亮。他那富于激情的旋转、跃动的笔触，则使他的麦田、柏树、星空等，有如火焰般升腾、颤动，震撼观者的心灵。在他的画上，强烈的情感完全溶化在色彩与笔触的交响乐中,他是表现主义的先驱.</p>
-<p>梵高觉得巴黎过于喧嚣于是独自一人来到了法国南方的城市’阿尔勒’,重新过上了贫困的,清苦的,但是纯粹的只有绘画的生活.</p>
-<blockquote>
-<p>我在寻求,我在奋斗,我在全心全意的投入到艺术之中.我不属于这儿。我是个农民画家，我要回到我的田野上去。我要找到一个太阳，它炽热得能把我心中除了绘画这种慾望以外的一切都烧光。</p>
-</blockquote>
-<p><em>向日葵,1888</em><br><img src="/res/img/lustforlife/sunflowers-1888.jpg" alt="向日葵"></p>
-<p>在阿尔,他精神已经有些不正常了,他知道了,长时间观看事物,才能使他的思想更成熟,理解更深刻.他把他的朋友保尔高更也接到了一起住,于是两个精神病人开始了无止尽的争论.在绘画的领域,梵高是一座真正的火山,而高更则是满腔热血沸腾,即便是没有分歧的部分,他们的讨论也是惊心动魄的.</p>
-<p><em>黄房子,1888</em><br><img src="/res/img/lustforlife/The-yellow-house.jpg" alt="黄房子"></p>
-<blockquote>
-<p>我画太阳时，要画得让人们感觉到它以可怕的速度在旋转。它发射出力量无穷的光波和热波。我画麦田时，要人们感觉到谷粒中的原子在生长、爆裂。我画苹果时，要人们感觉到苹果中的液汁溅到皮肤上，果核中的种籽在往外钻向开花结果！</p>
-<p>当我画一个在田里干活的农民的时候,我希望人们感觉到,农民就像庄稼那样正向下融会到土壤里面,而土壤也向上融会到农民身上.我希望人们感受到,太阳正注入到农民,土地,庄稼,犁和马的内部,恰如他们反过来又注入到太阳里面一样.当我开始感受到事件万物运动的这一普遍的节奏时,你才开始懂得了生活.只有这,才是主宰一切的上帝.</p>
-</blockquote>
-<p>是的,梵高的上帝已经死了,他成为主宰自己生活的上帝,也是他绘画的源泉. 然而正是这份对艺术的热爱和执着与生活的艰辛形成鲜明的对比,时时刻刻折磨着他的神经,’他是一个因善良受苦的天使,也是一个用色彩享乐的天才’,最后他割下了自己的耳朵…随后,他被送入圣雷米的疗养院,在那个安静的世界里,他的内心更为纯净,他画了星空,绽放了他内心最纯净的颜色.</p>
-<p><em>星空,1889</em><br><img src="/res/img/lustforlife/starry-night.jpg" alt=""></p>
-<p>我想,对生活充满热爱的人们都应该读一下这本书,去感受一下这个崇高的灵魂,感受一下它的孤独,感受一下我们拥有的幸福.</p>
-<p>致敬梵高!</p>
-<p><em>麦田里的乌鸦,1890</em><br><img src="/res/img/Wheatfield-with-crows-1890.jpg" alt=""></p>
-]]></content>
-    
-    <summary type="html">
-    
-      他明白了有些上帝的话,不过是孩子气的借口和托词,是一个吓坏了的孤独的人在寒冷,漫长的黑夜中,由于绝望而散布编造的谎言.没有什么上帝,事情就是这么简单.压根就没有上帝,只有混乱--悲惨的,痛苦的,残忍的,莫名其妙的,无止无休的混乱.
-    
-    </summary>
-    
-      <category term="读书笔记" scheme="http://zfeiyu.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="博闻" scheme="http://zfeiyu.com/tags/%E5%8D%9A%E9%97%BB/"/>
-    
-      <category term="梵高" scheme="http://zfeiyu.com/tags/%E6%A2%B5%E9%AB%98/"/>
     
   </entry>
   
