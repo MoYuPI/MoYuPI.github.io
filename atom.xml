@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zfeiyu.com/"/>
-  <updated>2017-05-24T08:23:31.000Z</updated>
+  <updated>2017-06-03T03:12:39.000Z</updated>
   <id>http://zfeiyu.com/</id>
   
   <author>
@@ -16,11 +16,59 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>hadoop实战(二)</title>
+    <link href="http://zfeiyu.com/2017/06/01/hadoop-in-action-2/"/>
+    <id>http://zfeiyu.com/2017/06/01/hadoop-in-action-2/</id>
+    <published>2017-06-01T09:30:01.000Z</published>
+    <updated>2017-06-03T03:12:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="WordCount统计词频"><a href="#WordCount统计词频" class="headerlink" title="WordCount统计词频"></a>WordCount统计词频</h1><h2 id="MapReduce实现"><a href="#MapReduce实现" class="headerlink" title="MapReduce实现"></a>MapReduce实现</h2><h3 id="WordCount-java源码"><a href="#WordCount-java源码" class="headerlink" title="WordCount.java源码"></a>WordCount.java源码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">import java.io.IOException;</div><div class="line">import java.util.StringTokenizer;</div><div class="line">import org.apache.hadoop.conf.Configuration;</div><div class="line">import org.apache.hadoop.fs.Path;</div><div class="line">import org.apache.hadoop.io.IntWritable;</div><div class="line">import org.apache.hadoop.io.Text;</div><div class="line">import org.apache.hadoop.mapreduce.Job;</div><div class="line">import org.apache.hadoop.mapreduce.Mapper;</div><div class="line">import org.apache.hadoop.mapreduce.Reducer;</div><div class="line">import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;</div><div class="line">import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;</div><div class="line">public class WordCount &#123;</div><div class="line">  public static class TokenizerMapper extends Mapper&lt;Object, Text, Text, IntWritable&gt;&#123;</div><div class="line">    private final static IntWritable one = new IntWritable(1);</div><div class="line">    private Text word = new Text();</div><div class="line">    public void map(Object key, Text value, Context context) throws IOException, InterruptedException &#123;</div><div class="line">      StringTokenizer itr = new StringTokenizer(value.toString());</div><div class="line">      while (itr.hasMoreTokens()) &#123;</div><div class="line">        word.set(itr.nextToken());</div><div class="line">        context.write(word, one);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  public static class IntSumReducer extends Reducer&lt;Text,IntWritable,Text,IntWritable&gt; &#123;</div><div class="line">    private IntWritable result = new IntWritable();</div><div class="line">    public void reduce(Text key, Iterable&lt;IntWritable&gt; values,</div><div class="line">                        Context context) throws IOException, InterruptedException &#123;</div><div class="line">        int sum = 0;</div><div class="line">        for (IntWritable val : values) &#123;</div><div class="line">          sum += val.get();</div><div class="line">        &#125;</div><div class="line">        result.set(sum);</div><div class="line">        context.write(key, result);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  public static void main(String[] args) throws Exception &#123;</div><div class="line">    Configuration conf = new Configuration();</div><div class="line">    Job job = Job.getInstance(conf, &quot;word count&quot;);</div><div class="line">    job.setJarByClass(WordCount.class);</div><div class="line">    job.setMapperClass(TokenizerMapper.class);</div><div class="line">    job.setCombinerClass(IntSumReducer.class);</div><div class="line">    job.setReducerClass(IntSumReducer.class);</div><div class="line">    job.setOutputKeyClass(Text.class);</div><div class="line">    job.setOutputValueClass(IntWritable.class);</div><div class="line">    FileInputFormat.addInputPath(job, new Path(args[0]));</div><div class="line">    FileOutputFormat.setOutputPath(job, new Path(args[1]));</div><div class="line">    System.exit(job.waitForCompletion(true) ? 0 : 1);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hadoop com.sun.tools.javac.Main WordCount.java</div><div class="line">jar cf wc.jar WordCount*.class</div></pre></td></tr></table></figure>
+<h3 id="创建DFS"><a href="#创建DFS" class="headerlink" title="创建DFS"></a>创建DFS</h3><p>在hdfs上的用户目录下创建输入/输出文件的文件夹.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hadoop fs -mkdir -p /user/&#123;whoami&#125;/wordcount/input</div></pre></td></tr></table></figure>
+<p>下本书</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir -p ~/tmp/book/</div><div class="line">cd ~/tmp/book</div><div class="line">wget http://www.gutenberg.org/files/5000/5000-8.txt</div></pre></td></tr></table></figure>
+<p>将书放到HDFS上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hadoop fs -put ~/tmp/book/*.txt /user/$&#123;whoami&#125;/wordcount/input</div></pre></td></tr></table></figure>
+<h3 id="执行MapReduce"><a href="#执行MapReduce" class="headerlink" title="执行MapReduce"></a>执行MapReduce</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hadoop jar wc.jar WordCount /user/$&#123;whoami&#125;/wordcount/input /user/$&#123;whoami&#125;/wordcount/output</div></pre></td></tr></table></figure>
+<p>查看解析内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hadoop fs -cat /user/$&#123;whoami&#125;/wordcount/output/part-r-00000</div></pre></td></tr></table></figure></p>
+<h2 id="HadoopStreaming实现"><a href="#HadoopStreaming实现" class="headerlink" title="HadoopStreaming实现"></a>HadoopStreaming实现</h2><p>Hadoop是使用Java语言编写的,所以最直接的方式的就是使用Java语言来实现Mapper和Reducer,然后配置MapReduce Job,提交到集群计算环境来完成计算.<br>hadoop也为其它语言，如C++、Shell、Python、 Ruby、PHP、Perl等提供了支持，这个工具就是Hadoop Streaming.</p>
+<h3 id="wordcount的python实现"><a href="#wordcount的python实现" class="headerlink" title="wordcount的python实现"></a>wordcount的python实现</h3><p>mapper.py源码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env python</div><div class="line">import sys</div><div class="line">def read_input(file):</div><div class="line">    for line in file:</div><div class="line">        yield line.split()</div><div class="line">def main(separator=&apos;\t&apos;):</div><div class="line">    data = read_input(sys.stdin)</div><div class="line">    for words in data:</div><div class="line">        for word in words:</div><div class="line">            print &quot;%s%s%d&quot; % (word, separator, 1)</div><div class="line">if __name__ == &quot;__main__&quot;:</div><div class="line">    main()</div></pre></td></tr></table></figure>
+<p>reducer.py</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env python</div><div class="line">from operator import itemgetter</div><div class="line">from itertools import groupby</div><div class="line">import sys</div><div class="line">def read_mapper_output(file, separator = &apos;\t&apos;):</div><div class="line">    for line in file:</div><div class="line">        yield line.rstrip().split(separator, 1)</div><div class="line">def main(separator = &apos;\t&apos;):</div><div class="line">    data = read_mapper_output(sys.stdin, separator = separator)</div><div class="line">    for current_word, group in groupby(data, itemgetter(0)):</div><div class="line">        try:</div><div class="line">            total_count = sum(int(count) for current_word, count in group)</div><div class="line">            print &quot;%s%s%d&quot; % (current_word, separator, total_count)</div><div class="line">        except valueError:</div><div class="line">            pass</div><div class="line">if __name__ == &quot;__main__&quot;:</div><div class="line">    main()</div></pre></td></tr></table></figure>
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>可以写个sh脚本运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">hadoop jar $STREAM  \</div><div class="line">-files ./mapper.py,./reducer.py \</div><div class="line">-mapper ./mapper.py \</div><div class="line">-reducer ./reducer.py \</div><div class="line">-input /user/$&#123;whoami&#125;/wordcount/input/ \</div><div class="line">-output ~/output</div></pre></td></tr></table></figure></p>
+<h2 id="Spark实现"><a href="#Spark实现" class="headerlink" title="Spark实现"></a>Spark实现</h2><p>运行spark的python交互式控制台,pyspark.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">hadoop@4532e4bdaa51:~$ pyspark</div><div class="line">Python 2.7.6 (default, Jun 22 2015, 17:58:13)</div><div class="line">[GCC 4.8.2] on linux2</div><div class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</div><div class="line">Using Spark&apos;s default log4j profile: org/apache/spark/log4j-defaults.properties</div><div class="line">Setting default log level to &quot;WARN&quot;.</div><div class="line">To adjust logging level use sc.setLogLevel(newLevel).</div><div class="line">16/10/28 02:10:51 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable</div><div class="line">Welcome to</div><div class="line">      ____              __</div><div class="line">     / __/__  ___ _____/ /__</div><div class="line">    _\ \/ _ \/ _ `/ __/  &apos;_/</div><div class="line">   /__ / .__/\_,_/_/ /_/\_\   version 2.0.1</div><div class="line">      /_/</div><div class="line">Using Python version 2.7.6 (default, Jun 22 2015 17:58:13)</div><div class="line">SparkSession available as &apos;spark&apos;.</div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure>
+<p>使用textFile加载文本到RDD,进行’wordcount’.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; text = sc.textFile(&quot;hdfs://localhost:9000/user/$&#123;whoami&#125;/wordcount/input&quot;)</div><div class="line">&gt;&gt;&gt; counts = text.flatMap(lambda line: line.split(&quot; &quot;)).map(lambda word: (word,1)).reduceByKey(lambda x,y: x + y)</div></pre></td></tr></table></figure>
+<p>调用saveAsTextFile,分布式作业开始…</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">counts.saveAsTextFile(&quot;hdfs://localhost:9000/wordcount/spark_out&quot;)</div></pre></td></tr></table></figure>
+<p>可以在工作台输出目录里查看</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">hadoop fs -cat  hdfs://localhost:9000/wordcount/spark_out/part-00000</div><div class="line">...</div><div class="line">(u&apos;Well&apos;, 1)</div><div class="line">(u&apos;roar,&apos;, 1)</div><div class="line">(u&apos;Lust&apos;, 1)</div><div class="line">(u&apos;up-side-down&apos;, 1)</div><div class="line">(u&apos;sozza&apos;, 1)</div><div class="line">(u&apos;primus&apos;, 1)</div><div class="line">(u&apos;expands&apos;, 1)</div><div class="line">...</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      hadoop应用实例
+    
+    </summary>
+    
+      <category term="开发者手册" scheme="http://zfeiyu.com/categories/%E5%BC%80%E5%8F%91%E8%80%85%E6%89%8B%E5%86%8C/"/>
+    
+    
+      <category term="大数据" scheme="http://zfeiyu.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="hadoop" scheme="http://zfeiyu.com/tags/hadoop/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数据平台构建思路</title>
     <link href="http://zfeiyu.com/2017/05/23/how-to-build-data-platform/"/>
     <id>http://zfeiyu.com/2017/05/23/how-to-build-data-platform/</id>
     <published>2017-05-23T07:50:48.000Z</published>
-    <updated>2017-05-24T08:23:31.000Z</updated>
+    <updated>2017-05-24T08:43:20.000Z</updated>
     
     <content type="html"><![CDATA[<p>构建大数据平台思路，企业如何大数据化？</p>
 <h1 id="全面数据化"><a href="#全面数据化" class="headerlink" title="全面数据化"></a>全面数据化</h1><ol>
@@ -184,11 +232,11 @@
   </entry>
   
   <entry>
-    <title>hadoop教程(一)</title>
-    <link href="http://zfeiyu.com/2017/05/22/hadoop-quick-start-1/"/>
-    <id>http://zfeiyu.com/2017/05/22/hadoop-quick-start-1/</id>
+    <title>hadoop实战(一)</title>
+    <link href="http://zfeiyu.com/2017/05/22/hadoop-in-action-1/"/>
+    <id>http://zfeiyu.com/2017/05/22/hadoop-in-action-1/</id>
     <published>2017-05-22T04:53:48.000Z</published>
-    <updated>2017-05-23T07:46:09.000Z</updated>
+    <updated>2017-06-03T03:12:39.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Docker形式的Hadoop"><a href="#Docker形式的Hadoop" class="headerlink" title="Docker形式的Hadoop"></a><a href="http://zfeiyu.com/2016/10/27/hadoop-quick-start/">Docker形式的Hadoop</a></h1><h1 id="Hadoop环境搭建"><a href="#Hadoop环境搭建" class="headerlink" title="Hadoop环境搭建"></a>Hadoop环境搭建</h1><h2 id="创建hadoop用户"><a href="#创建hadoop用户" class="headerlink" title="创建hadoop用户"></a>创建hadoop用户</h2><p>增加hadoop用户，授予管理员权限，并登录</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ sudo useradd -m hadoop</div><div class="line">$ sudo passwd hadoop</div><div class="line">$ sudo adduser hadoop sudo</div><div class="line">$ sudo su hadoop</div></pre></td></tr></table></figure>
@@ -203,23 +251,24 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ source ~/.bashrc</div></pre></td></tr></table></figure>
 <h2 id="安装Hadoop2-7"><a href="#安装Hadoop2-7" class="headerlink" title="安装Hadoop2.7"></a>安装Hadoop2.7</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">wget http://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/hadoop-2.7.3/hadoop-2.7.3.tar.gz</div><div class="line"></div><div class="line">sudo tar xzf hadoop-2.7.3.tar.gz</div><div class="line">sudo mv hadoop-2.7.3 /usr/local/hadoop</div><div class="line">sudo chmod 777 /usr/local/hadoop</div><div class="line">update-alternatives --config java</div></pre></td></tr></table></figure>
 <p>添加以下环境变量:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">#HADOOP VARIABLES START</div><div class="line"></div><div class="line">export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64</div><div class="line"></div><div class="line">export HADOOP_HOME=/usr/local/hadoop</div><div class="line">export HADOOP_INSTALL=$HADOOP_HOME</div><div class="line">export YARN_HOME=$HADOOP_HOME</div><div class="line">export PATH=$PATH:$HADOOP_HOME/bin</div><div class="line">export PATH=$PATH:$HADOOP_HOME/sbin</div><div class="line">export HADOOP_MAPRED_HOME=$HADOOP_HOME</div><div class="line">export HADOOP_COMMON_HOME=$HADOOP_HOME</div><div class="line">export HADOOP_HDFS_HOME=$HADOOP_HOME</div><div class="line">export YARN_HOME=$HADOOP_HOME</div><div class="line">export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native</div><div class="line">export HADOOP_OPTS= &quot;-Djava.library.path=$HADOOP_HOME/lib:$HADOOP_COMMON_LIB_NATIVE_DIR&quot;</div><div class="line"></div><div class="line">#HADOOP VARIABLES END</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">#HADOOP VARIABLES START</div><div class="line"></div><div class="line">export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64</div><div class="line"></div><div class="line">export HADOOP_HOME=/usr/local/hadoop</div><div class="line">export HADOOP_INSTALL=$HADOOP_HOME</div><div class="line">export YARN_HOME=$HADOOP_HOME</div><div class="line">export PATH=$PATH:$HADOOP_HOME/bin</div><div class="line">export PATH=$PATH:$HADOOP_HOME/sbin</div><div class="line">export HADOOP_MAPRED_HOME=$HADOOP_HOME</div><div class="line">export HADOOP_COMMON_HOME=$HADOOP_HOME</div><div class="line">export HADOOP_HDFS_HOME=$HADOOP_HOME</div><div class="line">export YARN_HOME=$HADOOP_HOME</div><div class="line">export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native</div><div class="line">export HADOOP_OPTS= &quot;-Djava.library.path=$HADOOP_HOME/lib:$HADOOP_COMMON_LIB_NATIVE_DIR&quot;</div><div class="line">export STREAM=$HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-*.jar</div><div class="line">export HADOOP_CLASSPATH=$&#123;JAVA_HOME&#125;/lib/tools.jar</div><div class="line">export JAVA_LIBRARY_PATH=$HADOOP_HOME/lib/native</div><div class="line">#HADOOP VARIABLES END</div></pre></td></tr></table></figure>
 <p>查看Hadhoop版本，验证是否成功</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">hadoop version</div><div class="line"></div><div class="line">hadoop@VM-160-8-ubuntu:~$ hadoop version</div><div class="line">Hadoop 2.7.3</div><div class="line">Subversion https://git-wip-us.apache.org/repos/asf/hadoop.git -r baa91f7c6bc9cb92be5982de4719c1c8af91ccff</div><div class="line">Compiled by root on 2016-08-18T01:41Z</div><div class="line">Compiled with protoc 2.5.0</div><div class="line">From source with checksum 2e4ce5f957ea4db193bce3734ff29ff4</div><div class="line">This command was run using /usr/local/hadoop/share/hadoop/common/hadoop-common-2.7.3.jar</div></pre></td></tr></table></figure>
-<h2 id="运行测试程序"><a href="#运行测试程序" class="headerlink" title="运行测试程序"></a>运行测试程序</h2><h3 id="步骤-1"><a href="#步骤-1" class="headerlink" title="步骤 1"></a>步骤 1</h3><p>创建一个临时的Input目录，将需要处理的文件copy到input文件夹下。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ mkdir input </div><div class="line">$ cp $HADOOP_HOME/*.txt input</div><div class="line">$ ls -l input </div><div class="line"></div><div class="line">-rw-r--r-- 1 root root 15164 Feb 21 10:14 LICENSE.txt</div><div class="line">-rw-r--r-- 1 root root   101 Feb 21 10:14 NOTICE.txt</div><div class="line">-rw-r--r-- 1 root root  1366 Feb 21 10:14 README.txt</div></pre></td></tr></table></figure></p>
+<h2 id="运行测试程序"><a href="#运行测试程序" class="headerlink" title="运行测试程序"></a>运行测试程序</h2><h3 id="步骤-1"><a href="#步骤-1" class="headerlink" title="步骤 1"></a>步骤 1</h3><p>创建一个临时的Input目录，将需要处理的文件copy到input文件夹下。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ mkdir input</div><div class="line">$ cp $HADOOP_HOME/*.txt input</div><div class="line">$ ls -l input</div><div class="line"></div><div class="line">-rw-r--r-- 1 root root 15164 Feb 21 10:14 LICENSE.txt</div><div class="line">-rw-r--r-- 1 root root   101 Feb 21 10:14 NOTICE.txt</div><div class="line">-rw-r--r-- 1 root root  1366 Feb 21 10:14 README.txt</div></pre></td></tr></table></figure></p>
 <h3 id="步骤-2"><a href="#步骤-2" class="headerlink" title="步骤 2"></a>步骤 2</h3><p>利用Hadoop进行单词计数处理，统计input文件夹中所有文件中含有单词的次数</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hadoop jar /usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.3.jar  wordcount input output</div></pre></td></tr></table></figure>
 <p>查看</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">hadoop@VM-160-8-ubuntu:~$ cat output/*</div><div class="line">cryptography    1</div><div class="line">cure    3</div><div class="line">currently    1</div><div class="line">customarily    3</div><div class="line">customary    1</div><div class="line">d)    1</div><div class="line">damage    1</div><div class="line">damages    7</div><div class="line">damages,    3</div><div class="line">damages.    2</div><div class="line">data    3</div><div class="line">data,    1</div><div class="line">date    7</div><div class="line">day    4</div><div class="line">days    4</div><div class="line">de    1</div><div class="line">deal    5</div><div class="line">declaratory    2</div><div class="line">decoding    1</div><div class="line">decompression    4</div><div class="line">deemed    2</div><div class="line">defend    2</div><div class="line">defend,    1</div><div class="line">defense    1</div><div class="line">defined    5</div><div class="line">definition,    4</div><div class="line">delete    2</div><div class="line">deleted    2</div><div class="line">deletion    2</div><div class="line">deliberate    1</div><div class="line">den    1</div><div class="line">dependencies    8</div><div class="line">depends    13</div><div class="line">derivative    5</div><div class="line">......</div></pre></td></tr></table></figure>
 <h1 id="Hadoop伪分布式安装"><a href="#Hadoop伪分布式安装" class="headerlink" title="Hadoop伪分布式安装"></a>Hadoop伪分布式安装</h1><h2 id="core-site-xml"><a href="#core-site-xml" class="headerlink" title="core-site.xml"></a>core-site.xml</h2><p>core-site.xml文件中包含Hadoop实例的端口号信息, 文件系统的内存分配信息，存储数据的内存限制，读/写缓冲区的容量等信息。 打开<code>core-site.xml</code>文件，并在, 标签之间添加以下属性信息。<br>cd $HADOOP_HOME/etc/hadoop</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;configuration&gt;</div><div class="line">   &lt;property&gt;</div><div class="line">      &lt;name&gt;fs.default.name&lt;/name&gt;</div><div class="line">      &lt;value&gt;hdfs://localhost:9000&lt;/value&gt;</div><div class="line">   &lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure>
 <h2 id="hdfs-site-xml"><a href="#hdfs-site-xml" class="headerlink" title="hdfs-site.xml"></a>hdfs-site.xml</h2><p><code>hdfs-site.xml</code>文件包括本地文件系统中复制数据，主节点路径，数据节点路径等信息，该文件主要储存Hadoop基础设施。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;configuration&gt;</div><div class="line">   &lt;property&gt;</div><div class="line">      &lt;name&gt;dfs.replication&lt;/name&gt;</div><div class="line">      &lt;value&gt;1&lt;/value&gt;</div><div class="line">   &lt;/property&gt; </div><div class="line">   &lt;property&gt;</div><div class="line">      &lt;name&gt;dfs.name.dir&lt;/name&gt;</div><div class="line">      &lt;value&gt;file:///home/hadoop/hadoopinfra/hdfs/namenode&lt;/value&gt;</div><div class="line">   &lt;/property&gt;  </div><div class="line">   &lt;property&gt;</div><div class="line">      &lt;name&gt;dfs.data.dir&lt;/name&gt; </div><div class="line">      &lt;value&gt;file:///home/hadoop/hadoopinfra/hdfs/datanode&lt;/value&gt; </div><div class="line">   &lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;configuration&gt;</div><div class="line">   &lt;property&gt;</div><div class="line">      &lt;name&gt;dfs.replication&lt;/name&gt;</div><div class="line">      &lt;value&gt;1&lt;/value&gt;</div><div class="line">   &lt;/property&gt;</div><div class="line">   &lt;property&gt;</div><div class="line">      &lt;name&gt;dfs.name.dir&lt;/name&gt;</div><div class="line">      &lt;value&gt;file:///home/hadoop/hadoopinfra/hdfs/namenode&lt;/value&gt;</div><div class="line">   &lt;/property&gt;  </div><div class="line">   &lt;property&gt;</div><div class="line">      &lt;name&gt;dfs.data.dir&lt;/name&gt;</div><div class="line">      &lt;value&gt;file:///home/hadoop/hadoopinfra/hdfs/datanode&lt;/value&gt;</div><div class="line">   &lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure>
 <h2 id="yarn-site-xml"><a href="#yarn-site-xml" class="headerlink" title="yarn-site.xml"></a>yarn-site.xml</h2><p>在以上文件中，所有的属性值都是用户定义的，可以通过改变属性值Hadoop基础构架，yarn-site.xml能够配置Hadoop的yarn，打开yarn-site.xml文件，在, 标签之间添加属性。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;configuration&gt;</div><div class="line">    &lt;property&gt;</div><div class="line">      &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;</div><div class="line">      &lt;value&gt;mapreduce_shuffle&lt;/value&gt; </div><div class="line">   &lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;configuration&gt;</div><div class="line">    &lt;property&gt;</div><div class="line">      &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;</div><div class="line">      &lt;value&gt;mapreduce_shuffle&lt;/value&gt;</div><div class="line">   &lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure>
 <h2 id="mapred-site-xml"><a href="#mapred-site-xml" class="headerlink" title="mapred-site.xml"></a>mapred-site.xml</h2><p><code>mapred-site.xml</code>文件说明哪一个MapReduce框架正在被使用。在默认状态下，Hadoop包含一个yarn-site.xml模板。 首先，需要使用cp命令复制mapred-site,xml.template到mapred-site.xml文件。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cp mapred-site.xml.template mapred-site.xml</div></pre></td></tr></table></figure>
 <p>打开mapred-site.xml文件，并在, 标签之间添加属性。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;configuration&gt;</div><div class="line">    &lt;property&gt; </div><div class="line">      &lt;name&gt;mapreduce.framework.name&lt;/name&gt;</div><div class="line">      &lt;value&gt;yarn&lt;/value&gt;</div><div class="line">   &lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;configuration&gt;</div><div class="line">    &lt;property&gt;</div><div class="line">      &lt;name&gt;mapreduce.framework.name&lt;/name&gt;</div><div class="line">      &lt;value&gt;yarn&lt;/value&gt;</div><div class="line">   &lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure>
 <h2 id="Hadoop启动"><a href="#Hadoop启动" class="headerlink" title="Hadoop启动"></a>Hadoop启动</h2><h3 id="建立主节点"><a href="#建立主节点" class="headerlink" title="建立主节点"></a>建立主节点</h3><p>建立主节点使用<code>hdfs namenode -format</code>命令。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ cd ~</div><div class="line">$ hdfs namenode -format</div><div class="line">打开hadoop-env.sh，增加</div><div class="line">export  HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native</div><div class="line">export  HADOOP_HOME=/usr/local/hadoop</div><div class="line">export  HADOOP_OPTS=&quot;-Djava.library.path=$HADOOP_HOME/lib:$HADOOP_COMMON_LIB_NATIVE_DIR&quot;</div></pre></td></tr></table></figure>
 <p>命令正确执行后，可以得到以下的输出结果。</p>
@@ -237,6 +286,14 @@
 <p>图2-Hadoop应用程序</p>
 <p><img src="/res/img/hadoop/8088.jpg" alt=""></p>
 <p>出现以上图片表明Hadoop程序已经完成部署。</p>
+<h1 id="Spark安装"><a href="#Spark安装" class="headerlink" title="Spark安装"></a>Spark安装</h1><p>获取并解压到Hadoop中.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget https://d3kbcqa49mib13.cloudfront.net/spark-2.1.1-bin-hadoop2.7.tgz</div><div class="line">tar -xf spark-2.1.1-bin-hadoop2.7.tgz</div><div class="line">sudo mv spark-2.1.1-bin-hadoop2.7 $HADOOP_HOME/spark2</div></pre></td></tr></table></figure>
+<p>配置环境变量:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export SPARK_HOME=$HADOOP_HOME/spark2</div><div class="line">export PATH=$SPARK_HOME/bin:$PATH</div></pre></td></tr></table></figure>
+<p>进入Spark安装路径,配置spark环境变量：<code>cp spark-env.sh.template spark-env.sh</code></p>
+<p>加入如下环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64</div><div class="line">export SPARK_MASTER_IP=10.154.160.8</div></pre></td></tr></table></figure>
+<p>sbin/start-all.sh启动spark, 8080端口访问spark的web站点</p>
 ]]></content>
     
     <summary type="html">
@@ -768,11 +825,11 @@
     
       <category term="开发环境" scheme="http://zfeiyu.com/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
     
-      <category term="hadoop" scheme="http://zfeiyu.com/tags/hadoop/"/>
-    
       <category term="docker" scheme="http://zfeiyu.com/tags/docker/"/>
     
       <category term="docker base image" scheme="http://zfeiyu.com/tags/docker-base-image/"/>
+    
+      <category term="hadoop" scheme="http://zfeiyu.com/tags/hadoop/"/>
     
       <category term="spark" scheme="http://zfeiyu.com/tags/spark/"/>
     
@@ -1265,6 +1322,36 @@
   </entry>
   
   <entry>
+    <title>My little trouble</title>
+    <link href="http://zfeiyu.com/2016/09/22/my-little-upset/"/>
+    <id>http://zfeiyu.com/2016/09/22/my-little-upset/</id>
+    <published>2016-09-21T16:00:00.000Z</published>
+    <updated>2016-10-30T11:05:50.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>碎片化的时代,获取了太多的垃圾信息,最近又想的太多.于是最近就变得比较焦虑,异常的焦虑.</p>
+<p>两年前回到宁波,这里的好企业真的太少了,尤其是技术类的.最后进入互联网的领域,web,app大部分都毫无技术含量,发现已于<code>研发</code>越走越远.</p>
+<p>反复思考自己的职业规划,思考自己想要什么.近几年换工作比较频繁,切换了不同的领域,由于具备通用的专业能力,知识的转化率都还算高.眼界虽宽了很多,但还是缺乏某一个领域深度,没有享受到领域知识的时间复利,一直处于开荒状态,不能进行有效的farm.</p>
+<p>我觉得必须开始经营自己的品牌:</p>
+<ol>
+<li>精进一项核心技能</li>
+<li>混圈子</li>
+<li>持续的自我进化</li>
+</ol>
+<p>于是问题来了,这次换还是不换呢?</p>
+]]></content>
+    
+    <summary type="html">
+    
+      人不是混圈子才会牛逼，而是牛逼了才会有圈子
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://zfeiyu.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>IONIC2使用感想</title>
     <link href="http://zfeiyu.com/2016/09/22/ionic2-/"/>
     <id>http://zfeiyu.com/2016/09/22/ionic2-/</id>
@@ -1292,36 +1379,6 @@
       <category term="移动开发" scheme="http://zfeiyu.com/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
     
       <category term="混合开发" scheme="http://zfeiyu.com/tags/%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>My little trouble</title>
-    <link href="http://zfeiyu.com/2016/09/22/my-little-upset/"/>
-    <id>http://zfeiyu.com/2016/09/22/my-little-upset/</id>
-    <published>2016-09-21T16:00:00.000Z</published>
-    <updated>2016-10-30T11:05:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>碎片化的时代,获取了太多的垃圾信息,最近又想的太多.于是最近就变得比较焦虑,异常的焦虑.</p>
-<p>两年前回到宁波,这里的好企业真的太少了,尤其是技术类的.最后进入互联网的领域,web,app大部分都毫无技术含量,发现已于<code>研发</code>越走越远.</p>
-<p>反复思考自己的职业规划,思考自己想要什么.近几年换工作比较频繁,切换了不同的领域,由于具备通用的专业能力,知识的转化率都还算高.眼界虽宽了很多,但还是缺乏某一个领域深度,没有享受到领域知识的时间复利,一直处于开荒状态,不能进行有效的farm.</p>
-<p>我觉得必须开始经营自己的品牌:</p>
-<ol>
-<li>精进一项核心技能</li>
-<li>混圈子</li>
-<li>持续的自我进化</li>
-</ol>
-<p>于是问题来了,这次换还是不换呢?</p>
-]]></content>
-    
-    <summary type="html">
-    
-      人不是混圈子才会牛逼，而是牛逼了才会有圈子
-    
-    </summary>
-    
-      <category term="随笔" scheme="http://zfeiyu.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
     
   </entry>
   
@@ -1654,41 +1711,6 @@
       <category term="架构" scheme="http://zfeiyu.com/tags/%E6%9E%B6%E6%9E%84/"/>
     
       <category term="SQLite" scheme="http://zfeiyu.com/tags/SQLite/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>活着为了讲述</title>
-    <link href="http://zfeiyu.com/2016/08/13/vivir-para-contarla/"/>
-    <id>http://zfeiyu.com/2016/08/13/vivir-para-contarla/</id>
-    <published>2016-08-12T16:00:00.000Z</published>
-    <updated>2016-10-30T11:05:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://img3.doubanio.com/lpic/s28606305.jpg" alt=""></p>
-<blockquote>
-<p>我是个爱讲故事的孩子,我想说的是:爱真的存在,幸福真的可能,死神也会败在幸福的手下.</p>
-</blockquote>
-<p>《活着为了讲述》是诺贝尔文学奖获得者，《百年孤独》作者加西亚·马尔克斯唯一传记,14年,新闻头条报道了这位文学巨匠的陨落,当时就非常想看这本书.马尔克斯是个爱讲故事的人,在虚实之间，在&lt;&lt;活着为了讲述&gt;&gt;里他亲自讲述了自己的故事。</p>
-<p>马尔克斯出生于哥伦比亚马格达莱纳的一个海滨小镇–阿拉卡塔卡,童年和外祖父母一起生活.他的父亲和大多数的欧美父母一样,希望他以后过上体面而稳定的生活–做一个律师,但马尔克斯对写作有着无限的遐想和热情,’要么写作,要么死去!’,’个人志向与生俱来,背道而驰,有违健康.顺势而行,灵丹妙药’.马尔克斯不但成为了一个作家,更跃升成为20世纪伟大的文学大师之一.</p>
-<p>自传里提及了他非常多的短篇小说,一个灵感就促成了一篇故事,受卡夫卡《变形记》启发的《第三次忍受》,因美女一句话而写成的《埃娃在猫身体里面》,石鸻鸟啄人一触而就《石鸻鸟之夜》,遗憾的是这本自传并未完成,最后停留在马尔克斯的青年时期,那个时候&lt;&lt;百年孤独&gt;&gt;还未问世,还藏匿在&lt;&lt;家&gt;&gt;中,也许在他心中这才是真实的自己,&lt;&lt;百年孤独&gt;&gt;的成功反而成为一种桎梏.</p>
-<p>马尔克斯的&lt;&lt;活着为了讲述&gt;&gt;即像小说又像自传,他自述了一个浓缩的世界,喧嚣纷乱却又生动可信的显示了一片大陆及其人民的富足和贫困,以及,妖娆妩媚的哥伦比亚女人在这个贫穷,落后的,但充满生机的小镇里抽烟,喝酒,调情,生育和生存…</p>
-<blockquote>
-<p>生活不是我们活过的日子,而是我们记住的日子,我们为了讲述而在记忆中重现的日子.</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      要么写作,要么死!
-    
-    </summary>
-    
-      <category term="读书笔记" scheme="http://zfeiyu.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="消遣" scheme="http://zfeiyu.com/tags/%E6%B6%88%E9%81%A3/"/>
-    
-      <category term="百年孤独" scheme="http://zfeiyu.com/tags/%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC/"/>
     
   </entry>
   
