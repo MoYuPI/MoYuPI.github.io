@@ -1,0 +1,989 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="大数据,hadoop," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="hadoop单站配置">
+<meta name="keywords" content="大数据,hadoop">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hadoop实战(一)">
+<meta property="og:url" content="http://zfeiyu.com/2017/05/22/hadoop-in-action-1/index.html">
+<meta property="og:site_name" content="lizorn">
+<meta property="og:description" content="hadoop单站配置">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://zfeiyu.com/res/img/hadoop/dsf_overview.jpg">
+<meta property="og:image" content="http://zfeiyu.com/res/img/hadoop/8088.jpg">
+<meta property="og:updated_time" content="2017-06-03T03:12:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hadoop实战(一)">
+<meta name="twitter:description" content="hadoop单站配置">
+<meta name="twitter:image" content="http://zfeiyu.com/res/img/hadoop/dsf_overview.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://zfeiyu.com/2017/05/22/hadoop-in-action-1/"/>
+
+
+  <title> hadoop实战(一) | lizorn </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1c798eaf80ffa31d9a4c27b209ffb502";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">lizorn</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">子非鱼</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-talks">
+          <a href="/talks" rel="section">
+            
+            talks
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                hadoop实战(一)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-05-22T12:53:48+08:00" content="2017-05-22">
+              2017-05-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/开发者手册/" itemprop="url" rel="index">
+                    <span itemprop="name">开发者手册</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/05/22/hadoop-in-action-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/22/hadoop-in-action-1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/05/22/hadoop-in-action-1/" class="leancloud_visitors" data-flag-title="hadoop实战(一)">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Docker形式的Hadoop"><a href="#Docker形式的Hadoop" class="headerlink" title="Docker形式的Hadoop"></a><a href="http://zfeiyu.com/2016/10/27/hadoop-quick-start/">Docker形式的Hadoop</a></h1><h1 id="Hadoop环境搭建"><a href="#Hadoop环境搭建" class="headerlink" title="Hadoop环境搭建"></a>Hadoop环境搭建</h1><h2 id="创建hadoop用户"><a href="#创建hadoop用户" class="headerlink" title="创建hadoop用户"></a>创建hadoop用户</h2><p>增加hadoop用户，授予管理员权限，并登录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ sudo useradd -m hadoop</div><div class="line">$ sudo passwd hadoop</div><div class="line">$ sudo adduser hadoop sudo</div><div class="line">$ sudo su hadoop</div></pre></td></tr></table></figure>
+<h2 id="安装配置SSH"><a href="#安装配置SSH" class="headerlink" title="安装配置SSH"></a>安装配置SSH</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install openssh-server</div><div class="line">$ sudo /etc/init.d/ssh start</div></pre></td></tr></table></figure>
+<p>设置免密码登录，生成私钥和公钥,并将公钥追加到 authorized_keys中，它为用户保存所有允许登录到ssh客户端用户的公钥内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -P &quot;&quot;</div><div class="line">$  cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</div><div class="line">$  chmod 0600 ~/.ssh/authorized_keys</div></pre></td></tr></table></figure>
+<p>在SSH安装之后，对SSH进行测试<code>$ssh localhost</code></p>
+<h2 id="安装Hadhoop"><a href="#安装Hadhoop" class="headerlink" title="安装Hadhoop"></a>安装Hadhoop</h2><h3 id="安装Java环境"><a href="#安装Java环境" class="headerlink" title="安装Java环境"></a>安装Java环境</h3><p><code>sudo apt-get install openjdk-7-jdk</code></p>
+<p>配置 JAVA_HOME， 获取java安装目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hadoop@78dd25fb63f7:/usr/local/hadoop$ update-alternatives --config java</div><div class="line">There is only one alternative in link group java (providing /usr/bin/java): /usr</div><div class="line">/lib/jvm/java-7-openjdk-amd64/jre/bin/java</div><div class="line">Nothing to configure.</div><div class="line">hadoop@78dd25fb63f7:/usr/local/hadoop$</div></pre></td></tr></table></figure>
+<p>配置环境变量<code>$ emacs ~/.bashrc</code>并export JAVA_HOME=JDK安装路径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ source ~/.bashrc</div></pre></td></tr></table></figure>
+<h2 id="安装Hadoop2-7"><a href="#安装Hadoop2-7" class="headerlink" title="安装Hadoop2.7"></a>安装Hadoop2.7</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">wget http://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/hadoop-2.7.3/hadoop-2.7.3.tar.gz</div><div class="line"></div><div class="line">sudo tar xzf hadoop-2.7.3.tar.gz</div><div class="line">sudo mv hadoop-2.7.3 /usr/local/hadoop</div><div class="line">sudo chmod 777 /usr/local/hadoop</div><div class="line">update-alternatives --config java</div></pre></td></tr></table></figure>
+<p>添加以下环境变量:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">#HADOOP VARIABLES START</div><div class="line"></div><div class="line">export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64</div><div class="line"></div><div class="line">export HADOOP_HOME=/usr/local/hadoop</div><div class="line">export HADOOP_INSTALL=$HADOOP_HOME</div><div class="line">export YARN_HOME=$HADOOP_HOME</div><div class="line">export PATH=$PATH:$HADOOP_HOME/bin</div><div class="line">export PATH=$PATH:$HADOOP_HOME/sbin</div><div class="line">export HADOOP_MAPRED_HOME=$HADOOP_HOME</div><div class="line">export HADOOP_COMMON_HOME=$HADOOP_HOME</div><div class="line">export HADOOP_HDFS_HOME=$HADOOP_HOME</div><div class="line">export YARN_HOME=$HADOOP_HOME</div><div class="line">export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native</div><div class="line">export HADOOP_OPTS= &quot;-Djava.library.path=$HADOOP_HOME/lib:$HADOOP_COMMON_LIB_NATIVE_DIR&quot;</div><div class="line">export STREAM=$HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-*.jar</div><div class="line">export HADOOP_CLASSPATH=$&#123;JAVA_HOME&#125;/lib/tools.jar</div><div class="line">export JAVA_LIBRARY_PATH=$HADOOP_HOME/lib/native</div><div class="line">#HADOOP VARIABLES END</div></pre></td></tr></table></figure>
+<p>查看Hadhoop版本，验证是否成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">hadoop version</div><div class="line"></div><div class="line">hadoop@VM-160-8-ubuntu:~$ hadoop version</div><div class="line">Hadoop 2.7.3</div><div class="line">Subversion https://git-wip-us.apache.org/repos/asf/hadoop.git -r baa91f7c6bc9cb92be5982de4719c1c8af91ccff</div><div class="line">Compiled by root on 2016-08-18T01:41Z</div><div class="line">Compiled with protoc 2.5.0</div><div class="line">From source with checksum 2e4ce5f957ea4db193bce3734ff29ff4</div><div class="line">This command was run using /usr/local/hadoop/share/hadoop/common/hadoop-common-2.7.3.jar</div></pre></td></tr></table></figure>
+<h2 id="运行测试程序"><a href="#运行测试程序" class="headerlink" title="运行测试程序"></a>运行测试程序</h2><h3 id="步骤-1"><a href="#步骤-1" class="headerlink" title="步骤 1"></a>步骤 1</h3><p>创建一个临时的Input目录，将需要处理的文件copy到input文件夹下。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ mkdir input</div><div class="line">$ cp $HADOOP_HOME/*.txt input</div><div class="line">$ ls -l input</div><div class="line"></div><div class="line">-rw-r--r-- 1 root root 15164 Feb 21 10:14 LICENSE.txt</div><div class="line">-rw-r--r-- 1 root root   101 Feb 21 10:14 NOTICE.txt</div><div class="line">-rw-r--r-- 1 root root  1366 Feb 21 10:14 README.txt</div></pre></td></tr></table></figure></p>
+<h3 id="步骤-2"><a href="#步骤-2" class="headerlink" title="步骤 2"></a>步骤 2</h3><p>利用Hadoop进行单词计数处理，统计input文件夹中所有文件中含有单词的次数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hadoop jar /usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.3.jar  wordcount input output</div></pre></td></tr></table></figure>
+<p>查看</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">hadoop@VM-160-8-ubuntu:~$ cat output/*</div><div class="line">cryptography    1</div><div class="line">cure    3</div><div class="line">currently    1</div><div class="line">customarily    3</div><div class="line">customary    1</div><div class="line">d)    1</div><div class="line">damage    1</div><div class="line">damages    7</div><div class="line">damages,    3</div><div class="line">damages.    2</div><div class="line">data    3</div><div class="line">data,    1</div><div class="line">date    7</div><div class="line">day    4</div><div class="line">days    4</div><div class="line">de    1</div><div class="line">deal    5</div><div class="line">declaratory    2</div><div class="line">decoding    1</div><div class="line">decompression    4</div><div class="line">deemed    2</div><div class="line">defend    2</div><div class="line">defend,    1</div><div class="line">defense    1</div><div class="line">defined    5</div><div class="line">definition,    4</div><div class="line">delete    2</div><div class="line">deleted    2</div><div class="line">deletion    2</div><div class="line">deliberate    1</div><div class="line">den    1</div><div class="line">dependencies    8</div><div class="line">depends    13</div><div class="line">derivative    5</div><div class="line">......</div></pre></td></tr></table></figure>
+<h1 id="Hadoop伪分布式安装"><a href="#Hadoop伪分布式安装" class="headerlink" title="Hadoop伪分布式安装"></a>Hadoop伪分布式安装</h1><h2 id="core-site-xml"><a href="#core-site-xml" class="headerlink" title="core-site.xml"></a>core-site.xml</h2><p>core-site.xml文件中包含Hadoop实例的端口号信息, 文件系统的内存分配信息，存储数据的内存限制，读/写缓冲区的容量等信息。 打开<code>core-site.xml</code>文件，并在, 标签之间添加以下属性信息。<br>cd $HADOOP_HOME/etc/hadoop</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;configuration&gt;</div><div class="line">   &lt;property&gt;</div><div class="line">      &lt;name&gt;fs.default.name&lt;/name&gt;</div><div class="line">      &lt;value&gt;hdfs://localhost:9000&lt;/value&gt;</div><div class="line">   &lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure>
+<h2 id="hdfs-site-xml"><a href="#hdfs-site-xml" class="headerlink" title="hdfs-site.xml"></a>hdfs-site.xml</h2><p><code>hdfs-site.xml</code>文件包括本地文件系统中复制数据，主节点路径，数据节点路径等信息，该文件主要储存Hadoop基础设施。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;configuration&gt;</div><div class="line">   &lt;property&gt;</div><div class="line">      &lt;name&gt;dfs.replication&lt;/name&gt;</div><div class="line">      &lt;value&gt;1&lt;/value&gt;</div><div class="line">   &lt;/property&gt;</div><div class="line">   &lt;property&gt;</div><div class="line">      &lt;name&gt;dfs.name.dir&lt;/name&gt;</div><div class="line">      &lt;value&gt;file:///home/hadoop/hadoopinfra/hdfs/namenode&lt;/value&gt;</div><div class="line">   &lt;/property&gt;  </div><div class="line">   &lt;property&gt;</div><div class="line">      &lt;name&gt;dfs.data.dir&lt;/name&gt;</div><div class="line">      &lt;value&gt;file:///home/hadoop/hadoopinfra/hdfs/datanode&lt;/value&gt;</div><div class="line">   &lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure>
+<h2 id="yarn-site-xml"><a href="#yarn-site-xml" class="headerlink" title="yarn-site.xml"></a>yarn-site.xml</h2><p>在以上文件中，所有的属性值都是用户定义的，可以通过改变属性值Hadoop基础构架，yarn-site.xml能够配置Hadoop的yarn，打开yarn-site.xml文件，在, 标签之间添加属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;configuration&gt;</div><div class="line">    &lt;property&gt;</div><div class="line">      &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;</div><div class="line">      &lt;value&gt;mapreduce_shuffle&lt;/value&gt;</div><div class="line">   &lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure>
+<h2 id="mapred-site-xml"><a href="#mapred-site-xml" class="headerlink" title="mapred-site.xml"></a>mapred-site.xml</h2><p><code>mapred-site.xml</code>文件说明哪一个MapReduce框架正在被使用。在默认状态下，Hadoop包含一个yarn-site.xml模板。 首先，需要使用cp命令复制mapred-site,xml.template到mapred-site.xml文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cp mapred-site.xml.template mapred-site.xml</div></pre></td></tr></table></figure>
+<p>打开mapred-site.xml文件，并在, 标签之间添加属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;configuration&gt;</div><div class="line">    &lt;property&gt;</div><div class="line">      &lt;name&gt;mapreduce.framework.name&lt;/name&gt;</div><div class="line">      &lt;value&gt;yarn&lt;/value&gt;</div><div class="line">   &lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure>
+<h2 id="Hadoop启动"><a href="#Hadoop启动" class="headerlink" title="Hadoop启动"></a>Hadoop启动</h2><h3 id="建立主节点"><a href="#建立主节点" class="headerlink" title="建立主节点"></a>建立主节点</h3><p>建立主节点使用<code>hdfs namenode -format</code>命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ cd ~</div><div class="line">$ hdfs namenode -format</div><div class="line">打开hadoop-env.sh，增加</div><div class="line">export  HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native</div><div class="line">export  HADOOP_HOME=/usr/local/hadoop</div><div class="line">export  HADOOP_OPTS=&quot;-Djava.library.path=$HADOOP_HOME/lib:$HADOOP_COMMON_LIB_NATIVE_DIR&quot;</div></pre></td></tr></table></figure>
+<p>命令正确执行后，可以得到以下的输出结果。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">hadoop@VM-160-8-ubuntu:/usr/local/hadoop/etc/hadoop$ hdfs namenode -format</div><div class="line">17/05/21 12:12:04 INFO namenode.NameNode: STARTUP_MSG:</div><div class="line">/************************************************************</div><div class="line">STARTUP_MSG: Starting NameNode</div><div class="line">STARTUP_MSG:   host = VM-160-8-ubuntu/127.0.0.1</div><div class="line">STARTUP_MSG:   args = [-format]</div><div class="line">STARTUP_MSG:   version = 2.7.3</div><div class="line">......</div><div class="line">......</div><div class="line">17/05/21 12:12:06 INFO namenode.NameNode: SHUTDOWN_MSG:</div><div class="line">/************************************************************</div><div class="line">SHUTDOWN_MSG: Shutting down NameNode at VM-160-8-ubuntu/127.0.0.1</div><div class="line">************************************************************/</div></pre></td></tr></table></figure>
+<h3 id="启动Hadoop的dfs文件系统"><a href="#启动Hadoop的dfs文件系统" class="headerlink" title="启动Hadoop的dfs文件系统"></a>启动Hadoop的dfs文件系统</h3><p>以下命令用来启动dfs，启动Hadoop文件系统。(2.7需将 /etc/hadoop/hadoop-env.sh中的 JAVA_HOME设为绝对路径)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">hadoop@VM-160-8-ubuntu:~$ start-dfs.sh</div><div class="line">17/05/21 12:23:54 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable</div><div class="line">Incorrect configuration: namenode address dfs.namenode.servicerpc-address or dfs.namenode.rpc-address is not configured.</div><div class="line">Starting namenodes on []</div><div class="line">localhost: starting namenode, logging to /usr/local/hadoop/logs/hadoop-hadoop-namenode-VM-160-8-ubuntu.out</div><div class="line">localhost: starting datanode, logging to /usr/local/hadoop/logs/hadoop-hadoop-datanode-VM-160-8-ubuntu.out</div><div class="line">Starting secondary namenodes [0.0.0.0]</div><div class="line">0.0.0.0: starting secondarynamenode, logging to /usr/local/hadoop/logs/hadoop-hadoop-secondarynamenode-VM-160-8-ubuntu.out</div><div class="line">17/05/21 12:24:13 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable</div></pre></td></tr></table></figure>
+<h3 id="启动Yarn脚本"><a href="#启动Yarn脚本" class="headerlink" title="启动Yarn脚本"></a>启动Yarn脚本</h3><p>以下命令启动yarn script，执行这个命令将会启动yarn daemons程序。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ start-yarn.sh</div><div class="line">hadoop@VM-160-8-ubuntu:~$ start-yarn.sh</div><div class="line">starting yarn daemons</div><div class="line">starting resourcemanager, logging to /usr/local/hadoop/logs/yarn-hadoop-resourcemanager-VM-160-8-ubuntu.out</div><div class="line">localhost: starting nodemanager, logging to /usr/local/hadoop/logs/yarn-hadoop-nodemanager-VM-160-8-ubuntu.out</div></pre></td></tr></table></figure>
+<p>通过浏览器访问Hadoop</p>
+<p>Hadoop默认的端口号是50070，使用以下命令访问Hadoop服务。<code>http://localhost:50070/</code></p>
+<p>图1-Hadoop服务</p>
+<p><img src="/res/img/hadoop/dsf_overview.jpg" alt=""></p>
+<h3 id="启动集群中所有的应用程序"><a href="#启动集群中所有的应用程序" class="headerlink" title="启动集群中所有的应用程序"></a>启动集群中所有的应用程序</h3><p>默认的端口号8088能够访问所有的应用程序，使用以下url能够访问这个服务。<code>http://localhost:8088/</code></p>
+<p>图2-Hadoop应用程序</p>
+<p><img src="/res/img/hadoop/8088.jpg" alt=""></p>
+<p>出现以上图片表明Hadoop程序已经完成部署。</p>
+<h1 id="Spark安装"><a href="#Spark安装" class="headerlink" title="Spark安装"></a>Spark安装</h1><p>获取并解压到Hadoop中.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget https://d3kbcqa49mib13.cloudfront.net/spark-2.1.1-bin-hadoop2.7.tgz</div><div class="line">tar -xf spark-2.1.1-bin-hadoop2.7.tgz</div><div class="line">sudo mv spark-2.1.1-bin-hadoop2.7 $HADOOP_HOME/spark2</div></pre></td></tr></table></figure>
+<p>配置环境变量:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export SPARK_HOME=$HADOOP_HOME/spark2</div><div class="line">export PATH=$SPARK_HOME/bin:$PATH</div></pre></td></tr></table></figure>
+<p>进入Spark安装路径,配置spark环境变量：<code>cp spark-env.sh.template spark-env.sh</code></p>
+<p>加入如下环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64</div><div class="line">export SPARK_MASTER_IP=10.154.160.8</div></pre></td></tr></table></figure>
+<p>sbin/start-all.sh启动spark, 8080端口访问spark的web站点</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/大数据/" rel="tag">#大数据</a>
+          
+            <a href="/tags/hadoop/" rel="tag">#hadoop</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/20/zabbix-guide/" rel="next" title="Zabbix使用指南">
+                <i class="fa fa-chevron-left"></i> Zabbix使用指南
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/23/how-to-build-data-platform/" rel="prev" title="数据平台构建思路">
+                数据平台构建思路 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/05/22/hadoop-in-action-1/"
+           data-title="hadoop实战(一)" data-url="http://zfeiyu.com/2017/05/22/hadoop-in-action-1/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/res/avatar.jpg"
+               alt="lizorn" />
+          <p class="site-author-name" itemprop="name">lizorn</p>
+          <p class="site-description motion-element" itemprop="description">思从深而行从简</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">51</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/about/" target="_blank" title="关于我">
+                  
+                    <i class="fa fa-fw fa-user"></i>
+                  
+                  关于我
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/LiZoRN/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/res/weixin.jpg" target="_blank" title="微信">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  微信
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker形式的Hadoop"><span class="nav-number">1.</span> <span class="nav-text">Docker形式的Hadoop</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hadoop环境搭建"><span class="nav-number">2.</span> <span class="nav-text">Hadoop环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建hadoop用户"><span class="nav-number">2.1.</span> <span class="nav-text">创建hadoop用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装配置SSH"><span class="nav-number">2.2.</span> <span class="nav-text">安装配置SSH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Hadhoop"><span class="nav-number">2.3.</span> <span class="nav-text">安装Hadhoop</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Java环境"><span class="nav-number">2.3.1.</span> <span class="nav-text">安装Java环境</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Hadoop2-7"><span class="nav-number">2.4.</span> <span class="nav-text">安装Hadoop2.7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行测试程序"><span class="nav-number">2.5.</span> <span class="nav-text">运行测试程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤-1"><span class="nav-number">2.5.1.</span> <span class="nav-text">步骤 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤-2"><span class="nav-number">2.5.2.</span> <span class="nav-text">步骤 2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hadoop伪分布式安装"><span class="nav-number">3.</span> <span class="nav-text">Hadoop伪分布式安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#core-site-xml"><span class="nav-number">3.1.</span> <span class="nav-text">core-site.xml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hdfs-site-xml"><span class="nav-number">3.2.</span> <span class="nav-text">hdfs-site.xml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yarn-site-xml"><span class="nav-number">3.3.</span> <span class="nav-text">yarn-site.xml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mapred-site-xml"><span class="nav-number">3.4.</span> <span class="nav-text">mapred-site.xml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hadoop启动"><span class="nav-number">3.5.</span> <span class="nav-text">Hadoop启动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建立主节点"><span class="nav-number">3.5.1.</span> <span class="nav-text">建立主节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动Hadoop的dfs文件系统"><span class="nav-number">3.5.2.</span> <span class="nav-text">启动Hadoop的dfs文件系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动Yarn脚本"><span class="nav-number">3.5.3.</span> <span class="nav-text">启动Yarn脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动集群中所有的应用程序"><span class="nav-number">3.5.4.</span> <span class="nav-text">启动集群中所有的应用程序</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spark安装"><span class="nav-number">4.</span> <span class="nav-text">Spark安装</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lizorn</span>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zfeiyu"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("rQ8OGfe9xd0QnUQQJLpYksWo-gzGzoHsz", "vEqVehf8ixuyXHHzTBIbmBo8");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

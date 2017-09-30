@@ -1,0 +1,1028 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端,Angularjs2," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="仅是官方文档的翻译.5分钟教程,5分钟入门,过易,本不想译,久未译,遂译.">
+<meta name="keywords" content="前端,Angularjs2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angularjs2 5分钟入门手册(ts)">
+<meta property="og:url" content="http://zfeiyu.com/2016/06/06/angularjs2-5-MINUTE-QUICKSTART/index.html">
+<meta property="og:site_name" content="lizorn">
+<meta property="og:description" content="仅是官方文档的翻译.5分钟教程,5分钟入门,过易,本不想译,久未译,遂译.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://zfeiyu.com/res/img/angularjs2/my-first-app.png">
+<meta property="og:updated_time" content="2016-10-30T11:05:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angularjs2 5分钟入门手册(ts)">
+<meta name="twitter:description" content="仅是官方文档的翻译.5分钟教程,5分钟入门,过易,本不想译,久未译,遂译.">
+<meta name="twitter:image" content="http://zfeiyu.com/res/img/angularjs2/my-first-app.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://zfeiyu.com/2016/06/06/angularjs2-5-MINUTE-QUICKSTART/"/>
+
+
+  <title> Angularjs2 5分钟入门手册(ts) | lizorn </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1c798eaf80ffa31d9a4c27b209ffb502";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">lizorn</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">子非鱼</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-talks">
+          <a href="/talks" rel="section">
+            
+            talks
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Angularjs2 5分钟入门手册(ts)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-06T00:00:00+08:00" content="2016-06-06">
+              2016-06-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/开发者手册/" itemprop="url" rel="index">
+                    <span itemprop="name">开发者手册</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/06/angularjs2-5-MINUTE-QUICKSTART/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/06/angularjs2-5-MINUTE-QUICKSTART/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/06/angularjs2-5-MINUTE-QUICKSTART/" class="leancloud_visitors" data-flag-title="Angularjs2 5分钟入门手册(ts)">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><em>译者注:仅是官方文档的翻译.5分钟教程,5分钟入门,过易,本不想译,久未译,遂译.</em></p>
+<p>我们将基于TypeScript来构建一个超级简单的Anglarjs2应用，同时为后续的APP应用开发,搭建好Angularjs2的开发环境.</p>
+<h2 id="在线示例"><a href="#在线示例" class="headerlink" title="在线示例"></a>在线示例</h2><p><a href="https://angular.io/resources/live-examples/quickstart/ts/plnkr.html" target="_blank" rel="external">在线示例</a></p>
+<h2 id="开始构建APP"><a href="#开始构建APP" class="headerlink" title="开始构建APP!"></a>开始构建APP!</h2><h3 id="前提-安装-Node-js"><a href="#前提-安装-Node-js" class="headerlink" title="前提: 安装 Node.js"></a>前提: 安装 Node.js</h3><p><a href="https://nodejs.org/" target="_blank" rel="external">nodejs官网</a></p>
+<h3 id="步骤1-创建和配置工程"><a href="#步骤1-创建和配置工程" class="headerlink" title="步骤1: 创建和配置工程"></a>步骤1: 创建和配置工程</h3><ul>
+<li>(a)创造工程文件夹</li>
+<li>(b)增加一个包定义并配置文件</li>
+<li>(c)安装包</li>
+</ul>
+<h4 id="a-创建文件"><a href="#a-创建文件" class="headerlink" title="(a) 创建文件"></a>(a) 创建文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir angular2-quickstart</div><div class="line">cd    angular2-quickstart</div></pre></td></tr></table></figure>
+<h4 id="b-增加包定义和配置文件"><a href="#b-增加包定义和配置文件" class="headerlink" title="(b) 增加包定义和配置文件"></a>(b) 增加包定义和配置文件</h4><ul>
+<li><code>package.json</code>  NPM的包配置文件, 列举了QuickStart依赖的包并定义了一些有用的脚本.</li>
+<li><code>tsconfig.json</code> TypeScript的编译器配置文件</li>
+<li><code>typings.json</code> TypeScript标示定义文件</li>
+<li><code>systemjs.config.js</code> SystemJS配置文件</li>
+</ul>
+<p><em>package.json:</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;name&quot;: &quot;angular2-quickstart&quot;,</div><div class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</div><div class="line">  &quot;scripts&quot;: &#123;</div><div class="line">    &quot;start&quot;: &quot;tsc &amp;&amp; concurrently \&quot;npm run tsc:w\&quot; \&quot;npm run lite\&quot; &quot;,</div><div class="line">    &quot;lite&quot;: &quot;lite-server&quot;,</div><div class="line">    &quot;postinstall&quot;: &quot;typings install&quot;,</div><div class="line">    &quot;tsc&quot;: &quot;tsc&quot;,</div><div class="line">    &quot;tsc:w&quot;: &quot;tsc -w&quot;,</div><div class="line">    &quot;typings&quot;: &quot;typings&quot;</div><div class="line">  &#125;,</div><div class="line">  &quot;license&quot;: &quot;ISC&quot;,</div><div class="line">  &quot;dependencies&quot;: &#123;</div><div class="line">    &quot;@angular/common&quot;:  &quot;2.0.0-rc.2&quot;,</div><div class="line">    &quot;@angular/compiler&quot;:  &quot;2.0.0-rc.2&quot;,</div><div class="line">    &quot;@angular/core&quot;:  &quot;2.0.0-rc.2&quot;,</div><div class="line">    &quot;@angular/http&quot;:  &quot;2.0.0-rc.2&quot;,</div><div class="line">    &quot;@angular/platform-browser&quot;:  &quot;2.0.0-rc.2&quot;,</div><div class="line">    &quot;@angular/platform-browser-dynamic&quot;:  &quot;2.0.0-rc.2&quot;,</div><div class="line">    &quot;@angular/router&quot;:  &quot;2.0.0-rc.2&quot;,</div><div class="line">    &quot;@angular/router-deprecated&quot;:  &quot;2.0.0-rc.2&quot;,</div><div class="line">    &quot;@angular/upgrade&quot;:  &quot;2.0.0-rc.2&quot;,</div><div class="line">    &quot;systemjs&quot;: &quot;0.19.27&quot;,</div><div class="line">    &quot;core-js&quot;: &quot;^2.4.0&quot;,</div><div class="line">    &quot;reflect-metadata&quot;: &quot;^0.1.3&quot;,</div><div class="line">    &quot;rxjs&quot;: &quot;5.0.0-beta.6&quot;,</div><div class="line">    &quot;zone.js&quot;: &quot;^0.6.12&quot;,</div><div class="line">    &quot;angular2-in-memory-web-api&quot;: &quot;0.0.12&quot;,</div><div class="line">    &quot;bootstrap&quot;: &quot;^3.3.6&quot;</div><div class="line">  &#125;,</div><div class="line">  &quot;devDependencies&quot;: &#123;</div><div class="line">    &quot;concurrently&quot;: &quot;^2.0.0&quot;,</div><div class="line">    &quot;lite-server&quot;: &quot;^2.2.0&quot;,</div><div class="line">    &quot;typescript&quot;: &quot;^1.8.10&quot;,</div><div class="line">    &quot;typings&quot;:&quot;^1.0.4&quot;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><em>tsconfig.json:</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;compilerOptions&quot;: &#123;</div><div class="line">    &quot;target&quot;: &quot;es5&quot;,</div><div class="line">    &quot;module&quot;: &quot;commonjs&quot;,</div><div class="line">    &quot;moduleResolution&quot;: &quot;node&quot;,</div><div class="line">    &quot;sourceMap&quot;: true,</div><div class="line">    &quot;emitDecoratorMetadata&quot;: true,</div><div class="line">    &quot;experimentalDecorators&quot;: true,</div><div class="line">    &quot;removeComments&quot;: false,</div><div class="line">    &quot;noImplicitAny&quot;: false</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><em>typings.json:</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;globalDependencies&quot;: &#123;</div><div class="line">    &quot;core-js&quot;: &quot;registry:dt/core-js#0.0.0+20160317120654&quot;,</div><div class="line">    &quot;jasmine&quot;: &quot;registry:dt/jasmine#2.2.0+20160505161446&quot;,</div><div class="line">    &quot;node&quot;: &quot;registry:dt/node#4.0.0+20160509154515&quot;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><em>systemjs.config.js:</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * System configuration for Angular 2 samples</div><div class="line"> * Adjust as necessary for your application needs.</div><div class="line"> */</div><div class="line">(function(global) &#123;</div><div class="line">  // map tells the System loader where to look for things</div><div class="line">  var map = &#123;</div><div class="line">    &apos;app&apos;:                        &apos;app&apos;, // &apos;dist&apos;,</div><div class="line">    &apos;@angular&apos;:                   &apos;node_modules/@angular&apos;,</div><div class="line">    &apos;angular2-in-memory-web-api&apos;: &apos;node_modules/angular2-in-memory-web-api&apos;,</div><div class="line">    &apos;rxjs&apos;:                       &apos;node_modules/rxjs&apos;</div><div class="line">  &#125;;</div><div class="line">  // packages tells the System loader how to load when no filename and/or no extension</div><div class="line">  var packages = &#123;</div><div class="line">    &apos;app&apos;:                        &#123; main: &apos;main.js&apos;,  defaultExtension: &apos;js&apos; &#125;,</div><div class="line">    &apos;rxjs&apos;:                       &#123; defaultExtension: &apos;js&apos; &#125;,</div><div class="line">    &apos;angular2-in-memory-web-api&apos;: &#123; main: &apos;index.js&apos;, defaultExtension: &apos;js&apos; &#125;,</div><div class="line">  &#125;;</div><div class="line">  var ngPackageNames = [</div><div class="line">    &apos;common&apos;,</div><div class="line">    &apos;compiler&apos;,</div><div class="line">    &apos;core&apos;,</div><div class="line">    &apos;http&apos;,</div><div class="line">    &apos;platform-browser&apos;,</div><div class="line">    &apos;platform-browser-dynamic&apos;,</div><div class="line">    &apos;router&apos;,</div><div class="line">    &apos;router-deprecated&apos;,</div><div class="line">    &apos;upgrade&apos;,</div><div class="line">  ];</div><div class="line">  // Individual files (~300 requests):</div><div class="line">  function packIndex(pkgName) &#123;</div><div class="line">    packages[&apos;@angular/&apos;+pkgName] = &#123; main: &apos;index.js&apos;, defaultExtension: &apos;js&apos; &#125;;</div><div class="line">  &#125;</div><div class="line">  // Bundled (~40 requests):</div><div class="line">  function packUmd(pkgName) &#123;</div><div class="line">    packages[&apos;@angular/&apos;+pkgName] = &#123; main: &apos;/bundles/&apos; + pkgName + &apos;.umd.js&apos;, defaultExtension: &apos;js&apos; &#125;;</div><div class="line">  &#125;</div><div class="line">  // Most environments should use UMD; some (Karma) need the individual index files</div><div class="line">  var setPackageConfig = System.packageWithIndex ? packIndex : packUmd;</div><div class="line">  // Add package entries for angular packages</div><div class="line">  ngPackageNames.forEach(setPackageConfig);</div><div class="line">  var config = &#123;</div><div class="line">    map: map,</div><div class="line">    packages: packages</div><div class="line">  &#125;;</div><div class="line">  System.config(config);</div><div class="line">&#125;)(this);</div></pre></td></tr></table></figure>
+<h4 id="c-安装依赖包"><a href="#c-安装依赖包" class="headerlink" title="(c) 安装依赖包"></a>(c) 安装依赖包</h4><p>使用<code>npm</code>安装<code>package.json</code>列出的依赖包.</p>
+<p><code>npm install</code></p>
+<blockquote>
+<p>如果<code>typings</code>文件夹没有在<code>npm install</code>后显示,则需手动安装.<br><code>npm run typings install</code></p>
+</blockquote>
+<h3 id="步骤2-第一个Aungular组件"><a href="#步骤2-第一个Aungular组件" class="headerlink" title="步骤2:第一个Aungular组件"></a>步骤2:第一个Aungular组件</h3><p>在工程跟目录下<strong>创建一个子文件夹<code>APP</code></strong></p>
+<p><code>mkdir app</code></p>
+<p><strong>增加一个组件文件<code>app/app.component.ts</code></strong> 内容如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">import &#123; Component &#125; from &apos;@angular/core&apos;;</div><div class="line">@Component(&#123;</div><div class="line">  selector: &apos;my-app&apos;,</div><div class="line">  template: &apos;&lt;h1&gt;My First Angular 2 App&lt;/h1&gt;&apos;</div><div class="line">&#125;)</div><div class="line">export class AppComponent &#123; &#125;</div></pre></td></tr></table></figure>
+<p><em>AppComponent是应用的根组件.</em><br>每一个Angular应用至少有一个<em>根组件</em>,通常都命名为<code>AppComponent</code>,组件是Angular应用最基础的构建模块.组件通过其关联的模板控制着视图的展示.</p>
+<p>本快速入门教程里的示例虽然只是一个超级简单的组件,但已经包含了每一个组件的基本结构要素.</p>
+<ul>
+<li><code>import</code> 引用想要的模块.</li>
+<li><code>@Component</code> 装饰器告诉Angular这个组件的模板以及如何构建组件</li>
+<li>组件类通过模板来控制视图的展示和行为</li>
+</ul>
+<h4 id="Import"><a href="#Import" class="headerlink" title="Import"></a>Import</h4><p>Angular的应用都是模块化的,他们由许多不同作用的文件组成.Angular本身就是是一个包含构建应用所需功能的模块库.</p>
+<p>当我们需要某个模块或者库的时候,就import它.</p>
+<p>示例中我们从Angular 2核心模块引入Component,这样就可以使用<code>@Component</code>装饰器了.</p>
+<p><code>import { Component } from &#39;@angular/core&#39;;</code></p>
+<h4 id="Component-decorator"><a href="#Component-decorator" class="headerlink" title="@Component decorator"></a>@Component decorator</h4><p><code>Component</code>是一个注释器函数,应用这类元数据对象函数需要在前面加个<code>@</code>符号.<code>@Component</code>是一个装饰器:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@Component(&#123;</div><div class="line">  selector: &apos;my-app&apos;,</div><div class="line">  template: &apos;&lt;h1&gt;My First Angular 2 App&lt;/h1&gt;&apos;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>这个元数据对象有两个属性,<code>selector</code>和<code>template</code>.</p>
+<ul>
+<li><p><strong>selector</strong>声明了一个简单的CSS选择器用来表示代表组件的HTML元素.<em>这个组件的HTML元素名为<code>my-app</code>,Angular创建<code>AppComponent</code>实例并展示到承载这个组件的HTML的每一个<code>my-app</code>元素里</em></p>
+</li>
+<li><p><strong>template</strong>声明组件相关的模板,决定了Angular如何渲染组件.</p>
+</li>
+</ul>
+<h4 id="组件类"><a href="#组件类" class="headerlink" title="组件类"></a>组件类</h4><p>文件的最后是一个<code>AppComponent</code>类.</p>
+<p><code>export class AppComponent { }</code></p>
+<p>由于本入门示例中不存在需要做的功能,目前<code>AppComponent</code>类是空的,以后我们想构建应用的时候,需要扩充类的特性和应用逻辑.</p>
+<h3 id="步骤3-增加main-ts"><a href="#步骤3-增加main-ts" class="headerlink" title="步骤3:增加main.ts"></a>步骤3:增加<code>main.ts</code></h3><p>现在我们需要告诉Angular要加载根组件了,创建<code>app/main.ts</code>,内容如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import &#123; bootstrap &#125;    from &apos;@angular/platform-browser-dynamic&apos;;</div><div class="line">import &#123; AppComponent &#125; from &apos;./app.component&apos;;</div><div class="line">bootstrap(AppComponent);</div></pre></td></tr></table></figure>
+<p>要启动应用,我们引入了两样东西:</p>
+<ol>
+<li>Angular的浏览器<code>bootstrap</code>功能</li>
+<li>应用的根组件<code>AppComponent</code></li>
+</ol>
+<p>然后调用<code>bootstrap(AppComponent)</code>,<strong>Bootstrapping是平台的一个特性</strong>.</p>
+<p>注意到我们从<code>@angular/platform-browser-dynamic</code>而不是从<code>@angular/core</code>引入<code>bootstrap</code>功能.</p>
+<p>Bootstrapping不属于核心库,这是因为可能会有多种方式启动Angular应用(没错,移动端/桌面/web端等等).当然,大部分的应用都是从浏览器库调用bootstrap方法的.但也有可能从不同的环境里加载组件,比如从<code>Apache Cordova</code>或者<code>NativeScript</code>加载,并运行在移动设备上.我们也有可能希望从服务器渲染第一个页面来改进性能或者加强<code>SEO</code>.这就需要有不同种类的bootstrap.</p>
+<p>__为什么要分离<code>main.ts</code>和app组件文件<br><em>这只是一个简单的入门示例,现在<code>main.ts</code>和app组件文件都很小,我们确实可以灵活的合并或者拆分它们.<br>但我们想阐述一个更合理的Angular应用架构.App引导程序在不同的环境里多种多样,模块化分离文件,可以让测试变的更容易些,可以对某个组件进行单元测试,而不需要启动整个应用.</em></p>
+<h3 id="步骤4-增加index-html"><a href="#步骤4-增加index-html" class="headerlink" title="步骤4:增加index.html"></a>步骤4:增加<code>index.html</code></h3><p>在工程根目录里创建一个<code>index.html</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">  &lt;head&gt;</div><div class="line">    &lt;title&gt;Angular 2 QuickStart&lt;/title&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</div><div class="line">    &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;</div><div class="line">    &lt;!-- 1. Load libraries --&gt;</div><div class="line">     &lt;!-- Polyfill(s) for older browsers --&gt;</div><div class="line">    &lt;script src=&quot;node_modules/core-js/client/shim.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script src=&quot;node_modules/zone.js/dist/zone.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script src=&quot;node_modules/reflect-metadata/Reflect.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script src=&quot;node_modules/systemjs/dist/system.src.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;!-- 2. Configure SystemJS --&gt;</div><div class="line">    &lt;script src=&quot;systemjs.config.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">      System.import(&apos;app&apos;).catch(function(err)&#123; console.error(err); &#125;);</div><div class="line">    &lt;/script&gt;</div><div class="line">  &lt;/head&gt;</div><div class="line">  &lt;!-- 3. Display the application --&gt;</div><div class="line">  &lt;body&gt;</div><div class="line">    &lt;my-app&gt;Loading...&lt;/my-app&gt;</div><div class="line">  &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>这个<code>index.html</code>文件定义了承载这个应用的web页.HTML里的关键部分有:</p>
+<ol>
+<li>JavaScript库</li>
+<li>SystemJS的配置文件,一个导入app模块引用<code>main</code>文件的脚本</li>
+<li>在<body>里的<my-app>标签,这是我们这个应用渲染位置.</my-app></body></li>
+</ol>
+<h5 id="库"><a href="#库" class="headerlink" title="库"></a>库</h5><p>我们加载以下脚本:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;!-- Polyfill(s) for older browsers --&gt;</div><div class="line">&lt;script src=&quot;node_modules/core-js/client/shim.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script src=&quot;node_modules/zone.js/dist/zone.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script src=&quot;node_modules/reflect-metadata/Reflect.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script src=&quot;node_modules/systemjs/dist/system.src.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>首先是<code>core-js</code>,它是一个ES2015(ES6)的<code>shim</code>,这个猴子补丁替换全局上下文(window)的ES6功能要素.接着是<code>Angular2</code>,<code>zone.js</code>,<code>reflect-metadata</code>的plyfills,这样这些功能就可以兼容老的浏览器了.最后是用于模块加载的库<code>SystemJS</code>.</p>
+<h5 id="SystemJS"><a href="#SystemJS" class="headerlink" title="SystemJS"></a>SystemJS</h5><p>入门教程使用SystemJS加载应用和库模块.之前我们已经将<code>systemjs.config.js</code>文件加入到了工程根目录了.基本上可以用<code>webpack</code>替换,不过<code>SystemJS</code>已经是个好选择了,最终选择权这个取决于你.</p>
+<p>所有的模块加载都需要有配置,所有的加载配置都会随着结构增加或者考虑性能等而变的复杂.我们建议在你精通加载器的配置,SystemJS配置<a href="https://github.com/systemjs/systemjs/blob/master/docs/config-api.md" target="_blank" rel="external">教程</a>.</p>
+<p>有了这些意识后,我们看看<code>systemjs.config.js</code>做了些什么?首先,我们创建一个map告诉SystemJS去哪里查找需要引入的模块.然后,将所有的包注册到SystemJS,包括:工程依赖包和应用包,<code>app</code>包.<br><code>app</code>包告诉SystemJS如何从<code>app/</code>文件目录里请求一个模块.<br>本示例使用TypeScript导入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import &#123; AppComponent &#125; from &apos;./app.component&apos;;</div></pre></td></tr></table></figure></p>
+<p>注意模块名不需要文件扩展名，SystemJS根据配置文件设置文件的默认扩展名为js.</p>
+<p>System.import告诉SystemJS导入main文件；main是Aangular应用启动入口，我们可以抓取并记录启动时候的错误信息。<br>所有其他的模块都由import导入.</p>
+<h5 id=""><a href="#" class="headerlink" title=""></a><my-app></my-app></h5><p>Angular调用main.ts里的bootstrap函数，它读取AppComponent的元数据，找到my-app选择器，定位my-app元素标签，并将组件转染到这些标签里.</p>
+<h4 id="增加样式"><a href="#增加样式" class="headerlink" title="增加样式"></a>增加样式</h4><p>样式并不是必须的但样式会让应用更加美观，在index.html里假设有个层级样式styles.css。<br>创建一个styles.css文件在工程根目录，内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">h1 &#123;</div><div class="line">  color: #369;</div><div class="line">  font-family: Arial, Helvetica, sans-serif;</div><div class="line">  font-size: 250%;</div><div class="line">&#125;</div><div class="line">body &#123;</div><div class="line">  margin: 2em;</div><div class="line">&#125;</div><div class="line"></div><div class="line"> /*</div><div class="line">  * See https://github.com/angular/angular.io/blob/master/public/docs/_examples/styles.css</div><div class="line">  * for the full set of master styles used by the documentation samples</div><div class="line">  */</div></pre></td></tr></table></figure>
+<h3 id="步骤5：构建和运行APP！"><a href="#步骤5：构建和运行APP！" class="headerlink" title="步骤5：构建和运行APP！"></a>步骤5：构建和运行APP！</h3><p>打开一个终端窗口，敲入如下命令：<br><code>npm start</code><br>这个命令执行了两条node进程：</p>
+<ol>
+<li>及时监控进行TypeScript编</li>
+<li>lite-server静态服务器加载index.html到浏览器，当应用文件有修改时实时刷新浏览器</li>
+</ol>
+<p>浏览器上就会打开并显示:<br><img src="/res/img/angularjs2/my-first-app.png" alt=""></p>
+<h2 id="wrap-up"><a href="#wrap-up" class="headerlink" title="wrap up"></a>wrap up</h2><p>我们最终的工程文件结构如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">--angular2-quickstart</div><div class="line"></div><div class="line">----app</div><div class="line"></div><div class="line">------app.component.ts</div><div class="line"></div><div class="line">------main.ts</div><div class="line"></div><div class="line">----node_modules ...</div><div class="line"></div><div class="line">----typings ...</div><div class="line"></div><div class="line">----index.html</div><div class="line"></div><div class="line">----package.json</div><div class="line"></div><div class="line">----styles.css</div><div class="line"></div><div class="line">----systemjs.config.js</div><div class="line"></div><div class="line">----tsconfig.json</div><div class="line"></div><div class="line">----typings.json</div></pre></td></tr></table></figure></p>
+<p><a href="https://github.com/angular/quickstart/blob/master/README.md" target="_blank" rel="external">打包下载</a></p>
+<h2 id="下一步？"><a href="#下一步？" class="headerlink" title="下一步？"></a>下一步？</h2><p>我们第一个应用没有太多的功能，只是最基础的angular2的”Hello, World”应用。<br>我们写了一个简单的angular组件，构建了一个简单的index.html,并通过一个静态文件服务器加载它.这些就是这个 “Hello, World” app的全部了</p>
+<p>后续教程 <a href="https://angular.io/docs/ts/latest/tutorial/" target="_blank" rel="external">Tour of Heroes Tutorial!</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端/" rel="tag">#前端</a>
+          
+            <a href="/tags/Angularjs2/" rel="tag">#Angularjs2</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/05/visual-studio-code-user-manual/" rel="next" title="vs code 使用指南">
+                <i class="fa fa-chevron-left"></i> vs code 使用指南
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/14/Rich-Dad-Poor-Dad/" rel="prev" title="穷爸爸富爸爸">
+                穷爸爸富爸爸 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/06/angularjs2-5-MINUTE-QUICKSTART/"
+           data-title="Angularjs2 5分钟入门手册(ts)" data-url="http://zfeiyu.com/2016/06/06/angularjs2-5-MINUTE-QUICKSTART/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/res/avatar.jpg"
+               alt="lizorn" />
+          <p class="site-author-name" itemprop="name">lizorn</p>
+          <p class="site-description motion-element" itemprop="description">思从深而行从简</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">51</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/about/" target="_blank" title="关于我">
+                  
+                    <i class="fa fa-fw fa-user"></i>
+                  
+                  关于我
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/LiZoRN/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/res/weixin.jpg" target="_blank" title="微信">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  微信
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#在线示例"><span class="nav-number">1.</span> <span class="nav-text">在线示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始构建APP"><span class="nav-number">2.</span> <span class="nav-text">开始构建APP!</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前提-安装-Node-js"><span class="nav-number">2.1.</span> <span class="nav-text">前提: 安装 Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤1-创建和配置工程"><span class="nav-number">2.2.</span> <span class="nav-text">步骤1: 创建和配置工程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-创建文件"><span class="nav-number">2.2.1.</span> <span class="nav-text">(a) 创建文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-增加包定义和配置文件"><span class="nav-number">2.2.2.</span> <span class="nav-text">(b) 增加包定义和配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-安装依赖包"><span class="nav-number">2.2.3.</span> <span class="nav-text">(c) 安装依赖包</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤2-第一个Aungular组件"><span class="nav-number">2.3.</span> <span class="nav-text">步骤2:第一个Aungular组件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Import"><span class="nav-number">2.3.1.</span> <span class="nav-text">Import</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Component-decorator"><span class="nav-number">2.3.2.</span> <span class="nav-text">@Component decorator</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#组件类"><span class="nav-number">2.3.3.</span> <span class="nav-text">组件类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤3-增加main-ts"><span class="nav-number">2.4.</span> <span class="nav-text">步骤3:增加main.ts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤4-增加index-html"><span class="nav-number">2.5.</span> <span class="nav-text">步骤4:增加index.html</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#库"><span class="nav-number">2.5.0.1.</span> <span class="nav-text">库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SystemJS"><span class="nav-number">2.5.0.2.</span> <span class="nav-text">SystemJS</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#"><span class="nav-number">2.5.0.3.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#增加样式"><span class="nav-number">2.5.1.</span> <span class="nav-text">增加样式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤5：构建和运行APP！"><span class="nav-number">2.6.</span> <span class="nav-text">步骤5：构建和运行APP！</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wrap-up"><span class="nav-number">3.</span> <span class="nav-text">wrap up</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下一步？"><span class="nav-number">4.</span> <span class="nav-text">下一步？</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lizorn</span>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zfeiyu"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("rQ8OGfe9xd0QnUQQJLpYksWo-gzGzoHsz", "vEqVehf8ixuyXHHzTBIbmBo8");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>
