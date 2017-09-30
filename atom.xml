@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>lizorn</title>
+  <title>临渊羡鱼</title>
   
   <subtitle>子非鱼</subtitle>
   <link href="/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>http://zfeiyu.com/</id>
   
   <author>
-    <name>lizorn</name>
+    <name>临渊羡鱼</name>
     
   </author>
   
@@ -226,11 +226,11 @@
     
       <category term="开发环境" scheme="http://zfeiyu.com/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
     
-      <category term="hadoop" scheme="http://zfeiyu.com/tags/hadoop/"/>
-    
       <category term="docker" scheme="http://zfeiyu.com/tags/docker/"/>
     
       <category term="docker base image" scheme="http://zfeiyu.com/tags/docker-base-image/"/>
+    
+      <category term="hadoop" scheme="http://zfeiyu.com/tags/hadoop/"/>
     
       <category term="spark" scheme="http://zfeiyu.com/tags/spark/"/>
     

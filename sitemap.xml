@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://zfeiyu.com/about/index.html</loc>
+    
+    <lastmod>2017-09-30T11:53:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zfeiyu.com/talks/index.html</loc>
+    
+    <lastmod>2017-09-30T11:50:51.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zfeiyu.com/2017/06/01/hadoop-in-action-2/</loc>
     
     <lastmod>2017-09-30T10:52:14.000Z</lastmod>
@@ -37,20 +51,6 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/talks/index.html</loc>
-    
-    <lastmod>2017-03-15T09:51:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/about/index.html</loc>
-    
-    <lastmod>2016-11-19T02:50:16.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://zfeiyu.com/2016/11/06/document-style-guide/</loc>
     
     <lastmod>2016-11-19T01:44:22.000Z</lastmod>
@@ -58,14 +58,14 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/11/02/docker-ubuntu-issue/</loc>
+    <loc>http://zfeiyu.com/2016/10/13/google-guide-to-development/</loc>
     
     <lastmod>2016-11-05T00:59:53.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/10/13/google-guide-to-development/</loc>
+    <loc>http://zfeiyu.com/2016/10/25/Taste-of-code/</loc>
     
     <lastmod>2016-11-05T00:59:53.000Z</lastmod>
     
@@ -79,7 +79,7 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/10/25/Taste-of-code/</loc>
+    <loc>http://zfeiyu.com/2016/11/02/docker-ubuntu-issue/</loc>
     
     <lastmod>2016-11-05T00:59:53.000Z</lastmod>
     
@@ -100,28 +100,7 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/03/11/songci-2/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/2016/03/06/ubuntu_env/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/2016/03/10/songci-1/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/2016/03/12/songci-3/</loc>
+    <loc>http://zfeiyu.com/2016/02/15/data_crush/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -135,42 +114,7 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/06/14/Le-voleur-d'ombres/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/2016/04/05/visual-studio-code-user-manual/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/2016/03/12/the-good-parts-of-javascript/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/2016/06/06/angularjs2-5-MINUTE-QUICKSTART/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/2016/06/14/Rich-Dad-Poor-Dad/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/2016/08/08/blockbuster-Founding-of-the-Republic/</loc>
+    <loc>http://zfeiyu.com/2016/03/10/songci-1/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -184,7 +128,70 @@
   </url>
   
   <url>
+    <loc>http://zfeiyu.com/2016/03/12/songci-3/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zfeiyu.com/2016/03/11/songci-2/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zfeiyu.com/2016/04/05/visual-studio-code-user-manual/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zfeiyu.com/2016/06/14/Rich-Dad-Poor-Dad/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zfeiyu.com/2016/06/06/angularjs2-5-MINUTE-QUICKSTART/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zfeiyu.com/2016/06/14/Le-voleur-d'ombres/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zfeiyu.com/2016/06/30/Shortest-History-of-Europe/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zfeiyu.com/2016/03/12/the-good-parts-of-javascript/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zfeiyu.com/2016/08/08/blockbuster-Founding-of-the-Republic/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zfeiyu.com/2016/08/09/lust-for-life/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -205,63 +212,7 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/08/09/lust-for-life/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://zfeiyu.com/2016/08/30/readmemo/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/2009/03/09/potato-killer/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/2016/08/22/readmemo/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/2016/09/22/ionic2-/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/2016/09/12/readmemo/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/2016/09/22/my-little-upset/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/2016/09/02/the-words-on-my-skin/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/2016/09/26/readmemo/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -275,21 +226,42 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/09/27/docker-manual/</loc>
+    <loc>http://zfeiyu.com/2016/09/05/readmemo/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/06/17/angularjs2-TUTORIAL-TOUR-OF-HEROES/</loc>
+    <loc>http://zfeiyu.com/2016/09/02/the-words-on-my-skin/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/10/27/hadoop-quick-start/</loc>
+    <loc>http://zfeiyu.com/2016/09/22/my-little-upset/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zfeiyu.com/2016/09/22/ionic2-/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zfeiyu.com/2016/09/26/readmemo/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zfeiyu.com/2016/09/12/readmemo/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -310,6 +282,20 @@
   </url>
   
   <url>
+    <loc>http://zfeiyu.com/2016/10/27/hadoop-quick-start/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zfeiyu.com/2016/09/27/docker-manual/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zfeiyu.com/2007/05/16/anonymity-2007/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
@@ -317,14 +303,7 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/02/15/big_data/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/2016/01/05/book-list/</loc>
+    <loc>http://zfeiyu.com/2009/03/09/potato-killer/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -332,6 +311,13 @@
   
   <url>
     <loc>http://zfeiyu.com/2011/12/08/stand-by-the-first-winner/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zfeiyu.com/2016/02/15/big_data/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -352,14 +338,14 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/02/15/data_crush/</loc>
+    <loc>http://zfeiyu.com/2016/01/05/book-list/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/404.html</loc>
+    <loc>http://zfeiyu.com/2016/06/17/angularjs2-TUTORIAL-TOUR-OF-HEROES/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -373,7 +359,14 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/gallery/index.html</loc>
+    <loc>http://zfeiyu.com/404.html</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zfeiyu.com/2016/03/04/why_nations_fail/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -381,6 +374,13 @@
   
   <url>
     <loc>http://zfeiyu.com/categories/index.html</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zfeiyu.com/gallery/index.html</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -401,21 +401,14 @@
   </url>
   
   <url>
+    <loc>http://zfeiyu.com/2016/03/06/ubuntu_env/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zfeiyu.com/tags/index.html</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/2016/03/04/why_nations_fail/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/about/resume/index.html</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -429,6 +422,13 @@
   </url>
   
   <url>
+    <loc>http://zfeiyu.com/about/resume/index.html</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zfeiyu.com/2016/03/10/fusioncharts_cracker/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
@@ -436,7 +436,7 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/09/05/readmemo/</loc>
+    <loc>http://zfeiyu.com/2016/08/22/readmemo/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
