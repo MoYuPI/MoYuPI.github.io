@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://zfeiyu.com/talks/the-7-habits-of-highly-effective-people/index.html</loc>
+    
+    <lastmod>2018-04-26T14:52:59.043Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zfeiyu.com/talks/blockchain/index.html</loc>
     
     <lastmod>2018-04-23T11:32:02.000Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://zfeiyu.com/2018/04/22/the-designing-design/</loc>
     
     <lastmod>2018-04-23T11:21:55.102Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/talks/the-7-habits-of-highly-effective-people/index.html</loc>
-    
-    <lastmod>2018-04-16T13:55:55.000Z</lastmod>
     
   </url>
   
@@ -121,14 +121,21 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/03/10/learning-jquery-lesson/</loc>
+    <loc>http://zfeiyu.com/2016/03/12/how-to-lie-with-stastics/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/03/12/how-to-lie-with-stastics/</loc>
+    <loc>http://zfeiyu.com/2016/03/11/songci-2/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zfeiyu.com/2016/04/05/visual-studio-code-user-manual/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -142,7 +149,7 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/03/12/the-good-parts-of-javascript/</loc>
+    <loc>http://zfeiyu.com/2016/06/06/angularjs2-5-MINUTE-QUICKSTART/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -163,7 +170,7 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/06/30/Shortest-History-of-Europe/</loc>
+    <loc>http://zfeiyu.com/2016/03/12/the-good-parts-of-javascript/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -177,13 +184,6 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/06/06/angularjs2-5-MINUTE-QUICKSTART/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://zfeiyu.com/2016/08/09/lust-for-life/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
@@ -191,7 +191,7 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/08/10/Steven-Allan-Spielberg/</loc>
+    <loc>http://zfeiyu.com/2016/06/30/Shortest-History-of-Europe/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -205,14 +205,14 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/09/02/the-words-on-my-skin/</loc>
+    <loc>http://zfeiyu.com/2016/06/17/angularjs2-TUTORIAL-TOUR-OF-HEROES/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/08/30/readmemo/</loc>
+    <loc>http://zfeiyu.com/2016/08/10/Steven-Allan-Spielberg/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -226,56 +226,7 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/09/05/readmemo/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/2005/10/05/hope-lost/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/2016/09/12/readmemo/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/2016/06/17/angularjs2-TUTORIAL-TOUR-OF-HEROES/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/2016/09/22/ionic2-/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/2016/09/26/readmemo/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/2016/10/27/docker-developer-env/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/2016/09/27/docker-manual/</loc>
+    <loc>http://zfeiyu.com/2016/08/30/readmemo/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -289,7 +240,56 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2009/11/18/my-essays-on/</loc>
+    <loc>http://zfeiyu.com/2016/09/05/readmemo/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zfeiyu.com/2016/09/12/readmemo/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zfeiyu.com/2016/09/22/ionic2-/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zfeiyu.com/2016/09/22/my-little-upset/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zfeiyu.com/2016/09/26/readmemo/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zfeiyu.com/2016/09/27/docker-manual/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zfeiyu.com/2016/10/27/docker-developer-env/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zfeiyu.com/2005/10/05/hope-lost/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -303,6 +303,13 @@
   </url>
   
   <url>
+    <loc>http://zfeiyu.com/2009/03/09/potato-killer/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zfeiyu.com/2016/01/05/book-list/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
@@ -310,7 +317,7 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2009/03/09/potato-killer/</loc>
+    <loc>http://zfeiyu.com/2009/11/18/my-essays-on/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -324,14 +331,14 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/02/15/data_crush/</loc>
+    <loc>http://zfeiyu.com/2016/01/05/chan/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/01/05/chan/</loc>
+    <loc>http://zfeiyu.com/2016/02/15/data_crush/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -352,21 +359,14 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/03/06/the-mythical-man-month/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfeiyu.com/2016/03/10/email_management/</loc>
-    
-    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://zfeiyu.com/2016/03/04/why_nations_fail/</loc>
+    
+    <lastmod>2016-10-30T11:05:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zfeiyu.com/2016/03/06/the-mythical-man-month/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -380,7 +380,7 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/03/10/fusioncharts_cracker/</loc>
+    <loc>http://zfeiyu.com/2016/03/10/email_management/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -408,14 +408,14 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/tags/index.html</loc>
+    <loc>http://zfeiyu.com/schedule/index.html</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/schedule/index.html</loc>
+    <loc>http://zfeiyu.com/tags/index.html</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -443,7 +443,7 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/03/11/songci-2/</loc>
+    <loc>http://zfeiyu.com/2016/03/10/fusioncharts_cracker/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
@@ -457,14 +457,14 @@
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/04/05/visual-studio-code-user-manual/</loc>
+    <loc>http://zfeiyu.com/2016/03/10/learning-jquery-lesson/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://zfeiyu.com/2016/09/22/my-little-upset/</loc>
+    <loc>http://zfeiyu.com/2016/09/02/the-words-on-my-skin/</loc>
     
     <lastmod>2016-10-30T11:05:50.000Z</lastmod>
     
