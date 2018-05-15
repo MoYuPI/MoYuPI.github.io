@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python&数据库]]></title>
+    <url>%2F2018%2F05%2F11%2Fpython-database-develop%2F</url>
+    <content type="text"><![CDATA[Sql定义SQL是一种数据库查询和程序设计语言，用于存取数据以及查询、更新和管理关系数据库系统。 特点： 是一种高级的非过程化编程语言，允许用户在高层数据结构上工作。 它不要求用户指定对数据的存放方法，也不需要用户了解具体的数据存放方式。 结构化查询语言语句可以嵌套，这使它具有极大的灵活性和强大的功能。 组成SQL由六个部分组成： 数据查询语言（DQL） 数据操作语言（DML） 事务处理语言（TPL） 数据控制语言（DCL） 数据定义语言（DDL） 针控制语言（CCL） RMDB定义RDBMS（关系型数据库): R, 即 “Relational” (有关系，关联的),是其中内容最丰富的部分. 数据通过 表 (table) 进行组织,每张表都是一些由 类型 (type) 相关联的 列 (column) 构成. 所有表,列及其类的类型被称为数据库的 schema (架构或模式). schema 通过每张表的描述信息完整刻画了数据库的结构. 比如, 一张叫做 Car 的表可能有以下一些列: 12345Make: a stringModel: a stringYear: a four-digit number; alternatively, a dateColor: a stringVIN(Vehicle Identification Number): a string 在一张表中,每个单一的条目叫做一行(row)或者一条记录(record). 为了区分每条记录, 通常会定义一个 主键 (primary key).表中的主键是其中一列, 它能够唯一标识每一行. 在表 Car 中, VIN 是一个天然的主键选择, 因为它能够保证每辆车具有唯一的标识. Schemasschema , 描述了列的名字及其所包含数据的类型。它还包括了其他一些信息， 比如哪些列可以为空， 哪些列不允许有重复值， 以及其他对表中列的所有限制信息。 在任意时刻一张表只能有一个 schema, 并且 表中的所有行必须遵守 schema 的规定 。 如果在传统的关系型数据库中，因为业务的需求需要新增一些字段，就需要变更表-添加新的列，对一个大型数据库做一些改变通常并不是一件小事。DBA需要做大量的schema维护工作。 QueryingSQL 能够让我们通过对数据库进行query (查询)来获取有用的信息.查询简单来说, 查询就是用一个结构化语言向 RDBMS 提问,返回的行就是问题的答案. 我们可以通过在数据库上进行如下的 SQL 查询 : 1SELECT Make, Model FROM Car; 将SQL大致翻译成中文: 向我展示(SELECT)表 Car(FROM) 每一行中 Make 和 Model 的值. 查询特定的表，使用表的主键VIN来标示唯一的一辆车: 1SELECT * FROM Car WHERE VIN = '2134AFGER245267' Relations数据库设计三大范式： 第一范式:确保每列的原子性. 第二范式:确保表中的每列都和主键相关. 确保每列都和主键列直接相关,而不是间接相关. ServiceHistory 表: 1VIN | Make | Model | Year | Color | Service Performed | Mechanic | Price | Date -&gt;Vehicle+ServiceHistory表 1VIN | Make | Model | Year | Color 1VIN | Service Performed | Mechanic | Price | Date 对两表做关联查询，如果数据库没有建立索引(indices),上面的查询就需要进行表扫描(table scan). NOSQLNOSQL数据库分类分类 Examples举例 典型应用场景 数据模型 优点 缺点 分类 Examples举例 典型应用场景 数据模型 优点 缺点 键值 Tokyo Cabinet/Tyrant, Redis, Voldemort, Oracle BDB 内容缓存，主要用于处理大量数据的高访问负载，也用于一些日志系统等等。 Key 指向 Value 的键值对，通常用hash table来实现 查找速度快 数据无结构化，通常只被当作字符串或者二进制数据 列存储数据库 Cassandra, HBase, Riak 分布式的文件系统 以列簇式存储，将同一列数据存在一起 centered $12 文档型数据库 CouchDB, MongoDb，SequoiaDB Web应用（与Key-Value类似，Value是结构化的，不同的是数据库能够了解Value的内容） Key-Value对应的键值对，Value为结构化数据 数据结构要求不严格，表结构可变，不需要像关系型数据库一样需要预先定义表结构 查询性能不高，而且缺乏统一的查询语法。 图形(Graph)数据库 Neo4J, InfoGrid, Infinite Graph 社交网络，推荐系统等。专注于构建关系图谱 图结构 利用图结构相关算法。比如最短路径寻址，N度关系查找等 很多时候需要对整个图做计算才能得出需要的信息，而且这种结构不太好做分布式的集群方案。 RMDB vs NOSQL-DB关系型数据库优点 事务处理—保持数据的一致性； 由于以标准化为前提，数据更新的开销很小（相同的字段基本上只有一处）； 可以进行Join等复杂查询 缺点： 扩展困难：由于存在类似Join这样多表查询机制，使得数据库在扩展方面很艰难; 读写慢：这种情况主要发生在数据量达到一定规模时由于关系型数据库的系统逻辑非常复杂，使得 其 非常容易发生死锁等的并发问题，所以导致其读写速度下滑非常严重; 成本高：企业级数据库的License价格很惊人，并且随着系统的规模，而不断上升; 有限的支撑容量：现有关系型解决方案还无法支撑Google这样海量的数据存储; 非关系型数据库优点： 简单的扩展：比如Cassandra的架构类似于P2P，所以能通过轻松地添加新的节点来扩展这个集群; 快速的读写：比如Redis，由于其逻辑简单，且支持内存，使得其性能非常出色，单节点每秒可以处理超过10万次读写操作; 低廉的成本：这是大多数分布式数据库共有的特点，因为主要都是开源软件，没有昂贵的License成本; 缺点： 不提供对SQL的支持：如果不支持SQL这样的工业标准，将会对用户产生一定的学习和应用迁移成本; 支持的特性不够丰富：现有产品所提供的功能都比较有限，大多数NoSQL数据库都不支持事务，也不像MS SQL和Oracle那样能提供各种附加功能，比如BI和报表等; 现有产品的不够成熟：大多数产品都还处于初创期，和关系型数据库几十年的完善不可同日而语; 主流数据库https://db-engines.com/en/ranking ORM定义orm英文全称object relational mapping,就是对象映射关系程序，简单来说我们类似python这种面向对象的程序来说一切皆对象，但是我们使用的数据库却都是关系型的，为了保证一致的使用习惯，通过orm将编程语言的对象模型和数据库的关系模型建立映射关系，这样我们在使用编程语言对数据库进行操作的时候可以直接使用编程语言的对象模型进行操作就可以了，而不用直接使用sql语言。 优点：ORM的核心：隐藏了数据访问细节。它使得我们的通用数据库交互变得简单易行，不用熟悉SQL语句以及数据库的异构性。ORM使我们构造固化数据结构变得简单易行。 缺点：无可避免的，自动化意味着映射和关联管理，代价是牺牲性能。现在的各种ORM框架都在尝试使用各种方法来减轻这块（LazyLoad，Cache），效果还是很显著的。 Python ORM库SQAlchemy安装12pip install SQAlchemypip install pymysql 架构 示例代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152from sqlalchemy import Column, DateTime, String, Integer, ForeignKey, funcfrom sqlalchemy.orm import relationship, backreffrom sqlalchemy.ext.declarative import declarative_baseBase = declarative_base()class Department(Base): __tablename__ = &apos;department&apos; id = Column(Integer, primary_key=True) name = Column(String(50) )class Employee(Base): __tablename__ = &apos;employee&apos; id = Column(Integer, primary_key=True) name = Column(String(50)) # Use default=func.now() to set the default hiring time # of an Employee to be the current time when an # Employee record was created hired_on = Column(DateTime, default=func.now()) department_id = Column(Integer, ForeignKey(&apos;department.id&apos;)) # Use cascade=&apos;delete,all&apos; to propagate the deletion of a Department onto its Employees department = relationship( Department, backref=backref(&apos;employees&apos;, uselist=True, cascade=&apos;delete,all&apos;))from sqlalchemy import create_engineengine = create_engine(&apos;mysql+pymysql://root:root@localhost:3306/test&apos;)from sqlalchemy.orm import sessionmakersession = sessionmaker()session.configure(bind=engine)Base.metadata.create_all(engine)if __name__ == &apos;__main__&apos;: # # 创建session对象: session = session() # 创建新User对象: new_user = Employee(id=&apos;5&apos;, name=&apos;Bob&apos;) # 添加到session: session.add(new_user) # 提交即保存到数据库: session.commit() # 关闭session: session.close() 练习：写一个轻量级的数据库设计思路： 一个 Python 的 dict 作为主要的数据存储 仅支持 string 类型作为键 (key) 支持存储 integer, string 和 list 简单 TCP/IP 服务器用来传递消息 一些像 INCREMENT, DELETE , APPEND 和 STATS 这样的高级命令 所需支持的命令行123456789101112131415161718192021PUT参数： Key, Value目的： 向数据库中插入一条新的条目GET参数： Key目的： 从数据库中检索一个已存储的值PUTLIST参数： Key, Value目的： 向数据库中插入一个新的列表条目APPEND参数： Key, Value目的： 向数据库中一个已有的列表添加一个新的元素INCREMENT参数： key目的： 增长数据库的中一个整型值DELETE参数： Key目的： 从数据库中删除一个条目STATS参数： 无 (N/A)目的： 请求每个执行命令的 成功/失败 的统计信息 消息结构请求消息一条 请求消息 (Request Message) 包含了一个命令（command），一个键 (key), 一个值 (value), 一个值的类型（type）. 后三个取决于消息类型，是可选项, 非必须。; 被用作是分隔符。即使并没有包含上述可选项， 但是在消息中仍然必须有三个 ; 字符。 12COMMAND; [KEY]; [VALUE]; [VALUE TYPE] COMMAND 是上面列表中的命令之一 KEY 是一个可以用作数据库 key 的 string （可选） VALUE 是数据库中的一个 integer, list 或 string (可选) list 可以被表示为一个用逗号分隔的一串 string, 比如说, “red, green, blue” VALUE TYPE 描述了 VALUE 应该被解释为什么类型 可能的类型值有：INT, STRING, LIST 示例12345678&quot;PUT; foo; 1; INT&quot;&quot;GET; foo;;&quot;&quot;PUTLIST; bar; a,b,c ; LIST&quot;&quot;APPEND; bar; d; STRING&quot;&quot;GETLIST; bar; ;&quot;STATS; ;;INCREMENT; foo;;DELETE; foo;; 响应消息一个 响应消息 (Reponse Message) 包含了两个部分， 通过 ; 进行分隔。第一个部分总是 True|False , 它取决于所执行的命令是否成功。 第二个部分是命令消息 (command message),当出现错误时，便会显示错误信息。对于那些执行成功的命令，如果我们不想要默认的返回值（比如 PUT）, 就会出现成功的信息。 如果我们返回成功命令的值 (比如 GET), 那么第二个部分就会是自身值。 Examples123456True; Key [foo] set to [1]True; 1True; Key [bar] set to [[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]]True; Key [bar] had value [d] appendedTrue; [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;]True; &#123;&apos;PUTLIST&apos;: &#123;&apos;success&apos;: 1, &apos;error&apos;: 0&#125;, &apos;STATS&apos;: &#123;&apos;success&apos;: 0, &apos;error&apos;: 0&#125;, &apos;INCREMENT&apos;: &#123;&apos;success&apos;: 0, &apos;error&apos;: 0&#125;, &apos;GET&apos;: &#123;&apos;success&apos;: 0, &apos;error&apos;: 0&#125;, &apos;PUT&apos;: &#123;&apos;success&apos;: 0, &apos;error&apos;: 0&#125;, &apos;GETLIST&apos;: &#123;&apos;success&apos;: 1, &apos;error&apos;: 0&#125;, &apos;APPEND&apos;: &#123;&apos;success&apos;: 1, &apos;error&apos;: 0&#125;, &apos;DELETE&apos;: &#123;&apos;success&apos;: 0, &apos;error&apos;: 0&#125;&#125; 示例代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171172173174175176177178179180181182183184185186187188189190191192# coding : utf-8import socketimport timeHOST = 'localhost'PORT = 6666SOCKET = socket.socket(socket.AF_INET, socket.SOCK_STREAM)# 状态字典STATS = &#123; 'PUT': &#123; 'success': 0, 'error': 0 &#125;, 'GET': &#123; 'success': 0, 'error': 0 &#125;, 'GETLIST': &#123; 'success': 0, 'error': 0 &#125;, 'PUTLIST': &#123; 'success': 0, 'error': 0 &#125;, 'INCREMENT': &#123; 'success': 0, 'error': 0 &#125;, 'APPEND': &#123; 'success': 0, 'error': 0 &#125;, 'DELETE': &#123; 'success': 0, 'error': 0 &#125;, 'STATS': &#123; 'success': 0, 'error': 0 &#125;,&#125;DATA = &#123;&#125;def parse_message(data): """解析命令行，输出元组(command, key, value).""" try: command, key, value, value_type = map(str.strip, data.strip().split(';')) except: return 'Invalid input! Expected: COMMAND; [KEY]; [VALUE]; [VALUE TYPE]' if value_type: if value_type == 'LIST': value = value.split(',') elif value_type == 'INT': value = int(value) else: value = None return command, key, valuedef update_stats(command, success): """更新命令状态码""" # todo if success: STATS[command]['success'] += 1 else: STATS[command]['error'] += 1def handle_put(key, value): """修改key，value""" DATA[key] = value return (True, 'key [&#123;&#125;] set to [&#123;&#125;]'.format(key, value))def handle_get(key): """根据key获取value""" if key not in DATA: return (False, 'Error: Key [&#123;&#125;] not found'.format(key)) else: return (True, DATA[key])def handle_putlist(key, value): """Return a tuple containing True if the command succeeded and the message to send back to the client""" return handle_put(key, value)def handle_getlist(key): """Return a tuple containing True if the key contained a list and the message to send back to the client.""" return_value = exists, value = handle_get(key) if not exists: return return_value elif not isinstance(value, list): return (False, 'ERROR: Key [&#123;&#125;] contains non-list value ([&#123;&#125;])'.format( key, value)) else: return return_valuedef handle_increment(key): """Return a tuple containing True if the key's value could be incremented and the message to send back to the client.""" return_value = exists, value = handle_get(key) if not exists: return return_value elif not isinstance(value, int): return (False, 'ERROR: Key [&#123;&#125;] contains non-list value ([&#123;&#125;])'.format( key, value)) else: DATA[key] = value + 1 return (True, 'Key [&#123;&#125;] incremented'.format(key, value))def handle_append(key, value): """Return a tuple containing True if the key's value could be appended to and the message to send back to the client.""" return_value = exists, list_value = handle_get(key) if not exists: return return_value elif not isinstance(list_value, list): return (False, 'ERROR: Key [&#123;&#125;] contains non-list value ([&#123;&#125;])'.format( key, list_value)) else: DATA[key].append(value) return (True, 'Key [&#123;&#125;] had value [&#123;&#125;] appended'.format(key, value))def handle_delete(key): """Return a tuple containing True if the key could be deleted and the message to send back to the client.""" if key not in DATA: return ( False, 'ERROR: Key [&#123;&#125;] not found and could not be deleted.'.format(key)) else: del DATA[key] return (True, 'Key [&#123;&#125;] had deleted'.format(key))def handle_stats(): """返回状态字典.""" return (True, str(STATS))# 查找表，将命令和处理命令关联COMMAND_HANDERS = &#123; 'PUT': handle_put, 'GET': handle_get, 'GETLIST': handle_getlist, 'PUTLIST': handle_putlist, 'INCREMENT': handle_increment, 'APPEND': handle_append, 'DELETE': handle_delete, 'STATS': handle_stats,&#125;def main(): """脚本主入口""" SOCKET.bind((HOST, PORT)) SOCKET.listen(1) print('Listening on &#123;&#125;'.format((HOST, PORT))) while 1: connection, address = SOCKET.accept() print('&#123;&#125; New connection from &#123;&#125;'.format( time.strftime(("%Y/%m/%d %H:%M:%S INFO"), time.localtime()), address)) data = connection.recv(4096).decode() command, key, value = parse_message(data) if command == 'STATS': response = handle_stats() elif command in ('GET', 'GETLIST', 'INCREMENT', 'DELETE'): response = COMMAND_HANDERS[command](key) elif command in ( 'PUT', 'PUTLIST', 'APPEND', ): response = COMMAND_HANDERS[command](key, value) else: response = (False, 'Unknown command type &#123;&#125;'.format(command)) update_stats(command, response[0]) data = '&#123;&#125;;\n&#123;&#125;\n'.format(response[0], response[1]) connection.sendall(bytearray(data, 'utf-8')) connection.close()if __name__ == '__main__': main()]]></content>
+      <categories>
+        <category>开发者手册</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+        <tag>sql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[设计中的设计]]></title>
     <url>%2F2018%2F04%2F22%2Fthe-designing-design%2F</url>
     <content type="text"><![CDATA[晚上一口气看完这本书，除了书的字太小、书内大量设计插图都是包豪斯风格之外,感受到一股浓浓的日本工匠的气息。作者全书都在阐述，设计是什么？ 理解一个东西不是能够定义它或者描述它，而是把这个我们认为自己已经知道的东西拿过来，让它变得未知，并激起我们对其真实性的新鲜感，从而深化我们对它的理解。 我的想法就是:刚刚泡了杯茶，现在还冒着热气，但随着时间的流逝，茶的温度会趋近环境的温度，这符合热力学第二定律，也符合香农的信息论。熵的增加意味着特质的降低，而设计就是降低熵的过程。 设计让它变得简单，变得平衡，让这壶茶在快节奏的生活和科技迭代的交汇处，保留原本的味道；让它回归事物本身找到属于自己的支点。]]></content>
@@ -348,18 +360,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[穷爸爸富爸爸]]></title>
-    <url>%2F2016%2F06%2F14%2FRich-Dad-Poor-Dad%2F</url>
-    <content type="text"><![CDATA[人过三十,回想过往，在杭州折腾了几年,买房卖房,买车,现在回了自己老家,实在也没什么积蓄,有车有房那是负债,除此之外没有资产，更实现不了财务自由。倒不是觉得自己没有财商，而是缺少教育，缺乏思想的启蒙。这就是书的价值，让你有机会可以接触到优秀的思想，冲击你的价值观，引发自己的思考。我觉得实现财务自由，并不是你一定要有多少钱，而是你是否能够真正的脱离财务来实现自由，来让自己过的更充实，不用疲于上班疲于赚钱疲于那些冠冕堂皇的事业。有些人很富裕，但他的内心很贫瘠，有些人很贫穷，但是他的内心很富足，幸福就是如此吧。 读书笔记 要懂得如何[让钱来替你工作],而不是[为了钱而工作]. 作者不鼓励找一份”稳定的工作”,重要的是要有老板心态,要多想想自己要什么,要成为什么样的人,用老板的眼光思考全局.当你没有面包的时候,要考虑怎么让人给你送上面包,而不是自己上班去赚,饱汉不知饿汉饥,让饿汉去思考还是略难的. 什么是资产?资产是向你口袋送钱的东西.什么是负债?负债就是把钱从你口袋掏出的东西. 首先支付自己，先确保自己的资产,再去偿还负债,这样才能积累财富.比如,每个月拿出固定的资金进行理财和投资,剩余的部分偿还住房按揭,信用卡等等,那不够了怎么办?想办法开源啊. 从长期来看,重要的不是你挣了多少钱,而是要看你能留下多少钱,以及留住多久. 这点非常赞同.有一个同事,外号股神,她老婆就经常控诉他,’结婚没指望上他这笔钱,买房也没指望上他这笔钱,生娃更没指望上他这笔钱’,在股市里赚了再多的钱,不拿出来,那也只是个数字,没有转化到生活价值里,即便他是资产,它也可能会有赔的一天.做生意也一样,有些人大起大落,起的时候风光无限,落的时候一蹶不振,重要的不是你挣了多少钱,而是看你能保住多少留下多少,保住多久留住多久. 金钱从来不是真正的资产，我们唯一的，真正的资产是我们的头脑。 (即：思维方式) 学无止境，不要放弃对求知的渴望.觉得在校读书无用，是因为离开学校后就放弃了学习。最大的投资，就是投资教育，投资自己。 几个步骤,让我们开始行动. 我需要一个超现实的理由:精神的力量. 我们要财务自由 每天作出自己的选择:选择的力量,这是人们希望生活在一个自由国度的主要原因. 多学会思考 慎重的选择朋友–关系的力量。 物以类聚，人以群分 快速学习。 掌握一种模式，吃透它，举一反三，然后快速的学习另外一种。 首先支付自己–自律。 自律是最重要的，如果控制不了自己，就不要想着致富。在资产的支配上，首先支付自己 购买奢侈品。 用消费的欲望来激发并利用理财的天赋去投资 偶像。 对英雄的崇拜，可以借鉴和鞭挞自己，多看看传记 先予后取。 乐善好施是必须的，这就是给予的力量。如果你想获得就要先给予。]]></content>
-      <categories>
-        <category>读书笔记</category>
-      </categories>
-      <tags>
-        <tag>博闻</tag>
-        <tag>财富</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[偷影子的人]]></title>
     <url>%2F2016%2F06%2F14%2FLe-voleur-d'ombres%2F</url>
     <content type="text"><![CDATA[读书笔记 我只是你生活里的一个影子，你却在我的生命里占有重要地位。如果我只是个单纯的过客，为何要让我闯入你的生活？我千百次想过要离开你，但仅凭一己之力我做不到。 人们常常把一些小事抛在脑后，一些生命的片刻烙印在时光尘埃里，我们可以试着忽略，但这些微不足道的小事却一点一滴形成一条链子，将你牢牢与过去连在一起。 我喜欢看着围绕妈妈嘴角与眼周的细纹，我知道她很讨厌它们，但这些细纹却让我觉得心安，我从她脸上读到我们相依为命的痕迹。回到这里，或许我想念 的并不是我的童年，而是妈妈、我们相依的时光、星期六午后的超市生活、一起分享的晚餐、偶尔相对无言却更能感受彼此的亲密，很多夜里她都到我房间陪我，她会靠在我身旁，把手滑进我的发中…光阴转瞬即逝，这些最单纯的瞬间，却隽永地牢牢铭刻在我们心底。 你不能干涉别人的人生，就算是为了对方好。这是他的人生，只有他一个人能决定他的人生。你必须顺应事实，放手成长，你没有必要医治好在成长路上与你擦肩而过的每个人，即使你成为最顶尖的医生，也做不到这样。 生命中某些珍贵的片段，其实都来自于一些微不足道的小事. 青少年时期，我们总梦想着离开父母的一天，而改天，却换成父母离开我们了。于是我们就只能梦想着，能否有一时片刻，重新变回寄居父母屋檐下的孩子，能抱抱他们，不害羞地告诉他们，我们爱他们，为了让自己安心而紧紧依偎在他们身边。 神甫在妈妈的墓前主持弥撒。我听着他讲道，他说人们从来不会失去双亲，即使过世之后，他们还是与你们同在。那些对你们怀有感情，并且把全部的爱都奉献给你们，好让你们替他们活下去，会永远活在你们的心中，不会消失。 我再也不能看到你，再也不能听到你叫我的名字，就像从前每天早上你所做的那样。我再也嗅不到你衣服上适合你的香味，再也不能与你分享我的快乐与忧伤。我们再也不能互相倾诉，你再也无法整理插在客厅花瓶中的含羞草，那是我一月底为你摘来的。你再也不会戴夏天的草帽，不能披秋天第一波寒流来袭时你披在肩上的克什米尔披肩。你再也不会再十二月的雪覆盖花园时点燃壁炉。你在春天还未来临前离去，毫无预警地抛下我。在月台上得知你已不在时，我感觉到一生中前所未有的孤单。 每一个人都有自己的世界,一人一世界,光丽的外表或者强健的体魄并不能表示他人的幸福,每一个人都有自己的悲伤。外表风光强悍的马格,谁能想到他的晚餐没有一家人的陪伴，只有履行任务般的进行。这或许就是一个人光环下的阴影。所以没有一个人是最悲哀的。只是你不了解罢了。 我的白昼如同无止境的黑夜，而我如同行尸走肉肉一般穿越其中 我知道，人一旦开始说谎，就很难不继续下去，但我管不了那么多，每个人都有自己的理由。这一次，我也有我非得如此不可的理由]]></content>
@@ -369,6 +369,18 @@
       <tags>
         <tag>消遣类</tag>
         <tag>成长</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[穷爸爸富爸爸]]></title>
+    <url>%2F2016%2F06%2F14%2FRich-Dad-Poor-Dad%2F</url>
+    <content type="text"><![CDATA[人过三十,回想过往，在杭州折腾了几年,买房卖房,买车,现在回了自己老家,实在也没什么积蓄,有车有房那是负债,除此之外没有资产，更实现不了财务自由。倒不是觉得自己没有财商，而是缺少教育，缺乏思想的启蒙。这就是书的价值，让你有机会可以接触到优秀的思想，冲击你的价值观，引发自己的思考。我觉得实现财务自由，并不是你一定要有多少钱，而是你是否能够真正的脱离财务来实现自由，来让自己过的更充实，不用疲于上班疲于赚钱疲于那些冠冕堂皇的事业。有些人很富裕，但他的内心很贫瘠，有些人很贫穷，但是他的内心很富足，幸福就是如此吧。 读书笔记 要懂得如何[让钱来替你工作],而不是[为了钱而工作]. 作者不鼓励找一份”稳定的工作”,重要的是要有老板心态,要多想想自己要什么,要成为什么样的人,用老板的眼光思考全局.当你没有面包的时候,要考虑怎么让人给你送上面包,而不是自己上班去赚,饱汉不知饿汉饥,让饿汉去思考还是略难的. 什么是资产?资产是向你口袋送钱的东西.什么是负债?负债就是把钱从你口袋掏出的东西. 首先支付自己，先确保自己的资产,再去偿还负债,这样才能积累财富.比如,每个月拿出固定的资金进行理财和投资,剩余的部分偿还住房按揭,信用卡等等,那不够了怎么办?想办法开源啊. 从长期来看,重要的不是你挣了多少钱,而是要看你能留下多少钱,以及留住多久. 这点非常赞同.有一个同事,外号股神,她老婆就经常控诉他,’结婚没指望上他这笔钱,买房也没指望上他这笔钱,生娃更没指望上他这笔钱’,在股市里赚了再多的钱,不拿出来,那也只是个数字,没有转化到生活价值里,即便他是资产,它也可能会有赔的一天.做生意也一样,有些人大起大落,起的时候风光无限,落的时候一蹶不振,重要的不是你挣了多少钱,而是看你能保住多少留下多少,保住多久留住多久. 金钱从来不是真正的资产，我们唯一的，真正的资产是我们的头脑。 (即：思维方式) 学无止境，不要放弃对求知的渴望.觉得在校读书无用，是因为离开学校后就放弃了学习。最大的投资，就是投资教育，投资自己。 几个步骤,让我们开始行动. 我需要一个超现实的理由:精神的力量. 我们要财务自由 每天作出自己的选择:选择的力量,这是人们希望生活在一个自由国度的主要原因. 多学会思考 慎重的选择朋友–关系的力量。 物以类聚，人以群分 快速学习。 掌握一种模式，吃透它，举一反三，然后快速的学习另外一种。 首先支付自己–自律。 自律是最重要的，如果控制不了自己，就不要想着致富。在资产的支配上，首先支付自己 购买奢侈品。 用消费的欲望来激发并利用理财的天赋去投资 偶像。 对英雄的崇拜，可以借鉴和鞭挞自己，多看看传记 先予后取。 乐善好施是必须的，这就是给予的力量。如果你想获得就要先给予。]]></content>
+      <categories>
+        <category>读书笔记</category>
+      </categories>
+      <tags>
+        <tag>博闻</tag>
+        <tag>财富</tag>
       </tags>
   </entry>
   <entry>
@@ -407,18 +419,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[渔家傲·塞下秋来风景异]]></title>
-    <url>%2F2016%2F03%2F12%2Fsongci-3%2F</url>
-    <content type="text"><![CDATA[【原文】渔家傲·塞下秋来风景异 作者：范仲淹 塞下①秋来风景异，衡阳雁去②无留意。四面边声③连角起，千嶂④里，长烟⑤落日孤城闭。 浊酒一杯家万里，燕然未勒⑥归无计。羌管⑦悠悠霜满地⑧。人不寐，将军白发征夫泪。 【注释】 ①塞下：边地。风景异：指景物与江南一带不同。 ②衡阳雁去：雁去衡阳的倒文。湖南衡阳县南有回雁峰，相传雁至此不再南飞。 ③边声：马嘶风号之类的边地荒寒肃杀之声。角：军中的号角。 ④嶂：像屏障一样并列的山峰。 ⑤长烟：荒漠上的烟。 ⑥燕然未勒：无破敌之功。燕然：山名，即今蒙古境内之杭爱山。勒：刻石记功。东汉窦宪追击北匈奴，出塞三千馀里，至燕然山刻石记功而还。燕然未勒：指边患未平、功业未成。 ⑦羌管：羌笛，因出自羌中，得名。 ⑧霜满地：喻夜深寒重。 【作品简介】这是一首抒怀词。当时范仲淹任陕西经略副使兼知延州（今陕西延安市）。这是当时第一首描写边塞题材的作品，也是宋代最早表现军旅生活的词作。上阕写景。首句顿入，起调突兀，俊骨雄风，已自夺人。千峰连亘如屏障，一座孤城，日未落而城门紧闭。也突出布防将士的备战警惕。下阕抒情。表达将士功业未立，无计归家的责任感，披露爱国衷肠。不愧苍凉感慨的豪士之伟词。这首词开启了苏辛豪放派的先声。 【翻译】边境上秋天一来风景全异，向衡阳飞去的雁群毫无留恋的情意。从四面八方传来的边地悲声随着号角响起。重重叠叠的山峰里，长烟直上落日斜照孤城紧闭。 喝一杯陈酒怀念家乡远隔万里，可是燕然还未刻上平胡的功绩，归期无法预计。羌人的笛声悠扬，寒霜撒满大地。征人不能入睡，将军头发花白，战士洒下眼泪。]]></content>
-      <categories>
-        <category>宋词</category>
-      </categories>
-      <tags>
-        <tag>赏析</tag>
-        <tag>宋词三百首</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[统计数字会说谎]]></title>
     <url>%2F2016%2F03%2F12%2Fhow-to-lie-with-stastics%2F</url>
     <content type="text"><![CDATA[序 虽然经验告诉我们’眼见为实’,但眼睛告诉我们的’真想’或许隐瞒了部分事实,或许夸大了事实. 统计这种神秘的语言,在一个靠数字说话的社会里是如此地吸引眼球,但有时它却被人利用,并成为恶意夸大或简化事实,迷惑他人的工具. 该书是一个利用统计数据行骗的入门书籍. 样本偏离统计数字的样本经常存在严重偏离的情况.会接受抽样调查的人,某种意义上已经进行了一部分情景化的过滤.样本碍于情面或者是尊严的问题,未必会说真话. 小结 为了确保结论有价值,根据抽样得出的结论一定要采用具有代表性的样本,这种样本才有可能排除误差 无形的误差和有形的误差一样容易破坏样本的可行度. 最基本的样本是随机样本,它是完全遵循随机原则从总体总选出来的.随机样本的校验方法:总体中的每个名字或每个事物是否具有相同的几率被选进样本? 一般而言,民意调查都具有一定的误差. 精心挑选的平均数 平均数：一组数据的总和除以这组数据个数所得到的商叫这组数据的平均数. 中位数：将一组数据按大小顺序排列,处在最中间位置的一个数叫做这组数据的中位数 . 众数：在一组数据中出现次数最多的数叫做这组数据的众数. 当你看到某个平均收入时,首先问问:是什么的平均?包括了哪些人? 没有披露的数据有时候单凭一个数据,如平均数来描述事物过于简单,起不到作用,不管这个平均数是均值还是中位数,也不管平均数的具体类型是否已知.需要关注其他未披露的数据,才能判断统计数据的准确性. 令人惊奇的图形 最简单的图形是直线图形,在显示趋势时,直线图形非常有用.然而只需要改变纵坐标和横坐标的比例关系,将会产生一张有迷惑作用的统计图形.统计图形具有客观性幻觉. 用图形描述统计事物,具有欺骗性,视觉作用起了非常大的作用.如数字比是2:1,但视觉效果却是4:1,而在大多数时候视觉效果起着决定性的作用. 相关关系的误解 两个事物之间的关联关系并不能用于说明其中一个将引起另外一个的变化. 如何反驳统计资料怎样凭借双眼就能识破虚假的统计资料,并揭开它的老底;同样重要的是,如何在这一大片充满了欺骗性的数据海洋中找出可靠有用的资料,我们只需要问5个问题. 谁说的?学术结论,实验结果以及报道引用都可能产生偏差,这些偏差可能是测量标准的改动造成的,也可能是不正确的测量方法造成的. 查看有意识的偏差. 查找无意识的偏差. 如引用到了权威人士,辨明内容是权威的还是资料是权威的. 它是如何知道的? 看样本是否有偏离. 采样数据是否足够大,观察值是否足够,从而保证结论的可靠性? 遗漏了什么? 很多数据由于没有进行有效的比较而失去意义 有时仅给出百分比却缺少原始数据也会造成欺骗.当看到一个指数时,需要了解它的基数. 遗漏了引起变化的原因,这容易让人认为是其他的因素才应对产生的变化负责. 如报道’最近25年癌症死亡人数增多’,这个结论会有误导性.事实上人口也在增多. 是否有人偷换了概念?数据的概念是否存在欺诈性?需要留心从搜集原始资料到形成结论的整个过程中,是否存在概念的偷换. 这个资料有意义吗?这个问题通常能将一个伪装的很好的统计资料打回原形.让人印象深刻的统计数据也会和实际情况相左. 奇妙的数据与平常的感觉不符 外推法十分有用,特别是预测趋势时.]]></content>
@@ -428,6 +428,18 @@
       <tags>
         <tag>大数据</tag>
         <tag>新知</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[渔家傲·塞下秋来风景异]]></title>
+    <url>%2F2016%2F03%2F12%2Fsongci-3%2F</url>
+    <content type="text"><![CDATA[【原文】渔家傲·塞下秋来风景异 作者：范仲淹 塞下①秋来风景异，衡阳雁去②无留意。四面边声③连角起，千嶂④里，长烟⑤落日孤城闭。 浊酒一杯家万里，燕然未勒⑥归无计。羌管⑦悠悠霜满地⑧。人不寐，将军白发征夫泪。 【注释】 ①塞下：边地。风景异：指景物与江南一带不同。 ②衡阳雁去：雁去衡阳的倒文。湖南衡阳县南有回雁峰，相传雁至此不再南飞。 ③边声：马嘶风号之类的边地荒寒肃杀之声。角：军中的号角。 ④嶂：像屏障一样并列的山峰。 ⑤长烟：荒漠上的烟。 ⑥燕然未勒：无破敌之功。燕然：山名，即今蒙古境内之杭爱山。勒：刻石记功。东汉窦宪追击北匈奴，出塞三千馀里，至燕然山刻石记功而还。燕然未勒：指边患未平、功业未成。 ⑦羌管：羌笛，因出自羌中，得名。 ⑧霜满地：喻夜深寒重。 【作品简介】这是一首抒怀词。当时范仲淹任陕西经略副使兼知延州（今陕西延安市）。这是当时第一首描写边塞题材的作品，也是宋代最早表现军旅生活的词作。上阕写景。首句顿入，起调突兀，俊骨雄风，已自夺人。千峰连亘如屏障，一座孤城，日未落而城门紧闭。也突出布防将士的备战警惕。下阕抒情。表达将士功业未立，无计归家的责任感，披露爱国衷肠。不愧苍凉感慨的豪士之伟词。这首词开启了苏辛豪放派的先声。 【翻译】边境上秋天一来风景全异，向衡阳飞去的雁群毫无留恋的情意。从四面八方传来的边地悲声随着号角响起。重重叠叠的山峰里，长烟直上落日斜照孤城紧闭。 喝一杯陈酒怀念家乡远隔万里，可是燕然还未刻上平胡的功绩，归期无法预计。羌人的笛声悠扬，寒霜撒满大地。征人不能入睡，将军头发花白，战士洒下眼泪。]]></content>
+      <categories>
+        <category>宋词</category>
+      </categories>
+      <tags>
+        <tag>赏析</tag>
+        <tag>宋词三百首</tag>
       </tags>
   </entry>
   <entry>
@@ -466,17 +478,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[FusionCharts Suite XT去水印]]></title>
-    <url>%2F2016%2F03%2F10%2Ffusioncharts_cracker%2F</url>
-    <content type="text"><![CDATA[闲来无事，挖掘了下单位的测试数据，分析生成pareto，用于持续改进,发现Fusioncharts有现成的模块可以用，向来不想重复造轮子，下载开袋即食，见有水印，遂去之，再此奉上。 拿来主义点此 授人以鱼不如授人以渔。 打开fusioncharts.js 搜索fusioncharts.com -&gt; 12&lt;span style="white-space:pre"&gt;&lt;/span&gt;Q="http://www.fusioncharts.com?BS=FCHSEvalMark&amp;utm_source=FCS_trial&amp;pver="+m.escape(d.core.version) 置空-&gt;Q=”” 搜索Trial-&gt; 12&lt;span style="white-space:pre"&gt;&lt;/span&gt;CREDIT_STRING:"FusionCharts XT Trial" 置空-&gt;CREDIT_STRING:””]]></content>
-      <categories>
-        <category>开发者手册</category>
-      </categories>
-      <tags>
-        <tag>FusionCharts</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[邮件管理,outlook的邮箱设置]]></title>
     <url>%2F2016%2F03%2F10%2Femail_management%2F</url>
     <content type="text"><![CDATA[性格决定了命运，你的努力，选择，耐心都可能影响你的一生，如何为人处世是个大命题，这里不扯这些，仅聊一聊专注力的事情，如何屏蔽干扰。现在育儿都很注重一点，就是专注力。我女儿在认真玩耍的时候，有人尝试去逗她玩，我都会及时阻止， 这个时候你去打扰她会影响她的专注力 这还包括成年人，当今社会信息和诱惑都非常的多，人的想法也时时刻刻都在发生改变，生活的琐事也随着经历的增长而增长，专注于一件事情会越来越难。 在大部分企业办公,电子邮件是最大的干扰之一，如何有效控制电子邮件的使用，整合大量的碎片时间？ 关闭电子邮件通知功能人脑并不擅长并发处理，左右互搏不是人人都会的，一次性专注批量的处理事情会大大提高效率。特别是像我这种有强迫症的人，如果电子邮件弹框通知，我随时都会打开查看，如果电子邮件过多，整一天会让我不厌其烦。 需要关闭电子邮件通知，outlook options-&gt;mail-&gt;Message arrival,关闭桌面通知和声音提示。 定期批量的处理邮件每隔一个小时，或者一天4次，批量专注的处理你的邮件。 保持即时通信工具的畅通，然后定期的查看电子邮件，变相的告诉对方，如果有急事，可以通过即时工具联系，提高沟通效率。 处理邮件后将邮件归档归档阅读完一份邮件第一件事情 处理完毕后，将其归档 To do,设置标记后，将其归档 分类创建分类文件夹，如： 1234567events：公司的一些通告/事件等垃圾邮件 customer:领导，需求，VPM等 members：组内成员 projects:项目分类 todo:代办的事情，通常是客户/考勤异常/manpower等等 bug:issue追踪 RES:一些资源 创建规则，移动或阻止邮件,保持inbox内的邮件数量：右击邮件-&gt;Rules-&gt;移动到各个文件夹下。 其他设置拼音检查 Outlook settings-&gt;Mail-&gt;ABC 勾上拼音检查 设置回执功能(若对方是预览打开，则无回执) Outlook settings-&gt;Mail-&gt;ABC 勾上read receipt confirming 签名： Outlook settings-&gt;Mail-&gt; 创建签名，如： 1234Best Regards!姓名/公司/部门Office: 联系电话/短号其他联系工具]]></content>
@@ -485,6 +486,17 @@
       </categories>
       <tags>
         <tag>时间管理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[FusionCharts Suite XT去水印]]></title>
+    <url>%2F2016%2F03%2F10%2Ffusioncharts_cracker%2F</url>
+    <content type="text"><![CDATA[闲来无事，挖掘了下单位的测试数据，分析生成pareto，用于持续改进,发现Fusioncharts有现成的模块可以用，向来不想重复造轮子，下载开袋即食，见有水印，遂去之，再此奉上。 拿来主义点此 授人以鱼不如授人以渔。 打开fusioncharts.js 搜索fusioncharts.com -&gt; 12&lt;span style="white-space:pre"&gt;&lt;/span&gt;Q="http://www.fusioncharts.com?BS=FCHSEvalMark&amp;utm_source=FCS_trial&amp;pver="+m.escape(d.core.version) 置空-&gt;Q=”” 搜索Trial-&gt; 12&lt;span style="white-space:pre"&gt;&lt;/span&gt;CREDIT_STRING:"FusionCharts XT Trial" 置空-&gt;CREDIT_STRING:””]]></content>
+      <categories>
+        <category>开发者手册</category>
+      </categories>
+      <tags>
+        <tag>FusionCharts</tag>
       </tags>
   </entry>
   <entry>
