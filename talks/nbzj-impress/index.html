@@ -1,0 +1,700 @@
+<!doctype html>
+
+<!--
+
+    Welcome to the light side of the source, young padawan.
+
+    One step closer to learn something interesting you are...
+
+                               ____                  
+                            _.' :  `._               
+                        .-.'`.  ;   .'`.-.           
+               __      / : ___\ ;  /___ ; \      __  
+             ,'_ ""=-.:__;".-.";: :".-.":__;.-="" _`,
+             :' `.t""=-.. '<@.`;_  ',@:` ..-=""j.' `;
+                  `:-.._J '-.-'L__ `-.-' L_..-;'     
+                    "-.__ ;  .-"  "-.  : __.-"       
+                        L ' /.======.\ ' J           
+                         "-.   "__"   .-"            
+                        __.l"-:_JL_;-";.__           
+                     .-j/'.;  ;""""  / .'\"-.        
+                   .' /:`. "-.:     .-" .';  `.      
+                .-"  / ;  "-. "-..-" .-"  :    "-.   
+             .+"-.  : :      "-.__.-"      ;-._   \  
+             ; \  `.; ;                    : : "+. ; 
+             :  ;   ; ;                    : ;  : \: 
+             ;  :   ; :                    ;:   ;  : 
+            : \  ;  :  ;                  : ;  /  :: 
+            ;  ; :   ; :                  ;   :   ;: 
+            :  :  ;  :  ;                : :  ;  : ; 
+            ;\    :   ; :                ; ;     ; ; 
+            : `."-;   :  ;              :  ;    /  ; 
+             ;    -:   ; :              ;  : .-"   : 
+             :\     \  :  ;            : \.-"      : 
+              ;`.    \  ; :            ;.'_..-=  / ; 
+              :  "-.  "-:  ;          :/."      .'  :
+               \         \ :          ;/  __        :
+                \       .-`.\        /t-""  ":-+.   :
+                 `.  .-"    `l    __/ /`. :  ; ; \  ;
+                   \   .-" .-"-.-"  .' .'j \  /   ;/ 
+                    \ / .-"   /.     .'.' ;_:'    ;  
+                     :-""-.`./-.'     /    `.___.'   
+                           \ `t  ._  /               
+                            "-.t-._:'                
+
+-->
+
+<!--
+    
+    So you'd like to know how to use impress.js?
+    
+    You've made the first, very important step - you're reading the source code.
+    And that's how impress.js presentations are built - with HTML and CSS code.
+    
+    Believe me, you need quite decent HTML and CSS skills to be able to use impress.js effectively.
+    More importantly, you need to be a designer. There are no default styles or layouts for impress.js presentations.
+    
+    You need to design and build it by hand.
+    
+    So...
+    
+    Would you still like to know how to use impress.js?
+    
+-->
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1024">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>宁波住建委综合信息平台一期项目验收汇报!</title>
+    
+    <meta name="description" content="using Impress">
+    <meta name="author" content="lizorn">
+	<script type="text/javascript" src="https://cdn.bootcss.com/SyntaxHighlighter/3.0.83/scripts/shCore.js"></script>
+	<script type="text/javascript" src="https://cdn.bootcss.com/SyntaxHighlighter/3.0.83/scripts/shBrushPython.js"></script>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet">
+
+    <!--
+        
+        Impress.js doesn't depend on any external stylesheets. It adds all of the styles it needs for the
+        presentation to work.
+        
+        This style below contains styles only for demo presentation. Browse it to see how impress.js
+        classes are used to style presentation steps, or how to apply fallback styles, but I don't want
+        you to use them directly in your presentation.
+        
+        Be creative, build your own. We don't really want all impress.js presentations to look the same,
+        do we?
+        
+        When creating your own presentation get rid of this file. Start from scratch, it's fun!
+        
+    -->
+    <link href="css/impress-demo.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css">
+    <link rel="shortcut icon" href="media/logo.png">
+    <link rel="apple-touch-icon" href="media/logo.png">
+</head>
+
+<!--
+    
+    Body element is used by impress.js to set some useful class names, that will allow you to detect
+    the support and state of the presentation in CSS or other scripts.
+    
+    First very useful class name is `impress-not-supported`. This class means, that browser doesn't
+    support features required by impress.js, so you should apply some fallback styles in your CSS.
+    It's not necessary to add it manually on this element. If the script detects that browser is not
+    good enough it will add this class, but keeping it in HTML means that users without JavaScript
+    will also get fallback styles.
+    
+    When impress.js script detects that browser supports all required features, this class name will
+    be removed.
+    
+    The class name on body element also depends on currently active presentation step. More details about
+    it can be found later, when `hint` element is being described.
+    
+-->
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<!--
+    
+    Now that's the core element used by impress.js.
+    
+    That's the wrapper for your presentation steps. In this element all the impress.js magic happens.
+    It doesn't have to be a `<div>`. Only `id` is important here as that's how the script find it.
+    
+    You probably won't need it now, but there are some configuration options that can be set on this element.
+    
+    To change the duration of the transition between slides use `data-transition-duration="2000"` giving it
+    a number of ms. It defaults to 1000 (1s).
+    
+    You can also control the perspective with `data-perspective="500"` giving it a number of pixels.
+    It defaults to 1000. You can set it to 0 if you don't want any 3D effects.
+    If you are willing to change this value make sure you understand how CSS perspective works:
+    https://developer.mozilla.org/en/CSS/perspective
+    
+    But as I said, you won't need it for now, so don't worry - there are some simple but interesting things
+    right around the corner of this tag ;)
+    
+-->
+<div id="impress">
+
+    <!--
+        
+        Here is where interesting thing start to happen.
+        
+        Each step of the presentation should be an element inside the `#impress` with a class name
+        of `step`. These step elements are positioned, rotated and scaled by impress.js, and
+        the 'camera' shows them on each step of the presentation.
+        
+        Positioning information is passed through data attributes.
+        
+        In the example below we only specify x and y position of the step element with `data-x="-1000"`
+        and `data-y="-1500"` attributes. This means that **the center** of the element (yes, the center)
+        will be positioned in point x = -1000px and y = -1500px of the presentation 'canvas'.
+        
+        It will not be rotated or scaled.
+        
+    -->
+    <div id="start" class="step" data-x="400" data-y="0" data-z="0" data-scale="5.5">
+        <p style="font-size:95px; font-weight:bold; color:white">综合信息平台一期</p>
+		<img src="media/logo.png" height="100" align="right">
+		<br> <br>
+		<p style="font-size:30px; color:white;">项目验收汇报!</p>
+		<p style="font-size:30px; color:white;">浙江申跃信息科技有限公司 </p>
+		
+    </div>
+
+    <!--
+        
+        The `id` attribute of the step element is used to identify it in the URL, but it's optional.
+        If it is not defined, it will get a default value of `step-N` where N is a number of slide.
+        
+        So in the example below it'll be `step-2`.
+        
+        The hash part of the url when this step is active will be `#/step-2`.
+        
+        You can also use `#step-2` in a link, to point directly to this particular step.
+        
+        Please note, that while `#/step-2` (with slash) would also work in a link it's not recommended.
+        Using classic `id`-based links like `#step-2` makes these links usable also in fallback mode.
+        
+    -->
+    <div id="titles" class="step slide" data-x="400" data-y="2000" data-z="0" data-scale="2.5"> 
+			<div class="slide-header"> 主要内容 </div>
+				<div class="slide-title">
+					<li>项目情况</li> 
+					<li>建设内容</li>
+					<li>建设成果</li>
+					<li>项目总结</li>
+				</div>
+	</div>
+
+    <div id="Introduction-1" class="step slide" data-x="4000" data-y="-4000" data-z="-5000">
+       <!-- <div class="slide-header1"> 项目情况 </div> -->
+	   <div class="slide-content">
+			<br> <br>
+		<!-- <img src="media/xmqk.png" align="center"> -->
+		<img src="media/xmqk.png" height="400" align="left">
+		</div>
+	</div>
+	
+	<div id="Introduction-2" class="step slide" data-x="5000" data-y="-4000" data-z="-5500">
+        <div class="slide-header1"> 建设目标 </div>
+		<div class="slide-content">
+		<br> <br>
+		<img src="media/jsmb1.png" height="480" align="left">
+		</div>
+	</div>
+
+	<div id="Introduction-3" class="step slide" data-x="6000" data-y="-4000" data-z="-6000">
+        <!-- <div class="slide-header2"> 编程语言设计选项 </div>
+		<div class="slide-content">
+			<br> </br>
+			<img src="media/Programming_Lang.png" height = "200" align="middle"> 
+		</div> -->
+        <!-- <div class="slide-header1"> 建设目标 </div> -->
+		<div class="slide-content">
+			<img src="media/jsmb2.png" height="400" align="center">
+		</div>
+    </div>
+
+	<div id="Introduction-4" class="step slide" data-x="7000" data-y="-4000" data-z="-6500">
+        <!-- <div class="slide-header2"> 低级语言 </div>
+		<div class="slide-content">
+			<br> </br>
+			<img src="media/Low_Level.png" height = "100" align="middle">
+			<br> </br>
+			<p> 语法和内部控制单元的语义. </p>
+				<li class="tab"> Move一个地址上的数据 </li>
+				<li class="tab"> 执行一个简单的ALU操作 </li>
+			<p> 机器语言、汇编. </p>
+		</div> -->
+		<div class="slide-header1"> 项目进度 </div>
+		<div class="slide-content">
+			<img src="media/jindu.png" height="400" align="left">
+		</div>
+    </div>
+
+	<div id="Introduction-5" class="step slide" data-x="7000" data-y="-3000" data-z="-7000">
+		<div class="slide-header2"> 建成情况 </div>
+		<div class="slide-content">
+			<img src="media/jcqk.png" height="500" align="middle">
+		</div>
+		
+		
+		<!-- <div class="slide-content">
+			<p> 编译型语言: </p>
+			<img src="media/HighLevel_Comp.png" height = "220" align="middle">
+			<p> 解释型语言: </p>
+			<img src="media/HighLevel_Inter.png" height = "100" align="middle">	
+		</div> -->
+	</div>
+	
+	<div id="History" class="step slide" data-x="6000" data-y="-3000" data-z="-3000">
+		<!-- <div class="slide-header2"> 建设内容 </div> -->
+		<div class="slide-content">
+			<img src="media/jsnr.png" height="500" align="middle">
+		</div>
+    </div>
+	
+	<div id="Introduction-7" class="step slide" data-x="5000" data-y="-3000" data-z="-1000">
+        <div class="slide-header2"> 项目总体架构 </div>
+		<div class="slide-content">
+			<img src="media/ztjg.png" height="500" align="middle">
+		</div>
+    </div>
+	
+	<div id="Introduction-8" class="step slide" data-x="4000" data-y="-3000" data-z="-5000">
+        <div class="slide-header1"> 内网门户 </div>
+		<div class="slide-content">
+				<img src="media/nwmh2.png" height="500" align="middle">
+		</div>
+    </div>
+	<div id="Introduction-9" class="step slide" data-x="5500" data-y="-2000" data-z="-2000">
+        <div class="slide-header1"> 内网门户架构 </div>
+		<div class="slide-content">
+				<img src="media/nwmhjg.png" height="500" align="middle">
+		</div>
+    </div>
+	
+<!--- NEXT PART -->
+
+	<!-- <div id="Syntax-1" class="step slide2" data-x="4000" data-y="1500" data-z = "-5000">
+       <div class="slide-header2">内网门户功能</div>
+	   <div class="slide-content">
+	   <p> Python语言易学、易读 </p>
+		<pre class="brush: py;">
+		>>>print("Hello World!")
+		>Hello World!</pre>
+		</div>
+    </div> -->
+    <div id="Syntax-2" class="step slide" data-x="5000" data-y="1500" data-z="-5000">
+       <div class="slide-header1">自定义桌面 </div>
+	   <div class="slide-content">
+			<img src="media/zdyzm.png" height="400" align="left">
+	   </div>
+    </div>
+	
+	<div id="Syntax-3" class="step slide" data-x="6000" data-y="1500" data-z="-2000">
+        <div class="slide-header1"> 统一认证 </div>
+		<div class="slide-content">
+				<img src="media/tyrz.png" height="400" align="left">
+		</div>
+    </div>
+
+	<div id="Syntax-4" class="step slide" data-x="7000" data-y="1500" data-z="-5000">
+		<div class="slide-header"> 电子政务 </div>
+		<div class="slide-content">
+				<img src="media/oa.png" height="500" align="left">
+		</div>
+    </div>
+
+	<div id="Syntax-5" class="step slide4" data-x="7000" data-y="2500" data-z="-2000">
+        <div class="slide-header4"> 物理部署 </div>
+		<div class="slide-content">
+				<img src="media/bs.png" height="500" align="left">
+		</div>
+	</div>
+
+	<!-- <div id="Syntax-6" class="step slide" data-x="6000" data-y="2500" data-z="-5000">
+        <div class="slide-header2">甬城住建</div>
+		<div class="slide-content">
+				<img src="media/yczj.png" height = "500" align="left">
+		</div>
+		
+    </div> -->
+
+	<div id="Syntax-7" class="step slide" data-x="5000" data-y="2500" data-z="-5000">
+        <div class="slide-header1">甬城住建架构</div>
+		<div class="slide-content">
+				<img src="media/yczjjg.png" height="500" align="left">
+		</div>	
+    </div>
+	<div id="Syntax-8" class="step slide" data-x="4000" data-y="2500" data-z="-5000">
+        <div class="slide-header2">甬城住建功能</div>
+		<div class="slide-content">
+				<img src="media/yczjgn.png" height="500" align="left">
+		</div>	
+    </div>
+	
+	<div id="Syntax-9" class="step slide" data-x="4000" data-y="3500" data-z="-2000">
+        <div class="slide-header2">微信政务平台</div>
+		<div class="slide-content">
+				<img src="media/wxzfjg.png" height="450" align="left">
+		</div>	
+    </div>
+	<!-- <div id="Syntax-10" class="step slide2" data-x="5000" data-y="3500" data-z="-5000">
+        <div class="slide-header2">宁波市住建委公众号</div>
+		<div class="slide-content">
+		<p> 程序通常把一个大型复杂的问题层层转化为一个与原问题相似的规模较小的问题来求解 </p>
+		<p> 递归策略只需少量的程序就可描述出解题过程所需要的多次重复计算 </p>
+		<span style="font-size: 25px">
+		<pre class="brush: py;">
+		def recurMul(a, b):
+			if b == 1:
+				return a
+			else:
+				return a + recurMul(a, b-1)</pre> </span>
+		<p> 递归需小心使用!!!<p>
+		</div>	
+    </div> -->
+	<!-- <div id="Syntax-11" class="step slide2" data-x="6000" data-y="3500" data-z="-5000">
+        <div class="slide-header2">异常</div>
+		<div class="slide-content">
+		<p> 程序碰到一个异常情况怎么办? </p>
+		<li class="tab">试图访问超出列表限制的下标将引发一个 <i>IndexError</i></li>
+		<li class="tab">试图强转一个不兼容的类型将引发一个 <i>TypeError</i></li>
+		<li class="tab"> 引用一个不存在的变量将引发 <i> NameError </i></li>
+		<li class="tab"> 强制混合不兼容的数据类型将引发 <i> TypeError </i></li>
+		<p> 怎么办? </p>
+		<li class="tab"> 默默捕获、沉默是金</li>
+		<li class="tab"> 返回错误值</li>
+		<li class="tab"> 中断执行</li>
+		</div>	
+    </div> -->
+	<div id="Syntax-12" class="step slide" data-x="7000" data-y="3500" data-z="-5000">
+        <div class="slide-header1">大数据管理平台</div>
+		<div class="slide-content">
+				<img src="media/sjglpt.png" height="400" align="left">
+		</div>	
+    </div>
+	<!-- 应用领域 -->
+	
+	<div id="Compound-1" class="step slide" data-x="-6000" data-y="-4500" data-z="-2000">
+        <div class="slide-header1">大数据管理平台架构</div>
+		<div class="slide-content">
+				<img src="media/sjptjg.png" height="500" align="left">
+		</div>
+    </div>
+	<div id="Compound-2" class="step slide" data-x="-5000" data-y="-4230" data-z="-5000" data-rotate-z="30">
+        <div class="slide-header1">数据治理架构</div>
+		<div class="slide-content">
+				<img src="media/sjzljg.png" height="500" align="left">
+		</div>	
+    </div>
+	<div id="Compound-3" class="step slide" data-x="-4268" data-y="-3500" data-z="-2000" data-rotate-z="60">
+        <div class="slide-header1">数据安全管理体系</div>
+		<div class="slide-content">
+				<img src="media/sjptaqgl.png" height="450" align="left">
+		</div>		
+    </div>
+	<div id="Compound-4" class="step slide" data-x="-4000" data-y="-2500" data-z="-5000" data-rotate-z="90">
+        <div class="slide-header1">数据管理平台</div>
+		<div class="slide-content">
+				<center><img src="media/sjglpt.png" height="500"></center>
+		</div>	
+    </div>
+	<!-- <div id="Compound-5" class="step slide" data-x="-4268" data-y="-1500" data-z="-5000" data-rotate-z="120">
+        <div class="slide-header2">公共信息服务架构</div>
+		<div class="slide-content">
+		<center><img src="media/gzxxfw.png" height = "400"></center>
+		</div>	
+    </div> -->
+	<div id="Compound-6" class="step slide" data-x="-5000" data-y="-770" data-z="-2000" data-rotate-z="150">
+        <div class="slide-header1">公共信息服务架构</div>
+		<div class="slide-content">
+				<center><img src="media/gzxxfw.png" height="500"></center>
+		</div>	
+    </div>
+	<div id="Compound-7" class="step slide" data-x="-6000" data-y="-500" data-z="-5000" data-rotate-z="180">
+        <div class="slide-header1">公共信息服务安全体系</div>
+		<div class="slide-content">
+		<center><img src="media/ggxxfwaqtx.png" height="450"></center>
+	
+		</div>	
+    </div>
+
+
+ <!--	编程的未来-->
+ 
+	<div id="Class-1" class="step slide" data-x="-7500" data-y="4000" data-z="-2000" data-rotate-z="180">
+       <!-- <div class="slide-header"> 建设成果 </div> -->
+	   <!-- <div class="slide-content"> -->
+		<img src="media/jscg.png" height="400" align="left">
+		<!-- </div> -->
+    </div>
+	<div id="Class-2" class="step slide" data-x="-6500" data-y="4000" data-z="-5000" data-rotate-z="180">
+       <!-- <div class="slide-header2">施工图审查专题</div> -->
+	   <!-- <div class="slide-content"> -->
+			<img src="media/cgzs1.png" height="450">
+		<!-- </div> -->
+    </div>
+	<div id="Class-3" class="step slide" data-x="-5500" data-y="4000" data-z="-2000" data-rotate-z="180">
+       <div class="slide-header1">接入系统 </div>
+	   <div class="slide-content">
+
+	   <center><img src="media/jrxt.png" height="500"></center>
+
+
+		</div>
+    </div>
+	<div id="Class-4" class="step slide" data-x="-4500" data-y="4000" data-z="-5000" data-rotate-z="180">
+       <div class="slide-header1">数据中心可视化</div>
+	   <div class="slide-content">
+			<center><img src="media/sjzxksh.png" height="500"></center>
+		</div>
+    </div>
+	<div id="Lib-1" class="step slide" data-x="-4500" data-y="3000" data-z="-2000" data-rotate-z="180">
+       <div class="slide-header1">建筑业专题</div>
+	   <div class="slide-content">
+			<center><img src="media/jzyzt.png" height="500"></center>
+		</div>
+    </div>
+    <div id="Lib-2" class="step slide" data-x="-5500" data-y="3000" data-z="-5000" data-rotate-z="180">
+       <div class="slide-header1"> 房屋安全专题 </div>
+	   <div class="slide-content">
+			<center><img src="media/cxfwaq.png" height="500"></center>
+	   </div>
+    </div>
+	
+	<div id="Lib-3" class="step slide" data-x="-6500" data-y="3000" data-z="-2000" data-rotate-z="180">
+        <div class="slide-header1"> 施工图审查 </div>
+		<div class="slide-content">
+		<center><img src="media/sgtsc.png" height="500" align="middle"></center>
+		</div>
+    </div>
+
+	<div id="Lib-4" class="step" data-x="-7500" data-y="3000" data-z="-5000" data-rotate-z="180">
+		<p style="font-size:80px; font-weight:bold; color:white">经验总结!</p>
+		<div class="slide-content">
+				<center><img src="media/xmyn.png" height="500" align="middle"></center>
+		</div>
+    </div>
+	
+	<div id="Lib-8" class="step" data-x="-4500" data-y="2000" data-z="-5000" data-rotate-z="180">
+			<p style="font-size:95px; font-weight:bold; color:white">Thank you!</p>
+    </div>
+	
+    <!--
+        
+        This is an example of step element being scaled.
+        
+        Again, we use a `data-` attribute, this time it's `data-scale="4"`, so it means that this
+        element will be 4 times larger than the others.
+        From presentation and transitions point of view it means, that it will have to be scaled
+        down (4 times) to make it back to its correct size.
+        
+    
+    <div id="Plastic" class="step" data-x="0" data-y="0" data-scale="4" align = "center">
+        <q>BUT if not:</q>
+        <p style="font-size:100px">Return Mapping</p>
+    </div>
+
+        
+        This element introduces rotation.
+        
+        Notation shouldn't be a surprise. We use `data-rotate="90"` attribute, meaning that this
+        element should be rotated by 90 degrees clockwise.
+        
+    -->
+
+    <!--
+        
+        This step here doesn't introduce anything new when it comes to data attributes, but you
+        should notice in the demo that some words of this text are being animated.
+        It's a very basic CSS transition that is applied to the elements when this step element is
+        reached.
+        
+        At the very beginning of the presentation all step elements are given the class of `future`.
+        It means that they haven't been visited yet.
+        
+        When the presentation moves to given step `future` is changed to `present` class name.
+        That's how animation on this step works - text moves when the step has `present` class.
+        
+        Finally when the step is left the `present` class is removed from the element and `past`
+        class is added.
+        
+        So basically every step element has one of three classes: `future`, `present` and `past`.
+        Only one current step has the `present` class.
+        
+    -->
+    <!--
+        
+        And the last one shows full power and flexibility of impress.js.
+        
+        You can not only position element in 3D, but also rotate it around any axis.
+        So this one here will get rotated by -40 degrees (40 degrees anticlockwise) around X axis and
+        10 degrees (clockwise) around Y axis.
+        
+        You can of course rotate it around Z axis with `data-rotate-z` - it has exactly the same effect
+        as `data-rotate` (these two are basically aliases).
+        
+    -->
+    
+	
+
+
+    <!--
+        
+        So to summarize of all the possible attributes used to position presentation steps, we have:
+        
+        * `data-x`, `data-y`, `data-z` - they define the position of **the center** of step element on
+            the canvas in pixels; their default value is 0;
+        * `data-rotate-x`, `data-rotate-y`, 'data-rotate-z`, `data-rotate` - they define the rotation of
+            the element around given axis in degrees; their default value is 0; `data-rotate` and `data-rotate-z`
+            are exactly the same;
+        * `data-scale` - defines the scale of step element; default value is 1
+        
+        These values are used by impress.js in CSS transformation functions, so for more information consult
+        CSS transfrom docs: https://developer.mozilla.org/en/CSS/transform
+        
+    -->
+    <div id="overview" class="step" data-x="0" data-y="0" data-scale="10">
+    </div>
+</div>
+
+<!--
+    
+    Hint is not related to impress.js in any way.
+    
+    But it can show you how to use impress.js features in creative way.
+    
+    When the presentation step is shown (selected) its element gets the class of "active" and the body element
+    gets the class based on active step id `impress-on-ID` (where ID is the step's id)... It may not be
+    so clear because of all these "ids" in previous sentence, so for example when the first step (the one with
+    the id of `bored`) is active, body element gets a class of `impress-on-bored`.
+    
+    This class is used by this hint below. Check CSS file to see how it's shown with delayed CSS animation when
+    the first step of presentation is visible for a couple of seconds.
+    
+    ...
+    
+    And when it comes to this piece of JavaScript below ... kids, don't do this at home ;)
+    It's just a quick and dirty workaround to get different hint text for touch devices.
+    In a real world it should be at least placed in separate JS file ... and the touch content should be
+    probably just hidden somewhere in HTML - not hard-coded in the script.
+    
+    Just sayin' ;)
+    
+-->
+<div class="hint">
+    <p>宁波住建委综合信息平台 项目总结</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Plasticity Project: Shayan Fahimi</p>";
+}
+</script>
+
+<!--
+    
+    Last, but not least.
+    
+    To make all described above really work, you need to include impress.js in the page.
+    I strongly encourage to minify it first.
+    
+    In here I just include full source of the script to make it more readable.
+    
+    You also need to call a `impress().init()` function to initialize impress.js presentation.
+    And you should do it in the end of your document. Not only because it's a good practice, but also
+    because it should be done when the whole document is ready.
+    Of course you can wrap it in any kind of "DOM ready" event, but I was too lazy to do so ;)
+    
+-->
+<script src="http://cdn.bootcss.com/impress.js/0.5.3/impress.js"></script>
+<script>impress().init();</script>
+
+<!--
+    
+    The `impress()` function also gives you access to the API that controls the presentation.
+    
+    Just store the result of the call:
+    
+        var api = impress();
+    
+    and you will get three functions you can call:
+    
+        `api.init()` - initializes the presentation,
+        `api.next()` - moves to next step of the presentation,
+        `api.prev()` - moves to previous step of the presentation,
+        `api.goto( idx | id | element, [duration] )` - moves the presentation to the step given by its index number
+                id or the DOM element; second parameter can be used to define duration of the transition in ms,
+                but it's optional - if not provided default transition duration for the presentation will be used.
+    
+    You can also simply call `impress()` again to get the API, so `impress().next()` is also allowed.
+    Don't worry, it wont initialize the presentation again.
+    
+    For some example uses of this API check the last part of the source of impress.js where the API
+    is used in event handlers.
+    
+-->
+
+</body>
+</html>
+
+<!--
+    
+    Now you know more or less everything you need to build your first impress.js presentation, but before
+    you start...
+    
+    Oh, you've already cloned the code from GitHub?
+    
+    You have it open in text editor?
+    
+    Stop right there!
+    
+    That's not how you create awesome presentations. This is only a code. Implementation of the idea that
+    first needs to grow in your mind.
+    
+    So if you want to build great presentation take a pencil and piece of paper. And turn off the computer.
+    
+    Sketch, draw and write. Brainstorm your ideas on a paper. Try to build a mind-map of what you'd like
+    to present. It will get you closer and closer to the layout you'll build later with impress.js.
+    
+    Get back to the code only when you have your presentation ready on a paper. It doesn't make sense to do
+    it earlier, because you'll only waste your time fighting with positioning of useless points.
+    
+    If you think I'm crazy, please put your hands on a book called "Presentation Zen". It's all about 
+    creating awesome and engaging presentations.
+    
+    Think about it. 'Cause impress.js may not help you, if you have nothing interesting to say.
+    
+-->
+
+<!--
+    
+    Are you still reading this?
+    
+    For real?
+    
+    I'm impressed! Feel free to let me know that you got that far (I'm @bartaz on Twitter), 'cause I'd like
+    to congratulate you personally :)
+    
+    But you don't have to do it now. Take my advice and take some time off. Make yourself a cup of coffee, tea,
+    or anything you like to drink. And raise a glass for me ;)
+    
+    Cheers!
+    
+-->
+
