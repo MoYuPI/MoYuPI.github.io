@@ -2,14 +2,23 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 
 
@@ -17,65 +26,77 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/favicon.ico?v=6.7.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
   
-  
-  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
 
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="新知类,编码规则,代码的味道," />
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="临渊羡鱼" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
-
-
-
-
-
-
-<meta name="description" content="整洁的代码简单直接;整洁的代码如同优美的散文;整洁的代码从不隐藏设计者的意图,充满了干净利落的抽象和直截了当的控制语句.">
+  <meta name="description" content="整洁的代码简单直接;整洁的代码如同优美的散文;整洁的代码从不隐藏设计者的意图,充满了干净利落的抽象和直截了当的控制语句.">
 <meta name="keywords" content="新知类,编码规则,代码的味道">
 <meta property="og:type" content="article">
 <meta property="og:title" content="代码的味道">
@@ -92,37 +113,20 @@
 
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '5.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+  <link rel="alternate" href="/atom.xml" title="临渊羡鱼" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="http://zfeiyu.com/2016/10/25/Taste-of-code/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
   };
 </script>
-
-
-
-  <link rel="canonical" href="http://zfeiyu.com/2016/10/25/Taste-of-code/"/>
-
-
-
-
 
   <title>代码的味道 | 临渊羡鱼</title>
   
@@ -131,7 +135,8 @@
 
 
 
-  <script type="text/javascript">
+
+  <script>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -144,9 +149,37 @@
 
 
 
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -156,25 +189,28 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">临渊羡鱼</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
         <h1 class="site-subtitle" itemprop="description">丝禽藏荷香，锦鲤绕岛影。</h1>
       
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -182,64 +218,103 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-            关于
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-            标签
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-talks">
-          <a href="/talks" rel="section">
-            
-            talks
-          </a>
-        </li>
-      
+          
+          <li class="menu-item menu-item-about">
 
+    
+    
+    
+
+    
+
+    <a href="/about/" rel="section">关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+
+    
+
+    <a href="/tags/" rel="section">标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+
+    
+
+    <a href="/categories/" rel="section">分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+
+    
+
+    <a href="/archives/" rel="section">归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-talks">
+
+    
+    
+    
+
+    
+
+    <a href="/talks/" rel="section">talks</a>
+
+  </li>
+
+      
       
         <li class="menu-item menu-item-search">
           
             <a href="javascript:;" class="popup-trigger">
           
-            
-            搜索
-          </a>
+            搜索</a>
         </li>
       
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -254,9 +329,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -270,12 +343,20 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
 
@@ -288,20 +369,22 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://zfeiyu.com/2016/10/25/Taste-of-code/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lizorn">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="想法永远是错的，除非事实证明它是对的。">
       <meta itemprop="image" content="/res/avatar.png">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="临渊羡鱼">
     </span>
 
@@ -310,11 +393,20 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">代码的味道</h2>
+          <h2 class="post-title" itemprop="name headline">代码的味道
+
+              
+            
+          </h2>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -322,18 +414,35 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-25T20:44:06+08:00">
-                2016-10-25
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2016-10-25 20:44:06" itemprop="dateCreated datePublished" datetime="2016-10-25T20:44:06+08:00">2016-10-25</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2016-11-05 08:59:53" itemprop="dateModified" datetime="2016-11-05T08:59:53+08:00">2016-11-05</time>
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -344,11 +453,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/开发者手册/" itemprop="url" rel="index">
-                    <span itemprop="name">开发者手册</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/开发者手册/" itemprop="url" rel="index"><span itemprop="name">开发者手册</span></a></span>
 
                 
                 
@@ -358,6 +463,7 @@
 
           
             
+            
           
 
           
@@ -365,36 +471,17 @@
 
           
             <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
             </span>
           
 
           
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  3,748
-                </span>
-              
-
-              
-
-              
-            </div>
-          
 
           
-              <div class="post-description">
-                  整洁的代码简单直接;整洁的代码如同优美的散文;整洁的代码从不隐藏设计者的意图,充满了干净利落的抽象和直截了当的控制语句.
-              </div>
+            <div class="post-description">整洁的代码简单直接;整洁的代码如同优美的散文;整洁的代码从不隐藏设计者的意图,充满了干净利落的抽象和直截了当的控制语句.</div>
           
 
         </div>
@@ -404,7 +491,7 @@
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
       
@@ -436,7 +523,7 @@
 <h1 id="命名问题"><a href="#命名问题" class="headerlink" title="命名问题"></a>命名问题</h1><h2 id="命名要具备描述性-避免歧义"><a href="#命名要具备描述性-避免歧义" class="headerlink" title="命名要具备描述性,避免歧义"></a>命名要具备描述性,避免歧义</h2><ul>
 <li>名副其实, 好的命名不需要额外的注释</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> d; <span class="comment">// 消逝的时间,以日计  ----bad</span></div><div class="line"><span class="keyword">int</span> elapsedTimeInDays; <span class="comment">//  ----good</span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> d; <span class="comment">// 消逝的时间,以日计  ----bad</span></span><br><span class="line"><span class="keyword">int</span> elapsedTimeInDays; <span class="comment">//  ----good</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>避免误导</li>
 </ul>
@@ -444,15 +531,15 @@
 <ul>
 <li>命名要有明显的区别</li>
 </ul>
-<p>以下的方法很难区分具体含义：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">getActiveCustomer();</div><div class="line">getActiveCustomers();</div><div class="line">getActiveCustomerInfo()</div></pre></td></tr></table></figure></p>
+<p>以下的方法很难区分具体含义：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">getActiveCustomer();</span><br><span class="line">getActiveCustomers();</span><br><span class="line">getActiveCustomerInfo()</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>命名要具备可读性</li>
 </ul>
-<p>命名通常要用于交流和沟通，需要具备基本的口语习惯。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> Date modymdhms; <span class="comment">//bad</span></div><div class="line"><span class="keyword">private</span> Date modificationTimestamp; /good</div></pre></td></tr></table></figure></p>
+<p>命名通常要用于交流和沟通，需要具备基本的口语习惯。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> Date modymdhms; <span class="comment">//bad</span></span><br><span class="line"><span class="keyword">private</span> Date modificationTimestamp; /good</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>类名使用名词,方法名使用动词.</li>
 </ul>
-<h2 id="名称应与抽象层级相符"><a href="#名称应与抽象层级相符" class="headerlink" title="名称应与抽象层级相符."></a>名称应与抽象层级相符.</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Modem</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">boolean</span> <span class="title">dial</span><span class="params">(String phoneNumber)</span></span>;<span class="comment">//应修改为 boolean connect(String phoneNumber);</span></div><div class="line">  <span class="function"><span class="keyword">boolean</span> <span class="title">disconnect</span><span class="params">()</span></span>;</div><div class="line">  <span class="function"><span class="keyword">boolean</span> <span class="title">send</span><span class="params">(<span class="keyword">char</span> c)</span></span>;</div><div class="line">  <span class="function"><span class="keyword">char</span> <span class="title">recv</span><span class="params">()</span></span>;</div><div class="line">  <span class="function">String <span class="title">getConnectedPhoneNumber</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="名称应与抽象层级相符"><a href="#名称应与抽象层级相符" class="headerlink" title="名称应与抽象层级相符."></a>名称应与抽象层级相符.</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Modem</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">boolean</span> <span class="title">dial</span><span class="params">(String phoneNumber)</span></span>;<span class="comment">//应修改为 boolean connect(String phoneNumber);</span></span><br><span class="line">  <span class="function"><span class="keyword">boolean</span> <span class="title">disconnect</span><span class="params">()</span></span>;</span><br><span class="line">  <span class="function"><span class="keyword">boolean</span> <span class="title">send</span><span class="params">(<span class="keyword">char</span> c)</span></span>;</span><br><span class="line">  <span class="function"><span class="keyword">char</span> <span class="title">recv</span><span class="params">()</span></span>;</span><br><span class="line">  <span class="function">String <span class="title">getConnectedPhoneNumber</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="尽可能使用标准命名法"><a href="#尽可能使用标准命名法" class="headerlink" title="尽可能使用标准命名法."></a>尽可能使用标准命名法.</h2><ul>
 <li>如果名称基于现有的约定或用法,命名就比较容易理解</li>
 <li>命名要遵循专业领域的命名</li>
@@ -472,17 +559,17 @@
 <li>命名应该说明函数,变量或类的一切信息,不要用名称掩蔽副作用</li>
 <li>不使用简单的动词来描述不止做了一个简单动作的函数.</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> ObjectOutputStream <span class="title">getOos</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</div><div class="line">     <span class="keyword">if</span> (m_oos == <span class="keyword">null</span>) &#123;</div><div class="line">         m_oos = <span class="keyword">new</span> ObjectOutputStream(m_socket.getOutputStream());</div><div class="line">     &#125;</div><div class="line">     <span class="keyword">return</span> m_oos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ObjectOutputStream <span class="title">getOos</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">     <span class="keyword">if</span> (m_oos == <span class="keyword">null</span>) &#123;</span><br><span class="line">         m_oos = <span class="keyword">new</span> ObjectOutputStream(m_socket.getOutputStream());</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> m_oos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><code>getOos</code>应改为<code>createOrReturnOos</code></p>
 <h1 id="注释问题"><a href="#注释问题" class="headerlink" title="注释问题"></a>注释问题</h1><h2 id="不恰当的注释"><a href="#不恰当的注释" class="headerlink" title="不恰当的注释."></a>不恰当的注释.</h2><p>注释只应该描述相关代码和设计的技术信息.<br>如描述一些修改记录,问题追踪等是不恰当的注释,这些注释过时且无实际意义，会扰乱和降低阅读体验.<br>这些工作需要交给版本能控制工具。</p>
 <h2 id="废弃的注释"><a href="#废弃的注释" class="headerlink" title="废弃的注释."></a>废弃的注释.</h2><p>注释也需要维护,过时,无关或不正确的注释会引起歧义并影响代码的可读性,需第一时间删除或更新.</p>
 <h2 id="冗余注释"><a href="#冗余注释" class="headerlink" title="冗余注释."></a>冗余注释.</h2><p>代码已经充分自我描述了,那么注释就是冗余的. 注释应该是代码未能涉及信息的补充.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">i++;  <span class="comment">// increment i</span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i++;  <span class="comment">// increment i</span></span><br></pre></td></tr></table></figure>
 <h2 id="坏注释"><a href="#坏注释" class="headerlink" title="坏注释."></a>坏注释.</h2><p>注释也是代码的一部分,要保持简洁和语句通顺,别在里面闲扯.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">I fear that I will always be A lonely number like root three</span></div><div class="line"><span class="comment">A three is all that's good and right</span></div><div class="line"><span class="comment">Why must my three keep out of sight Beneath a vicious square-root sign?</span></div><div class="line"><span class="comment">I wish instead I were a nine</span></div><div class="line"><span class="comment">For nine could thwart this evil trick With just some quick arithmetic</span></div><div class="line"><span class="comment">I know I'll never see the sun</span></div><div class="line"><span class="comment">As 1.7321...</span></div><div class="line"><span class="comment">Such is my reality A sad irrationality</span></div><div class="line"><span class="comment">When,hark, just what is this I see?</span></div><div class="line"><span class="comment">Another square root of a three</span></div><div class="line"><span class="comment">Has quietly come waltzing by</span></div><div class="line"><span class="comment">Together now we multiply</span></div><div class="line"><span class="comment">To form a number we prefer</span></div><div class="line"><span class="comment">Rejoicing as an integer</span></div><div class="line"><span class="comment">We break free from our mortal bonds</span></div><div class="line"><span class="comment">And with a wave of magic wands</span></div><div class="line"><span class="comment">Our square-root signs become unglued</span></div><div class="line"><span class="comment">And love for me has been renewed</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">double</span> number = Math.sqrt(<span class="number">3</span>)*Math.sqrt(<span class="number">3</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">I fear that I will always be A lonely number like root three</span></span><br><span class="line"><span class="comment">A three is all that's good and right</span></span><br><span class="line"><span class="comment">Why must my three keep out of sight Beneath a vicious square-root sign?</span></span><br><span class="line"><span class="comment">I wish instead I were a nine</span></span><br><span class="line"><span class="comment">For nine could thwart this evil trick With just some quick arithmetic</span></span><br><span class="line"><span class="comment">I know I'll never see the sun</span></span><br><span class="line"><span class="comment">As 1.7321...</span></span><br><span class="line"><span class="comment">Such is my reality A sad irrationality</span></span><br><span class="line"><span class="comment">When,hark, just what is this I see?</span></span><br><span class="line"><span class="comment">Another square root of a three</span></span><br><span class="line"><span class="comment">Has quietly come waltzing by</span></span><br><span class="line"><span class="comment">Together now we multiply</span></span><br><span class="line"><span class="comment">To form a number we prefer</span></span><br><span class="line"><span class="comment">Rejoicing as an integer</span></span><br><span class="line"><span class="comment">We break free from our mortal bonds</span></span><br><span class="line"><span class="comment">And with a wave of magic wands</span></span><br><span class="line"><span class="comment">Our square-root signs become unglued</span></span><br><span class="line"><span class="comment">And love for me has been renewed</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">double</span> number = Math.sqrt(<span class="number">3</span>)*Math.sqrt(<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
 <h2 id="废弃的代码"><a href="#废弃的代码" class="headerlink" title="废弃的代码."></a>废弃的代码.</h2><p>不应该出现注释的代码, 注释掉的代码需要及时删除,版本控制系统会记录没一次的修改,不需要通过注释的形式.</p>
 <h1 id="一般性问题"><a href="#一般性问题" class="headerlink" title="一般性问题"></a>一般性问题</h1><h2 id="理所当然的行为未被实现"><a href="#理所当然的行为未被实现" class="headerlink" title="理所当然的行为未被实现."></a>理所当然的行为未被实现.</h2><p>根据”最小惊异原则”,函数或类应该实现用户或程序员有理由期待的行为.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Day day = DayDate.StringToDay(String dayName);</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Day day = DayDate.StringToDay(String dayName);</span><br></pre></td></tr></table></figure>
 <p>我们期望字符串Monday转化为Day类型的<code>Day.MONDAY</code>，也期望可以转化为常用缩写的<code>Day.MON</code>,还期望可以忽略大小写,<code>Day.mon</code>，这个再正常不过了.<br>还比如，一个EXCEL的字段解析,一次web页面的字符串输入，至少要保证忽略两边的空格.</p>
 <h2 id="不正确的边界行为"><a href="#不正确的边界行为" class="headerlink" title="不正确的边界行为."></a>不正确的边界行为.</h2><p>单元测试需要追索每种边界条件,并编写测试.</p>
 <h2 id="忽略安全"><a href="#忽略安全" class="headerlink" title="忽略安全."></a>忽略安全.</h2><p>不要关闭编译器的告警,不要忽略编译告警,甚至可以引入**Lint等语法静态编译校验工具来提高代码质量.</p>
@@ -509,7 +596,7 @@
 <li>代码尽可能具有表达力.</li>
 <li>短小紧凑的代码不一定是最好的代码,魔法数字应该拆分到具备解释性的变量里.如下代码你能明白什么意思吗？</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> init <span class="title">m_otCalc</span><span class="params">()</span> </span>&#123;</div><div class="line">     <span class="keyword">return</span> iThsWkd * iThsRte + (<span class="keyword">int</span>) Math.round(<span class="number">0.5</span> * iThsRte * Math.max(<span class="number">0</span>, iThsWkd - <span class="number">400</span>));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> init <span class="title">m_otCalc</span><span class="params">()</span> </span>&#123;</span><br><span class="line">     <span class="keyword">return</span> iThsWkd * iThsRte + (<span class="keyword">int</span>) Math.round(<span class="number">0.5</span> * iThsRte * Math.max(<span class="number">0</span>, iThsWkd - <span class="number">400</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="代码位置错误"><a href="#代码位置错误" class="headerlink" title="代码位置错误."></a>代码位置错误.</h2><p>开发人员做出的最重要决定之一就是在哪里放代码. 比如做一个考勤模块的功能,可以在打印报表的代码中做工作时间统计,或者在刷卡代码中保留一份工作时间记录.<br>这个时候最小惊异原则就起了作用.代码应该放在读者自然而然的地方，期待它所在的地方，就和老婆一样，每天早上醒来就在边上.</p>
 <p>所以说编程其实是一种艺术行为. PI应该出现在声明三角函数的地方，而不是和一只老虎困在大海里.</p>
 <h2 id="不恰当的静态方法"><a href="#不恰当的静态方法" class="headerlink" title="不恰当的静态方法."></a>不恰当的静态方法.</h2><ul>
@@ -517,9 +604,9 @@
 <li><code>Math.max(double a, double)</code>是个良好的静态方法,因为它并不在需要在的那个实体上运作.</li>
 </ul>
 <h2 id="使用解释性变量"><a href="#使用解释性变量" class="headerlink" title="使用解释性变量."></a>使用解释性变量.</h2><p>和G16类同,使用解释性变量,只要把计算过程打散成一系列良好命名的中间值,就可以提高代码的可读性,</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Matcher match = headerPattern.matcher(line);</div><div class="line"><span class="keyword">if</span>(match.find())&#123;</div><div class="line">     String key = match.gourp(<span class="number">1</span>);</div><div class="line">     String value = match.group(<span class="number">2</span>);</div><div class="line">     headers.put(key.toLowerCase(), value);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Matcher match = headerPattern.matcher(line);</span><br><span class="line"><span class="keyword">if</span>(match.find())&#123;</span><br><span class="line">     String key = match.gourp(<span class="number">1</span>);</span><br><span class="line">     String value = match.group(<span class="number">2</span>);</span><br><span class="line">     headers.put(key.toLowerCase(), value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="函数名称应该表达其行为"><a href="#函数名称应该表达其行为" class="headerlink" title="函数名称应该表达其行为."></a>函数名称应该表达其行为.</h2><p>如果必须要通过查看函数的实现(或文档)才知道它是做什么的,那是时候该换个更好的函数名了.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Date newDate = date.add(<span class="number">5</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date newDate = date.add(<span class="number">5</span>);</span><br></pre></td></tr></table></figure>
 <p>从函数调用中看不出函数的行为,如果是添加5天并修改日期,那么命名需要调整为increaseByDays.</p>
 <h2 id="理解算法"><a href="#理解算法" class="headerlink" title="理解算法."></a>理解算法.</h2><ul>
 <li>很多可笑代码的出现,是因为没花时间去理解公式和算法,硬塞进足够的if语句和标示,让系统勉强运作.</li>
@@ -528,27 +615,27 @@
 <h2 id="遵循标准约定"><a href="#遵循标准约定" class="headerlink" title="遵循标准约定."></a>遵循标准约定.</h2><p>每个团队都应遵循基于通用行业规范的一套编码标准.</p>
 <h2 id="魔法数"><a href="#魔法数" class="headerlink" title="魔法数."></a>魔法数.</h2><p>用常量代替魔法数字.</p>
 <h2 id="封装条件语句"><a href="#封装条件语句" class="headerlink" title="封装条件语句."></a>封装条件语句.</h2><p>如果没有if或while语句的上下文,布尔逻辑就难以理解,应该把解释了条件意图的函数抽离出来.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (timer.hasExpired() &amp;&amp; !timer.isRecurrent()) <span class="comment">//bad</span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (timer.hasExpired() &amp;&amp; !timer.isRecurrent()) <span class="comment">//bad</span></span><br></pre></td></tr></table></figure>
 <p>换成</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (shouldBeDeleted(timer)) <span class="comment">//good</span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (shouldBeDeleted(timer)) <span class="comment">//good</span></span><br></pre></td></tr></table></figure>
 <h2 id="避免否定性条件"><a href="#避免否定性条件" class="headerlink" title="避免否定性条件."></a>避免否定性条件.</h2><p>人的逆向思维能力一般都比较差，否定式要比肯定式难明白一些.所以,尽可能将条件表示为肯定形式.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (!buffer.shouldNotompact())  <span class="comment">//bad</span></div></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (buffer.shouldCompact())  <span class="comment">//good</span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!buffer.shouldNotompact())  <span class="comment">//bad</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (buffer.shouldCompact())  <span class="comment">//good</span></span><br></pre></td></tr></table></figure>
 <h2 id="函数只该做一件事"><a href="#函数只该做一件事" class="headerlink" title="函数只该做一件事."></a>函数只该做一件事.</h2><p>遵循职责单一原则.以下的代码完成了太多的事情，我们需要拆分.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pay</span><span class="params">()</span> </span>&#123;</div><div class="line">     <span class="keyword">for</span> (Employee e : employees) &#123;</div><div class="line">         <span class="keyword">if</span> (e.isPayday()) &#123;</div><div class="line">              Money pay = e.calculatePay();</div><div class="line">               e.deliverPay(pay)</div><div class="line">          &#125;</div><div class="line">     &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>遍历雇员<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pay</span><span class="params">()</span> </span>&#123;</div><div class="line">     <span class="keyword">for</span> (Employee e : employees) &#123;</div><div class="line">          payIfNecessary(e);</div><div class="line">     &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>检查是否该给雇员付工资<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">payIfNecessary</span><span class="params">(Employee e)</span> </span>&#123;</div><div class="line">     <span class="keyword">if</span> (e.isPayday())&#123;</div><div class="line">         calculateAndDeliverPay(e);</div><div class="line">     &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>给雇员付工资<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">caculateAndDeliverPay</span><span class="params">(Employee e)</span> </span>&#123;</div><div class="line">     Money pay = e.calculatePay();</div><div class="line">     e.deliverPay.pay()</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pay</span><span class="params">()</span> </span>&#123;</span><br><span class="line">     <span class="keyword">for</span> (Employee e : employees) &#123;</span><br><span class="line">         <span class="keyword">if</span> (e.isPayday()) &#123;</span><br><span class="line">              Money pay = e.calculatePay();</span><br><span class="line">               e.deliverPay(pay)</span><br><span class="line">          &#125;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>遍历雇员<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pay</span><span class="params">()</span> </span>&#123;</span><br><span class="line">     <span class="keyword">for</span> (Employee e : employees) &#123;</span><br><span class="line">          payIfNecessary(e);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>检查是否该给雇员付工资<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">payIfNecessary</span><span class="params">(Employee e)</span> </span>&#123;</span><br><span class="line">     <span class="keyword">if</span> (e.isPayday())&#123;</span><br><span class="line">         calculateAndDeliverPay(e);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>给雇员付工资<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">caculateAndDeliverPay</span><span class="params">(Employee e)</span> </span>&#123;</span><br><span class="line">     Money pay = e.calculatePay();</span><br><span class="line">     e.deliverPay.pay()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="掩藏时序耦合"><a href="#掩藏时序耦合" class="headerlink" title="掩藏时序耦合."></a>掩藏时序耦合.</h2><p>不要隐藏时序耦合.如下代码，三个函数存在时序,捕鱼之前先织网,织网之前先编绳.如果调用倒换,可能就导致抛出异常.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MoogDiver</span> </span>&#123;</div><div class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dive</span><span class="params">(String reson)</span> </span>&#123;</div><div class="line">          saturateGradient();</div><div class="line">          reticulateSplines();</div><div class="line">          diveForMoog(reason);</div><div class="line">     &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MoogDiver</span> </span>&#123;</span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dive</span><span class="params">(String reson)</span> </span>&#123;</span><br><span class="line">          saturateGradient();</span><br><span class="line">          reticulateSplines();</span><br><span class="line">          diveForMoog(reason);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>我们需要做调整，该耦合的还是得耦合,要符合实际的业务逻辑.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MoogDiver</span> </span>&#123;</div><div class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dive</span><span class="params">(String reson)</span> </span>&#123;</div><div class="line">          Gradient gradient = saturateGradient();</div><div class="line">          List&lt;Spline&gt; splines = reticulateSplines(gradient );</div><div class="line">          diveForMoog(splines ,reason);</div><div class="line">     &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MoogDiver</span> </span>&#123;</span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dive</span><span class="params">(String reson)</span> </span>&#123;</span><br><span class="line">          Gradient gradient = saturateGradient();</span><br><span class="line">          List&lt;Spline&gt; splines = reticulateSplines(gradient );</span><br><span class="line">          diveForMoog(splines ,reason);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="函数应该只在一个抽象层级上"><a href="#函数应该只在一个抽象层级上" class="headerlink" title="函数应该只在一个抽象层级上."></a>函数应该只在一个抽象层级上.</h2><h2 id="避免传递浏览"><a href="#避免传递浏览" class="headerlink" title="避免传递浏览,"></a>避免传递浏览,</h2><p>函数或者接口调用者不需要了解太多架构相关的东西.如果A与B协作,B与C协作,我们不想让使用A的模块了解C的信息</p>
 <p><code>bad: a.getB().getC().doSomething()</code></p>
 <p><code>good: myCollaborator.doSomething()</code></p>
 <h1 id="环境问题"><a href="#环境问题" class="headerlink" title="环境问题"></a>环境问题</h1><h2 id="需要多步才能实现的构建"><a href="#需要多步才能实现的构建" class="headerlink" title="需要多步才能实现的构建."></a>需要多步才能实现的构建.</h2><p>构建系统应到是单步的操作, 执行一条命令,就可以从版本控制系统里拉下源代码,并完成构建.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">svn get myPorject</div><div class="line"><span class="built_in">cd</span> myProject</div><div class="line">ant all</div></pre></td></tr></table></figure>
-<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> *******</div><div class="line"><span class="built_in">cd</span> **</div><div class="line">npm intall</div><div class="line">npm start</div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">svn get myPorject</span><br><span class="line"><span class="built_in">cd</span> myProject</span><br><span class="line">ant all</span><br></pre></td></tr></table></figure>
+<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> *******</span><br><span class="line"><span class="built_in">cd</span> **</span><br><span class="line">npm intall</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure></p>
 <h2 id="需要多步才能做到的测试"><a href="#需要多步才能做到的测试" class="headerlink" title="需要多步才能做到的测试"></a>需要多步才能做到的测试</h2><p>单个命令应该可以运行全部的单元测试，并输出结果和报告.</p>
 <h1 id="测试问题"><a href="#测试问题" class="headerlink" title="测试问题"></a>测试问题</h1><h2 id="测试不足-未使用覆盖率工具"><a href="#测试不足-未使用覆盖率工具" class="headerlink" title="测试不足,未使用覆盖率工具."></a>测试不足,未使用覆盖率工具.</h2><ul>
 <li>一套测试中应该有多少个测试?CMMI将单元测试作为QA考核项,单元测试需考虑测试用例的代码覆盖率.</li>
@@ -565,12 +652,22 @@
 
       
     </div>
+
+    
+      
+
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -624,9 +721,484 @@
   </article>
 
 
+  </div>
 
-    <div class="post-spread">
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
       
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/res/avatar.png" alt="lizorn">
+            
+              <p class="site-author-name" itemprop="name">lizorn</p>
+              <p class="site-description motion-element" itemprop="description">想法永远是错的，除非事实证明它是对的。</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">68</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">89</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:mail@lizorn.com" title="E-Mail &rarr; mailto:mail@lizorn.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="/about/" title="关于我 &rarr; /about/"><i class="fa fa-fw fa-user"></i>关于我</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/LiZoRN/" title="GitHub &rarr; https://github.com/LiZoRN/" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="/res/weixin.jpg" title="微信 &rarr; /res/weixin.jpg"><i class="fa fa-fw fa-weixin"></i>微信</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#代码的味道"><span class="nav-number">1.</span> <span class="nav-text">代码的味道</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#你的代码臭不可闻，为什么？"><span class="nav-number">1.1.</span> <span class="nav-text">你的代码臭不可闻，为什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码的表现力"><span class="nav-number">1.2.</span> <span class="nav-text">代码的表现力</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是整洁的代码"><span class="nav-number">1.2.1.</span> <span class="nav-text">什么是整洁的代码?</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命名问题"><span class="nav-number">2.</span> <span class="nav-text">命名问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#命名要具备描述性-避免歧义"><span class="nav-number">2.1.</span> <span class="nav-text">命名要具备描述性,避免歧义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#名称应与抽象层级相符"><span class="nav-number">2.2.</span> <span class="nav-text">名称应与抽象层级相符.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#尽可能使用标准命名法"><span class="nav-number">2.3.</span> <span class="nav-text">尽可能使用标准命名法.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#名称的长度应与作用范围的广泛度相关"><span class="nav-number">2.4.</span> <span class="nav-text">名称的长度应与作用范围的广泛度相关.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免编码"><span class="nav-number">2.5.</span> <span class="nav-text">避免编码.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#名称应说明附加功能和副作用"><span class="nav-number">2.6.</span> <span class="nav-text">名称应说明附加功能和副作用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注释问题"><span class="nav-number">3.</span> <span class="nav-text">注释问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不恰当的注释"><span class="nav-number">3.1.</span> <span class="nav-text">不恰当的注释.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#废弃的注释"><span class="nav-number">3.2.</span> <span class="nav-text">废弃的注释.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#冗余注释"><span class="nav-number">3.3.</span> <span class="nav-text">冗余注释.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#坏注释"><span class="nav-number">3.4.</span> <span class="nav-text">坏注释.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#废弃的代码"><span class="nav-number">3.5.</span> <span class="nav-text">废弃的代码.</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一般性问题"><span class="nav-number">4.</span> <span class="nav-text">一般性问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#理所当然的行为未被实现"><span class="nav-number">4.1.</span> <span class="nav-text">理所当然的行为未被实现.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不正确的边界行为"><span class="nav-number">4.2.</span> <span class="nav-text">不正确的边界行为.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#忽略安全"><span class="nav-number">4.3.</span> <span class="nav-text">忽略安全.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重复"><span class="nav-number">4.4.</span> <span class="nav-text">重复.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码出现在错误的抽象层级上"><span class="nav-number">4.5.</span> <span class="nav-text">代码出现在错误的抽象层级上.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基类依赖于派生类"><span class="nav-number">4.6.</span> <span class="nav-text">基类依赖于派生类.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信息过多"><span class="nav-number">4.7.</span> <span class="nav-text">信息过多</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混淆视听"><span class="nav-number">4.8.</span> <span class="nav-text">混淆视听</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#垂直分割"><span class="nav-number">4.9.</span> <span class="nav-text">垂直分割.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前后不一致"><span class="nav-number">4.10.</span> <span class="nav-text">前后不一致.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计耦合"><span class="nav-number">4.11.</span> <span class="nav-text">设计耦合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐晦的意图"><span class="nav-number">4.12.</span> <span class="nav-text">隐晦的意图.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码位置错误"><span class="nav-number">4.13.</span> <span class="nav-text">代码位置错误.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不恰当的静态方法"><span class="nav-number">4.14.</span> <span class="nav-text">不恰当的静态方法.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用解释性变量"><span class="nav-number">4.15.</span> <span class="nav-text">使用解释性变量.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数名称应该表达其行为"><span class="nav-number">4.16.</span> <span class="nav-text">函数名称应该表达其行为.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理解算法"><span class="nav-number">4.17.</span> <span class="nav-text">理解算法.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遵循标准约定"><span class="nav-number">4.18.</span> <span class="nav-text">遵循标准约定.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#魔法数"><span class="nav-number">4.19.</span> <span class="nav-text">魔法数.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#封装条件语句"><span class="nav-number">4.20.</span> <span class="nav-text">封装条件语句.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免否定性条件"><span class="nav-number">4.21.</span> <span class="nav-text">避免否定性条件.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数只该做一件事"><span class="nav-number">4.22.</span> <span class="nav-text">函数只该做一件事.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#掩藏时序耦合"><span class="nav-number">4.23.</span> <span class="nav-text">掩藏时序耦合.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数应该只在一个抽象层级上"><span class="nav-number">4.24.</span> <span class="nav-text">函数应该只在一个抽象层级上.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免传递浏览"><span class="nav-number">4.25.</span> <span class="nav-text">避免传递浏览,</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境问题"><span class="nav-number">5.</span> <span class="nav-text">环境问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#需要多步才能实现的构建"><span class="nav-number">5.1.</span> <span class="nav-text">需要多步才能实现的构建.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需要多步才能做到的测试"><span class="nav-number">5.2.</span> <span class="nav-text">需要多步才能做到的测试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试问题"><span class="nav-number">6.</span> <span class="nav-text">测试问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试不足-未使用覆盖率工具"><span class="nav-number">6.1.</span> <span class="nav-text">测试不足,未使用覆盖率工具.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试边界条件"><span class="nav-number">6.2.</span> <span class="nav-text">测试边界条件.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试覆盖率都具备启发性"><span class="nav-number">6.3.</span> <span class="nav-text">测试覆盖率都具备启发性,</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试应该快速"><span class="nav-number">6.4.</span> <span class="nav-text">测试应该快速</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单元测试保障了代码的重构"><span class="nav-number">6.5.</span> <span class="nav-text">单元测试保障了代码的重构.</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数问题"><span class="nav-number">7.</span> <span class="nav-text">函数问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#过多的参数"><span class="nav-number">7.1.</span> <span class="nav-text">过多的参数.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出参数"><span class="nav-number">7.2.</span> <span class="nav-text">输出参数.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标示参数"><span class="nav-number">7.3.</span> <span class="nav-text">标示参数.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不被调用的函数"><span class="nav-number">7.4.</span> <span class="nav-text">不被调用的函数.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命名不明确"><span class="nav-number">7.5.</span> <span class="nav-text">命名不明确.</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lizorn  Hosted by Coding Pages</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+      <div>
         
   <script>
     window._bd_share_config = {
@@ -653,252 +1225,15 @@
   with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
 </script>
 
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
-    
-      <div id="vcomments"></div>
-    
-  </div>
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          
-            <img class="site-author-image" itemprop="image"
-              src="/res/avatar.png"
-              alt="lizorn" />
-          
-            <p class="site-author-name" itemprop="name">lizorn</p>
-            <p class="site-description motion-element" itemprop="description"></p>
-        </div>
-
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-            
-              <a href="/archives/">
-            
-                <span class="site-state-item-count">68</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">19</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">89</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
-          </div>
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="mailto:valeera@foxmail.com" target="_blank" title="E-Mail">
-                  
-                    <i class="fa fa-fw fa-envelope"></i></a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="/about/" target="_blank" title="关于我">
-                  
-                    <i class="fa fa-fw fa-user"></i></a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/LiZoRN/" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i></a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="/res/weixin.jpg" target="_blank" title="微信">
-                  
-                    <i class="fa fa-fw fa-weixin"></i></a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#代码的味道"><span class="nav-number">1.</span> <span class="nav-text">代码的味道</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#你的代码臭不可闻，为什么？"><span class="nav-number">1.1.</span> <span class="nav-text">你的代码臭不可闻，为什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码的表现力"><span class="nav-number">1.2.</span> <span class="nav-text">代码的表现力</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是整洁的代码"><span class="nav-number">1.2.1.</span> <span class="nav-text">什么是整洁的代码?</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命名问题"><span class="nav-number">2.</span> <span class="nav-text">命名问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#命名要具备描述性-避免歧义"><span class="nav-number">2.1.</span> <span class="nav-text">命名要具备描述性,避免歧义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#名称应与抽象层级相符"><span class="nav-number">2.2.</span> <span class="nav-text">名称应与抽象层级相符.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#尽可能使用标准命名法"><span class="nav-number">2.3.</span> <span class="nav-text">尽可能使用标准命名法.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#名称的长度应与作用范围的广泛度相关"><span class="nav-number">2.4.</span> <span class="nav-text">名称的长度应与作用范围的广泛度相关.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免编码"><span class="nav-number">2.5.</span> <span class="nav-text">避免编码.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#名称应说明附加功能和副作用"><span class="nav-number">2.6.</span> <span class="nav-text">名称应说明附加功能和副作用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注释问题"><span class="nav-number">3.</span> <span class="nav-text">注释问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不恰当的注释"><span class="nav-number">3.1.</span> <span class="nav-text">不恰当的注释.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#废弃的注释"><span class="nav-number">3.2.</span> <span class="nav-text">废弃的注释.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#冗余注释"><span class="nav-number">3.3.</span> <span class="nav-text">冗余注释.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#坏注释"><span class="nav-number">3.4.</span> <span class="nav-text">坏注释.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#废弃的代码"><span class="nav-number">3.5.</span> <span class="nav-text">废弃的代码.</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一般性问题"><span class="nav-number">4.</span> <span class="nav-text">一般性问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#理所当然的行为未被实现"><span class="nav-number">4.1.</span> <span class="nav-text">理所当然的行为未被实现.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不正确的边界行为"><span class="nav-number">4.2.</span> <span class="nav-text">不正确的边界行为.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#忽略安全"><span class="nav-number">4.3.</span> <span class="nav-text">忽略安全.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重复"><span class="nav-number">4.4.</span> <span class="nav-text">重复.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码出现在错误的抽象层级上"><span class="nav-number">4.5.</span> <span class="nav-text">代码出现在错误的抽象层级上.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基类依赖于派生类"><span class="nav-number">4.6.</span> <span class="nav-text">基类依赖于派生类.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信息过多"><span class="nav-number">4.7.</span> <span class="nav-text">信息过多</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混淆视听"><span class="nav-number">4.8.</span> <span class="nav-text">混淆视听</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#垂直分割"><span class="nav-number">4.9.</span> <span class="nav-text">垂直分割.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前后不一致"><span class="nav-number">4.10.</span> <span class="nav-text">前后不一致.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计耦合"><span class="nav-number">4.11.</span> <span class="nav-text">设计耦合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐晦的意图"><span class="nav-number">4.12.</span> <span class="nav-text">隐晦的意图.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码位置错误"><span class="nav-number">4.13.</span> <span class="nav-text">代码位置错误.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不恰当的静态方法"><span class="nav-number">4.14.</span> <span class="nav-text">不恰当的静态方法.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用解释性变量"><span class="nav-number">4.15.</span> <span class="nav-text">使用解释性变量.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数名称应该表达其行为"><span class="nav-number">4.16.</span> <span class="nav-text">函数名称应该表达其行为.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理解算法"><span class="nav-number">4.17.</span> <span class="nav-text">理解算法.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遵循标准约定"><span class="nav-number">4.18.</span> <span class="nav-text">遵循标准约定.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#魔法数"><span class="nav-number">4.19.</span> <span class="nav-text">魔法数.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#封装条件语句"><span class="nav-number">4.20.</span> <span class="nav-text">封装条件语句.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免否定性条件"><span class="nav-number">4.21.</span> <span class="nav-text">避免否定性条件.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数只该做一件事"><span class="nav-number">4.22.</span> <span class="nav-text">函数只该做一件事.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#掩藏时序耦合"><span class="nav-number">4.23.</span> <span class="nav-text">掩藏时序耦合.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数应该只在一个抽象层级上"><span class="nav-number">4.24.</span> <span class="nav-text">函数应该只在一个抽象层级上.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免传递浏览"><span class="nav-number">4.25.</span> <span class="nav-text">避免传递浏览,</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境问题"><span class="nav-number">5.</span> <span class="nav-text">环境问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#需要多步才能实现的构建"><span class="nav-number">5.1.</span> <span class="nav-text">需要多步才能实现的构建.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需要多步才能做到的测试"><span class="nav-number">5.2.</span> <span class="nav-text">需要多步才能做到的测试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试问题"><span class="nav-number">6.</span> <span class="nav-text">测试问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试不足-未使用覆盖率工具"><span class="nav-number">6.1.</span> <span class="nav-text">测试不足,未使用覆盖率工具.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试边界条件"><span class="nav-number">6.2.</span> <span class="nav-text">测试边界条件.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试覆盖率都具备启发性"><span class="nav-number">6.3.</span> <span class="nav-text">测试覆盖率都具备启发性,</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试应该快速"><span class="nav-number">6.4.</span> <span class="nav-text">测试应该快速</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单元测试保障了代码的重构"><span class="nav-number">6.5.</span> <span class="nav-text">单元测试保障了代码的重构.</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数问题"><span class="nav-number">7.</span> <span class="nav-text">函数问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#过多的参数"><span class="nav-number">7.1.</span> <span class="nav-text">过多的参数.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出参数"><span class="nav-number">7.2.</span> <span class="nav-text">输出参数.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标示参数"><span class="nav-number">7.3.</span> <span class="nav-text">标示参数.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不被调用的函数"><span class="nav-number">7.4.</span> <span class="nav-text">不被调用的函数.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命名不明确"><span class="nav-number">7.5.</span> <span class="nav-text">命名不明确.</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">临渊羡鱼</span>
-  <div class="powered-by">  
-  </div>
-  <span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
-
-  
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
-    
-      <span class="post-meta-item-text">Site words total count&#58;</span>
-    
-    <span title="Site words total count">90.1k</span>
-  
-</div>
-
-
-
-
-
-
-
-
-
-        
-<div class="busuanzi-count">
-  <script async src="http://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  
-    <span class="site-uv">
-      <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
-    </span>
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
-    </span>
-  
-</div>
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
       </div>
     
 
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -912,7 +1247,6 @@
 
 
 
-  
 
 
 
@@ -922,74 +1256,6 @@
 
 
 
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
-
-
-
-  
-  
-
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
 
 
 
@@ -999,8 +1265,55 @@
 
 
   
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
-  <script type="text/javascript">
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=6.7.0"></script>
+
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  
+
+
+  
+
+  <script>
     // Popup Window;
     var isfetched = false;
     var isXml = true;
@@ -1049,6 +1362,8 @@
         .css('overflow', 'hidden');
       $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
 
+      
+
       $.ajax({
         url: path,
         dataType: isXml ? "xml" : "json",
@@ -1082,8 +1397,9 @@
                 var title = data.title.trim();
                 var titleInLowerCase = title.toLowerCase();
                 var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
                 var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
                 var indexOfTitle = [];
                 var indexOfContent = [];
                 // only match articles with not empty titles
@@ -1252,9 +1568,9 @@
               })
             };
             if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
             } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
             } else {
               resultItems.sort(function (resultLeft, resultRight) {
                 if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
@@ -1333,5 +1649,19 @@
 
   
 
-</body>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":50,"height":100},"mobile":{"show":true}});</script></body>
 </html>

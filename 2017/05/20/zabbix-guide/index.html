@@ -2,14 +2,23 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 
 
@@ -17,65 +26,77 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/favicon.ico?v=6.7.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
   
-  
-  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
 
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="运维," />
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="临渊羡鱼" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
-
-
-
-
-
-
-<meta name="description" content="zabbix可监控服务器资源以及数据库资源，同时有开放的api接口可以方便的在它的基础上做二次开发">
+  <meta name="description" content="zabbix可监控服务器资源以及数据库资源，同时有开放的api接口可以方便的在它的基础上做二次开发">
 <meta name="keywords" content="运维">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Zabbix使用指南">
@@ -92,37 +113,20 @@
 
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '5.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+  <link rel="alternate" href="/atom.xml" title="临渊羡鱼" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="http://zfeiyu.com/2017/05/20/zabbix-guide/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
   };
 </script>
-
-
-
-  <link rel="canonical" href="http://zfeiyu.com/2017/05/20/zabbix-guide/"/>
-
-
-
-
 
   <title>Zabbix使用指南 | 临渊羡鱼</title>
   
@@ -131,7 +135,8 @@
 
 
 
-  <script type="text/javascript">
+
+  <script>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -144,9 +149,37 @@
 
 
 
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -156,25 +189,28 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">临渊羡鱼</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
         <h1 class="site-subtitle" itemprop="description">丝禽藏荷香，锦鲤绕岛影。</h1>
       
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -182,64 +218,103 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-            关于
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-            标签
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-talks">
-          <a href="/talks" rel="section">
-            
-            talks
-          </a>
-        </li>
-      
+          
+          <li class="menu-item menu-item-about">
 
+    
+    
+    
+
+    
+
+    <a href="/about/" rel="section">关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+
+    
+
+    <a href="/tags/" rel="section">标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+
+    
+
+    <a href="/categories/" rel="section">分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+
+    
+
+    <a href="/archives/" rel="section">归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-talks">
+
+    
+    
+    
+
+    
+
+    <a href="/talks/" rel="section">talks</a>
+
+  </li>
+
+      
       
         <li class="menu-item menu-item-search">
           
             <a href="javascript:;" class="popup-trigger">
           
-            
-            搜索
-          </a>
+            搜索</a>
         </li>
       
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -254,9 +329,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -270,12 +343,20 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
 
@@ -288,20 +369,22 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://zfeiyu.com/2017/05/20/zabbix-guide/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lizorn">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="想法永远是错的，除非事实证明它是对的。">
       <meta itemprop="image" content="/res/avatar.png">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="临渊羡鱼">
     </span>
 
@@ -310,11 +393,20 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Zabbix使用指南</h2>
+          <h2 class="post-title" itemprop="name headline">Zabbix使用指南
+
+              
+            
+          </h2>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -322,18 +414,23 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-20T16:38:30+08:00">
-                2017-05-20
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-05-20 16:38:30 / 修改时间：16:31:52" itemprop="dateCreated datePublished" datetime="2017-05-20T16:38:30+08:00">2017-05-20</time>
             
 
             
+              
 
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -344,11 +441,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/开发者工具/" itemprop="url" rel="index">
-                    <span itemprop="name">开发者工具</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/开发者工具/" itemprop="url" rel="index"><span itemprop="name">开发者工具</span></a></span>
 
                 
                 
@@ -358,6 +451,7 @@
 
           
             
+            
           
 
           
@@ -365,36 +459,17 @@
 
           
             <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
             </span>
           
 
           
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  635
-                </span>
-              
-
-              
-
-              
-            </div>
-          
 
           
-              <div class="post-description">
-                  zabbix可监控服务器资源以及数据库资源，同时有开放的api接口可以方便的在它的基础上做二次开发
-              </div>
+            <div class="post-description">zabbix可监控服务器资源以及数据库资源，同时有开放的api接口可以方便的在它的基础上做二次开发</div>
           
 
         </div>
@@ -404,18 +479,16 @@
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
       
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox"
-                 href="/res/img/zabbix/monitor.png" rel="gallery_cjrhlryu4003c91s6gulw5fy1"
-                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="/res/img/zabbix/monitor.png" itemprop="contentUrl"/>
+              <a class="post-gallery-img fancybox" href="/res/img/zabbix/monitor.png" rel="gallery_cjrin2mil003igrs6deplzo13" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="/res/img/zabbix/monitor.png" itemprop="contentUrl">
               </a>
             
           
@@ -427,21 +500,21 @@
 
       
         <p>zabbix可监控服务器资源以及数据库资源，同时有开放的api接口可以方便的在它的基础上做二次开发，可作为数据中心建设的备选方案。</p>
-<h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ubuntu 14.04</div><div class="line">mysql-5.6</div><div class="line">php-5.5</div><div class="line">zabbix-3.2</div></pre></td></tr></table></figure>
-<h2 id="安装LAMP"><a href="#安装LAMP" class="headerlink" title="安装LAMP"></a>安装LAMP</h2><h3 id="安装Apache2和PHP"><a href="#安装Apache2和PHP" class="headerlink" title="安装Apache2和PHP"></a>安装Apache2和PHP</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt install apache2</div><div class="line">sudo apt-get install php5  php5-mysql  libapache2-mod-auth-mysql</div></pre></td></tr></table></figure>
+<h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ubuntu 14.04</span><br><span class="line">mysql-5.6</span><br><span class="line">php-5.5</span><br><span class="line">zabbix-3.2</span><br></pre></td></tr></table></figure>
+<h2 id="安装LAMP"><a href="#安装LAMP" class="headerlink" title="安装LAMP"></a>安装LAMP</h2><h3 id="安装Apache2和PHP"><a href="#安装Apache2和PHP" class="headerlink" title="安装Apache2和PHP"></a>安装Apache2和PHP</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install apache2</span><br><span class="line">sudo apt-get install php5  php5-mysql  libapache2-mod-auth-mysql</span><br></pre></td></tr></table></figure>
 <p>查找date字符串，修改date.timezone及添加后面的字段 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">date.timezone = Asia/Shanghai </div><div class="line">max_input_time = 600 </div><div class="line">max_execution_time= 600 </div><div class="line">post_max_size = 32M</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">date.timezone = Asia/Shanghai </span><br><span class="line">max_input_time = 600 </span><br><span class="line">max_execution_time= 600 </span><br><span class="line">post_max_size = 32M</span><br></pre></td></tr></table></figure>
 <p>重启apache2 <code>/etc/init.d/apache2 restart</code></p>
-<h3 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install mysql-server</div><div class="line">sudo apt isntall mysql-client</div><div class="line">sudo apt install libmysqlclient-dev </div><div class="line"></div><div class="line">sudo apt-get install phpmyadmin</div><div class="line">sudo apt-get install php-mbstring</div><div class="line">sudo apt-get install php-gettext</div><div class="line">sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin</div></pre></td></tr></table></figure>
-<h2 id="安装Zabbix"><a href="#安装Zabbix" class="headerlink" title="安装Zabbix"></a>安装Zabbix</h2><h3 id="增加zabbix用户和组"><a href="#增加zabbix用户和组" class="headerlink" title="增加zabbix用户和组"></a>增加zabbix用户和组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">groupadd zabbix</div><div class="line">useradd -g zabbix -m zabbix</div></pre></td></tr></table></figure>
-<h3 id="安装依赖环境："><a href="#安装依赖环境：" class="headerlink" title="安装依赖环境："></a>安装依赖环境：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">apt-get update</div><div class="line">sudo apt-get install build-essential</div><div class="line">sudo apt-get -y install make</div><div class="line">sudo apt-get -y install gcc</div><div class="line">sudo apt-get -y install libghc-hsql-mysql-dev</div><div class="line">sudo apt-get install libmysqlclient18</div><div class="line">sudo apt-get -y install libxml2-dev</div><div class="line">sudo apt-get install libcurl3-dev</div><div class="line">sudo apt-get install libsnmp-dev</div></pre></td></tr></table></figure>
-<h3 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">### 创建zabbix表</div><div class="line">create database zabbix character set utf8;</div><div class="line">### 创建mysql帐号：zabbix，密码：zabbix </div><div class="line">grant all on zabbix.* to &apos;zabbix&apos;@&apos;localhost&apos; identified by &apos;zabbix&apos;;</div></pre></td></tr></table></figure>
+<h3 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-server</span><br><span class="line">sudo apt isntall mysql-client</span><br><span class="line">sudo apt install libmysqlclient-dev </span><br><span class="line"></span><br><span class="line">sudo apt-get install phpmyadmin</span><br><span class="line">sudo apt-get install php-mbstring</span><br><span class="line">sudo apt-get install php-gettext</span><br><span class="line">sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin</span><br></pre></td></tr></table></figure>
+<h2 id="安装Zabbix"><a href="#安装Zabbix" class="headerlink" title="安装Zabbix"></a>安装Zabbix</h2><h3 id="增加zabbix用户和组"><a href="#增加zabbix用户和组" class="headerlink" title="增加zabbix用户和组"></a>增加zabbix用户和组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">groupadd zabbix</span><br><span class="line">useradd -g zabbix -m zabbix</span><br></pre></td></tr></table></figure>
+<h3 id="安装依赖环境："><a href="#安装依赖环境：" class="headerlink" title="安装依赖环境："></a>安装依赖环境：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">sudo apt-get install build-essential</span><br><span class="line">sudo apt-get -y install make</span><br><span class="line">sudo apt-get -y install gcc</span><br><span class="line">sudo apt-get -y install libghc-hsql-mysql-dev</span><br><span class="line">sudo apt-get install libmysqlclient18</span><br><span class="line">sudo apt-get -y install libxml2-dev</span><br><span class="line">sudo apt-get install libcurl3-dev</span><br><span class="line">sudo apt-get install libsnmp-dev</span><br></pre></td></tr></table></figure>
+<h3 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">### 创建zabbix表</span><br><span class="line">create database zabbix character set utf8;</span><br><span class="line">### 创建mysql帐号：zabbix，密码：zabbix </span><br><span class="line">grant all on zabbix.* to &apos;zabbix&apos;@&apos;localhost&apos; identified by &apos;zabbix&apos;;</span><br></pre></td></tr></table></figure>
 <p>( 源码包下的路径：zabbix –&gt; database –&gt; mysql –&gt; *.sql )</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mysql -uzabbix -pzabbix zabbix &lt; schema.sql</div><div class="line">mysql -uzabbix -pzabbix zabbix &lt; images.sql </div><div class="line">mysql -uzabbix -pzabbix zabbix &lt; data.sql</div></pre></td></tr></table></figure>
-<h3 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">./configure --enable-server --enable-agent --with-mysql --enable-ipv6 --with-net-snmp --with-libcurl --with-libxml2</div><div class="line"></div><div class="line">make install</div></pre></td></tr></table></figure>
-<h3 id="安装中文字体"><a href="#安装中文字体" class="headerlink" title="安装中文字体"></a>安装中文字体</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install language-pack-zh-hans</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql -uzabbix -pzabbix zabbix &lt; schema.sql</span><br><span class="line">mysql -uzabbix -pzabbix zabbix &lt; images.sql </span><br><span class="line">mysql -uzabbix -pzabbix zabbix &lt; data.sql</span><br></pre></td></tr></table></figure>
+<h3 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./configure --enable-server --enable-agent --with-mysql --enable-ipv6 --with-net-snmp --with-libcurl --with-libxml2</span><br><span class="line"></span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<h3 id="安装中文字体"><a href="#安装中文字体" class="headerlink" title="安装中文字体"></a>安装中文字体</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install language-pack-zh-hans</span><br></pre></td></tr></table></figure>
 <h3 id="启动zabbix-server"><a href="#启动zabbix-server" class="headerlink" title="启动zabbix_server"></a>启动zabbix_server</h3><p><code>/etc/init.d/zabbix-server start</code></p>
-<p>访问<a href="http://127.0.0.1/zabbix/" target="_blank" rel="external">zabbix frontend</a>,用户名密码<code>admin/zabbix</code></p>
+<p>访问<a href="http://127.0.0.1/zabbix/" target="_blank" rel="noopener">zabbix frontend</a>,用户名密码<code>admin/zabbix</code></p>
 <h1 id="添加Zabbix-agent-active模式-监控主机"><a href="#添加Zabbix-agent-active模式-监控主机" class="headerlink" title="添加Zabbix agent(active模式)监控主机"></a>添加Zabbix agent(active模式)监控主机</h1><p>active模式：agent主机主动上报采集数据。</p>
 <p>克隆一个模板</p>
 <p><img src="/res/img/zabbix/template.png" alt=""></p>
@@ -457,7 +530,7 @@
 <li>将zabbix文件夹解压后放在<code>C：\</code></li>
 <li>C:\zabbix\下 新建一个<code>zabbix_agent.log</code>文件</li>
 <li><p>配置zabbix_agentd.win.conf文件（位于<code>C:\zabbix\conf\</code>），需要修改的地方分别为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Logfile= C:\zabbix\zabbix_agent.log</div><div class="line">        Server=X.X.X.X</div><div class="line">        Hostname=X.X.X.X</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Logfile= C:\zabbix\zabbix_agent.log</span><br><span class="line">        Server=X.X.X.X</span><br><span class="line">        Hostname=X.X.X.X</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p> 注：</p>
@@ -466,22 +539,32 @@
 <li>LogFile为<code>zabbix_agentd.log</code>文件的位置，用于记录事件，这里的zabbix_agentd.log填写你新建log文件的位置</li>
 <li>Hostname需要和服务器端配置主机填入的主机名称一致，不然日志中将会报“host{主机名}not found”的错误</li>
 </ol>
-<h3 id="打开CMD命令行，注意文件路径执行："><a href="#打开CMD命令行，注意文件路径执行：" class="headerlink" title="打开CMD命令行，注意文件路径执行："></a>打开CMD命令行，注意文件路径执行：</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">C:\zabbix\bin\win32\zabbix_agentd.exe -c C:\zabbix\conf\zabbix_agentd.win.conf -i</div><div class="line">C:\zabbix\bin\win32\zabbix_agentd.exe -c C:\zabbix\conf\zabbix_agentd.win.conf -s</div></pre></td></tr></table></figure>
+<h3 id="打开CMD命令行，注意文件路径执行："><a href="#打开CMD命令行，注意文件路径执行：" class="headerlink" title="打开CMD命令行，注意文件路径执行："></a>打开CMD命令行，注意文件路径执行：</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\zabbix\bin\win32\zabbix_agentd.exe -c C:\zabbix\conf\zabbix_agentd.win.conf -i</span><br><span class="line">C:\zabbix\bin\win32\zabbix_agentd.exe -c C:\zabbix\conf\zabbix_agentd.win.conf -s</span><br></pre></td></tr></table></figure>
 </code></pre><h2 id="查看监控项"><a href="#查看监控项" class="headerlink" title="查看监控项"></a>查看监控项</h2><p><img src="/res/img/zabbix/monitor.png" alt=""></p>
 <h1 id="数据库监控"><a href="#数据库监控" class="headerlink" title="数据库监控"></a>数据库监控</h1><ol>
-<li>oracle监控插件:<a href="http://www.smartmarmot.com/wiki/index.php?title=Orabbix" target="_blank" rel="external">orabbix</a></li>
+<li>oracle监控插件:<a href="http://www.smartmarmot.com/wiki/index.php?title=Orabbix" target="_blank" rel="noopener">orabbix</a></li>
 <li>mysql：官方自带mysql监控模板，agent端运行mysql监控脚本<br>todo</li>
 </ol>
 <h1 id="CLI"><a href="#CLI" class="headerlink" title="CLI"></a>CLI</h1><p>todo</p>
 
       
     </div>
+
+    
+      
+
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -531,9 +614,484 @@
   </article>
 
 
+  </div>
 
-    <div class="post-spread">
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
       
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/res/avatar.png" alt="lizorn">
+            
+              <p class="site-author-name" itemprop="name">lizorn</p>
+              <p class="site-description motion-element" itemprop="description">想法永远是错的，除非事实证明它是对的。</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">68</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">89</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:mail@lizorn.com" title="E-Mail &rarr; mailto:mail@lizorn.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="/about/" title="关于我 &rarr; /about/"><i class="fa fa-fw fa-user"></i>关于我</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/LiZoRN/" title="GitHub &rarr; https://github.com/LiZoRN/" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="/res/weixin.jpg" title="微信 &rarr; /res/weixin.jpg"><i class="fa fa-fw fa-weixin"></i>微信</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Install"><span class="nav-number">1.</span> <span class="nav-text">Install</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装LAMP"><span class="nav-number">1.2.</span> <span class="nav-text">安装LAMP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Apache2和PHP"><span class="nav-number">1.2.1.</span> <span class="nav-text">安装Apache2和PHP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装mysql"><span class="nav-number">1.2.2.</span> <span class="nav-text">安装mysql</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Zabbix"><span class="nav-number">1.3.</span> <span class="nav-text">安装Zabbix</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#增加zabbix用户和组"><span class="nav-number">1.3.1.</span> <span class="nav-text">增加zabbix用户和组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖环境："><span class="nav-number">1.3.2.</span> <span class="nav-text">安装依赖环境：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导入数据"><span class="nav-number">1.3.3.</span> <span class="nav-text">导入数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译安装"><span class="nav-number">1.3.4.</span> <span class="nav-text">编译安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装中文字体"><span class="nav-number">1.3.5.</span> <span class="nav-text">安装中文字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动zabbix-server"><span class="nav-number">1.3.6.</span> <span class="nav-text">启动zabbix_server</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加Zabbix-agent-active模式-监控主机"><span class="nav-number">2.</span> <span class="nav-text">添加Zabbix agent(active模式)监控主机</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-zabbix-agent"><span class="nav-number">2.1.</span> <span class="nav-text">安装 zabbix agent</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打开CMD命令行，注意文件路径执行："><span class="nav-number">2.1.1.</span> <span class="nav-text">打开CMD命令行，注意文件路径执行：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看监控项"><span class="nav-number">2.2.</span> <span class="nav-text">查看监控项</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库监控"><span class="nav-number">3.</span> <span class="nav-text">数据库监控</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CLI"><span class="nav-number">4.</span> <span class="nav-text">CLI</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lizorn  Hosted by Coding Pages</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+      <div>
         
   <script>
     window._bd_share_config = {
@@ -560,252 +1118,15 @@
   with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
 </script>
 
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
-    
-      <div id="vcomments"></div>
-    
-  </div>
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          
-            <img class="site-author-image" itemprop="image"
-              src="/res/avatar.png"
-              alt="lizorn" />
-          
-            <p class="site-author-name" itemprop="name">lizorn</p>
-            <p class="site-description motion-element" itemprop="description"></p>
-        </div>
-
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-            
-              <a href="/archives/">
-            
-                <span class="site-state-item-count">68</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">19</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">89</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
-          </div>
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="mailto:valeera@foxmail.com" target="_blank" title="E-Mail">
-                  
-                    <i class="fa fa-fw fa-envelope"></i></a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="/about/" target="_blank" title="关于我">
-                  
-                    <i class="fa fa-fw fa-user"></i></a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/LiZoRN/" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i></a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="/res/weixin.jpg" target="_blank" title="微信">
-                  
-                    <i class="fa fa-fw fa-weixin"></i></a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Install"><span class="nav-number">1.</span> <span class="nav-text">Install</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装LAMP"><span class="nav-number">1.2.</span> <span class="nav-text">安装LAMP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Apache2和PHP"><span class="nav-number">1.2.1.</span> <span class="nav-text">安装Apache2和PHP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装mysql"><span class="nav-number">1.2.2.</span> <span class="nav-text">安装mysql</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Zabbix"><span class="nav-number">1.3.</span> <span class="nav-text">安装Zabbix</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#增加zabbix用户和组"><span class="nav-number">1.3.1.</span> <span class="nav-text">增加zabbix用户和组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖环境："><span class="nav-number">1.3.2.</span> <span class="nav-text">安装依赖环境：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导入数据"><span class="nav-number">1.3.3.</span> <span class="nav-text">导入数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译安装"><span class="nav-number">1.3.4.</span> <span class="nav-text">编译安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装中文字体"><span class="nav-number">1.3.5.</span> <span class="nav-text">安装中文字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动zabbix-server"><span class="nav-number">1.3.6.</span> <span class="nav-text">启动zabbix_server</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加Zabbix-agent-active模式-监控主机"><span class="nav-number">2.</span> <span class="nav-text">添加Zabbix agent(active模式)监控主机</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-zabbix-agent"><span class="nav-number">2.1.</span> <span class="nav-text">安装 zabbix agent</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打开CMD命令行，注意文件路径执行："><span class="nav-number">2.1.1.</span> <span class="nav-text">打开CMD命令行，注意文件路径执行：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看监控项"><span class="nav-number">2.2.</span> <span class="nav-text">查看监控项</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库监控"><span class="nav-number">3.</span> <span class="nav-text">数据库监控</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CLI"><span class="nav-number">4.</span> <span class="nav-text">CLI</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">临渊羡鱼</span>
-  <div class="powered-by">  
-  </div>
-  <span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
-
-  
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
-    
-      <span class="post-meta-item-text">Site words total count&#58;</span>
-    
-    <span title="Site words total count">90.1k</span>
-  
-</div>
-
-
-
-
-
-
-
-
-
-        
-<div class="busuanzi-count">
-  <script async src="http://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  
-    <span class="site-uv">
-      <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
-    </span>
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
-    </span>
-  
-</div>
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
       </div>
     
 
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -819,7 +1140,6 @@
 
 
 
-  
 
 
 
@@ -829,74 +1149,6 @@
 
 
 
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
-
-
-
-  
-  
-
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
 
 
 
@@ -906,8 +1158,55 @@
 
 
   
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
-  <script type="text/javascript">
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=6.7.0"></script>
+
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  
+
+
+  
+
+  <script>
     // Popup Window;
     var isfetched = false;
     var isXml = true;
@@ -956,6 +1255,8 @@
         .css('overflow', 'hidden');
       $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
 
+      
+
       $.ajax({
         url: path,
         dataType: isXml ? "xml" : "json",
@@ -989,8 +1290,9 @@
                 var title = data.title.trim();
                 var titleInLowerCase = title.toLowerCase();
                 var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
                 var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
                 var indexOfTitle = [];
                 var indexOfContent = [];
                 // only match articles with not empty titles
@@ -1159,9 +1461,9 @@
               })
             };
             if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
             } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
             } else {
               resultItems.sort(function (resultLeft, resultRight) {
                 if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
@@ -1240,5 +1542,19 @@
 
   
 
-</body>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":50,"height":100},"mobile":{"show":true}});</script></body>
 </html>

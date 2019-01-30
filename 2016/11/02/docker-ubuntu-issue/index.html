@@ -2,14 +2,23 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 
 
@@ -17,65 +26,77 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/favicon.ico?v=6.7.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
   
-  
-  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
 
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="docker,spacemacs,emacs,linux环境变量," />
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="临渊羡鱼" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
-
-
-
-
-
-
-<meta name="description" content="emacs使用多年,发现spacemacs的配置还算符合胃口,于是想做一个基于Ubuntu16.04的Docker镜像,以后就可以带着这粒胶囊行走天下了.没想到踩到一个坑...">
+  <meta name="description" content="emacs使用多年,发现spacemacs的配置还算符合胃口,于是想做一个基于Ubuntu16.04的Docker镜像,以后就可以带着这粒胶囊行走天下了.没想到踩到一个坑...">
 <meta name="keywords" content="docker,spacemacs,emacs,linux环境变量">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu docker镜像问题">
@@ -90,37 +111,20 @@
 
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '5.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+  <link rel="alternate" href="/atom.xml" title="临渊羡鱼" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="http://zfeiyu.com/2016/11/02/docker-ubuntu-issue/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
   };
 </script>
-
-
-
-  <link rel="canonical" href="http://zfeiyu.com/2016/11/02/docker-ubuntu-issue/"/>
-
-
-
-
 
   <title>ubuntu docker镜像问题 | 临渊羡鱼</title>
   
@@ -129,7 +133,8 @@
 
 
 
-  <script type="text/javascript">
+
+  <script>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -142,9 +147,37 @@
 
 
 
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -154,25 +187,28 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">临渊羡鱼</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
         <h1 class="site-subtitle" itemprop="description">丝禽藏荷香，锦鲤绕岛影。</h1>
       
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -180,64 +216,103 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-            关于
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-            标签
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-talks">
-          <a href="/talks" rel="section">
-            
-            talks
-          </a>
-        </li>
-      
+          
+          <li class="menu-item menu-item-about">
 
+    
+    
+    
+
+    
+
+    <a href="/about/" rel="section">关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+
+    
+
+    <a href="/tags/" rel="section">标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+
+    
+
+    <a href="/categories/" rel="section">分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+
+    
+
+    <a href="/archives/" rel="section">归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-talks">
+
+    
+    
+    
+
+    
+
+    <a href="/talks/" rel="section">talks</a>
+
+  </li>
+
+      
       
         <li class="menu-item menu-item-search">
           
             <a href="javascript:;" class="popup-trigger">
           
-            
-            搜索
-          </a>
+            搜索</a>
         </li>
       
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -252,9 +327,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -268,12 +341,20 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
 
@@ -286,20 +367,22 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://zfeiyu.com/2016/11/02/docker-ubuntu-issue/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lizorn">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="想法永远是错的，除非事实证明它是对的。">
       <meta itemprop="image" content="/res/avatar.png">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="临渊羡鱼">
     </span>
 
@@ -308,11 +391,20 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">ubuntu docker镜像问题</h2>
+          <h2 class="post-title" itemprop="name headline">ubuntu docker镜像问题
+
+              
+            
+          </h2>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -320,18 +412,35 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-02T11:22:51+08:00">
-                2016-11-02
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2016-11-02 11:22:51" itemprop="dateCreated datePublished" datetime="2016-11-02T11:22:51+08:00">2016-11-02</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2016-11-05 08:59:53" itemprop="dateModified" datetime="2016-11-05T08:59:53+08:00">2016-11-05</time>
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -342,11 +451,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/开发者手册/" itemprop="url" rel="index">
-                    <span itemprop="name">开发者手册</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/开发者手册/" itemprop="url" rel="index"><span itemprop="name">开发者手册</span></a></span>
 
                 
                 
@@ -356,6 +461,7 @@
 
           
             
+            
           
 
           
@@ -363,36 +469,17 @@
 
           
             <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
             </span>
           
 
           
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,274
-                </span>
-              
-
-              
-
-              
-            </div>
-          
 
           
-              <div class="post-description">
-                  emacs使用多年,发现spacemacs的配置还算符合胃口,于是想做一个基于Ubuntu16.04的Docker镜像,以后就可以带着这粒胶囊行走天下了.没想到踩到一个坑...
-              </div>
+            <div class="post-description">emacs使用多年,发现spacemacs的配置还算符合胃口,于是想做一个基于Ubuntu16.04的Docker镜像,以后就可以带着这粒胶囊行走天下了.没想到踩到一个坑...</div>
           
 
         </div>
@@ -402,7 +489,7 @@
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
       
@@ -411,36 +498,36 @@
         <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>emacs使用多年,发现spacemacs的配置还算符合胃口,于是想做一个基于Ubuntu16.04的Docker镜像,以后就可以带着这粒胶囊行走天下了.</p>
 <p>没想到踩到一个坑…</p>
 <p><em>Dockerfile:</em></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">RUN \</div><div class="line"> DEBIAN_FRONTEND=noninteractive apt-get update &amp;&amp; \</div><div class="line"> DEBIAN_FRONTEND=noninteractive apt-get -y install wget curl git emacs&amp;&amp; \</div><div class="line"> DEBIAN_FRONTEND=noninteractive apt-get -y autoremove &amp;&amp; \</div><div class="line"> DEBIAN_FRONTEND=noninteractive git <span class="built_in">clone</span> https://github.com/syl20bnr/spacemacs ~/.emacs.d &amp;&amp; \</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">RUN \</span><br><span class="line"> DEBIAN_FRONTEND=noninteractive apt-get update &amp;&amp; \</span><br><span class="line"> DEBIAN_FRONTEND=noninteractive apt-get -y install wget curl git emacs&amp;&amp; \</span><br><span class="line"> DEBIAN_FRONTEND=noninteractive apt-get -y autoremove &amp;&amp; \</span><br><span class="line"> DEBIAN_FRONTEND=noninteractive git <span class="built_in">clone</span> https://github.com/syl20bnr/spacemacs ~/.emacs.d &amp;&amp; \</span><br></pre></td></tr></table></figure>
 <p>镜像build完成,启动emacs报错:<br><code>Debugger entered--Lisp error:(Wrong-type-argument stringp nil)</code></p>
 <p>打开<code>--debug-info</code>进行调试,出错的堆栈信息如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">string-match(&quot;\\(fish\\|t?csh\\)$&quot; nil)</div><div class="line">exec-path-from-shell--standard-shell-p(nil)</div><div class="line">exec-path-from-shell-printf(&quot;%S\\000%s&quot; (&quot;$&#123;PATH-ad3306701bb5eb9f528b5c1b34485248&#125;&quot; &quot;$&#123;MANPYTHON-ad3306701bb5eb9f528b5c1b34485248&#125;&quot;))</div><div class="line">exec-path-from-shell-getenvs((&quot;PATH&quot; &quot;MANPATH&quot;))</div><div class="line">exec-path-from-shell-copy-envs((&quot;PATH&quot; &quot;MANPATH&quot;))</div><div class="line">exec-path-from-shell-initialize()</div><div class="line">(progn (exec-path-from-shell-initialize))</div><div class="line">...</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">string-match(&quot;\\(fish\\|t?csh\\)$&quot; nil)</span><br><span class="line">exec-path-from-shell--standard-shell-p(nil)</span><br><span class="line">exec-path-from-shell-printf(&quot;%S\\000%s&quot; (&quot;$&#123;PATH-ad3306701bb5eb9f528b5c1b34485248&#125;&quot; &quot;$&#123;MANPYTHON-ad3306701bb5eb9f528b5c1b34485248&#125;&quot;))</span><br><span class="line">exec-path-from-shell-getenvs((&quot;PATH&quot; &quot;MANPATH&quot;))</span><br><span class="line">exec-path-from-shell-copy-envs((&quot;PATH&quot; &quot;MANPATH&quot;))</span><br><span class="line">exec-path-from-shell-initialize()</span><br><span class="line">(progn (exec-path-from-shell-initialize))</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>Emacs本质上是个操作系统,它有自己的环境变量.</p>
 <p>所以为了让它可以使用宿主的<code>shell</code>,首先需要确保宿主和Emacs自身环境变量的一致性.</p>
 <p><code>exec-path-from-shell</code> 就是一这么个<code>GNU Emacs</code>库,它将宿主的关键<code>SHELL</code>环境复制到EMACS的环境变量里,从而确保Emacs可以正常调用宿主机的<code>BASH</code>.</p>
 <p>查看<code>exec-path-from-shell-printf</code>的代码:</p>
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">(<span class="name">defun</span> exec-path-from-shell-printf (<span class="name">str</span> <span class="symbol">&amp;optional</span> args)</div><div class="line">  <span class="string">"Return the result of printing STR in the user's shell.</span></div><div class="line"><span class="string">  Executes $SHELL as interactive login shell.</span></div><div class="line"><span class="string">  STR is inserted literally in a single-quoted argument to printf,</span></div><div class="line"><span class="string">  and may therefore contain backslashed escape sequences understood</span></div><div class="line"><span class="string">  by printf.</span></div><div class="line"><span class="string">  ARGS is an optional list of args which will be inserted by printf</span></div><div class="line"><span class="string">  in place of any % placeholders in STR.  ARGS are not automatically</span></div><div class="line"><span class="string">  shell-escaped, so they may contain $ etc."</span></div><div class="line">  (<span class="name">let*</span> ((<span class="name">printf-bin</span> (<span class="name">or</span> (<span class="name">executable-find</span> <span class="string">"printf"</span>) <span class="string">"printf"</span>))</div><div class="line">         (<span class="name">printf-command</span></div><div class="line">          (<span class="name">concat</span> printf-bin</div><div class="line">                  <span class="string">" '__RESULT\\000"</span> str <span class="string">"' "</span></div><div class="line">                  (<span class="name">mapconcat</span> #'exec-path-from-shell--double-quote args <span class="string">" "</span>)))</div><div class="line">         (<span class="name">shell-args</span> (<span class="name">append</span> exec-path-from-shell-arguments</div><div class="line">                             (<span class="name">list</span> <span class="string">"-c"</span></div><div class="line">                                   (<span class="name">if</span> (<span class="name">exec-path-from-shell--standard-shell-p</span> (<span class="name">getenv</span> <span class="string">"SHELL"</span>))</div><div class="line">                                       printf-command</div><div class="line">                                     (<span class="name">concat</span> <span class="string">"sh -c "</span> (<span class="name">shell-quote-argument</span> printf-command))))))</div><div class="line">         (<span class="name">shell</span> (<span class="name">getenv</span> <span class="string">"SHELL"</span>)))</div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">defun</span> exec-path-from-shell-printf (<span class="name">str</span> <span class="symbol">&amp;optional</span> args)</span><br><span class="line">  <span class="string">"Return the result of printing STR in the user's shell.</span></span><br><span class="line"><span class="string">  Executes $SHELL as interactive login shell.</span></span><br><span class="line"><span class="string">  STR is inserted literally in a single-quoted argument to printf,</span></span><br><span class="line"><span class="string">  and may therefore contain backslashed escape sequences understood</span></span><br><span class="line"><span class="string">  by printf.</span></span><br><span class="line"><span class="string">  ARGS is an optional list of args which will be inserted by printf</span></span><br><span class="line"><span class="string">  in place of any % placeholders in STR.  ARGS are not automatically</span></span><br><span class="line"><span class="string">  shell-escaped, so they may contain $ etc."</span></span><br><span class="line">  (<span class="name">let*</span> ((<span class="name">printf-bin</span> (<span class="name">or</span> (<span class="name">executable-find</span> <span class="string">"printf"</span>) <span class="string">"printf"</span>))</span><br><span class="line">         (<span class="name">printf-command</span></span><br><span class="line">          (<span class="name">concat</span> printf-bin</span><br><span class="line">                  <span class="string">" '__RESULT\\000"</span> str <span class="string">"' "</span></span><br><span class="line">                  (<span class="name">mapconcat</span> #'exec-path-from-shell--double-quote args <span class="string">" "</span>)))</span><br><span class="line">         (<span class="name">shell-args</span> (<span class="name">append</span> exec-path-from-shell-arguments</span><br><span class="line">                             (<span class="name">list</span> <span class="string">"-c"</span></span><br><span class="line">                                   (<span class="name">if</span> (<span class="name">exec-path-from-shell--standard-shell-p</span> (<span class="name">getenv</span> <span class="string">"SHELL"</span>))</span><br><span class="line">                                       printf-command</span><br><span class="line">                                     (<span class="name">concat</span> <span class="string">"sh -c "</span> (<span class="name">shell-quote-argument</span> printf-command))))))</span><br><span class="line">         (<span class="name">shell</span> (<span class="name">getenv</span> <span class="string">"SHELL"</span>)))</span><br></pre></td></tr></table></figure>
 <p>结合出错堆栈分析,问题基本可以定位,即: <code>(getenv &quot;SHELL&quot;)</code>去获取”SHELL”的环境变量,返回为空.</p>
 <p>接着来查看<code>getenv</code>方法,它通过调用<code>getenv-internal</code>用来获取系统<code>environment</code>的变量.</p>
 <p>查看系统环境变量,<code>env|grep SHELL</code>,果然无值.</p>
 <p>那么只需要设置Docker-Ubuntu16.04容器的<code>SHELL</code>环境变量到<code>env</code>里就可以了.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">echo &quot;export SHELL=/bin/bash&quot; &gt;&gt; ~/.bashrc</div><div class="line">source ~/.bashrc</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;export SHELL=/bin/bash&quot; &gt;&gt; ~/.bashrc</span><br><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
 <p>运行<code>emacs</code>,问题解决.<br>此时Dockerfile可以配置如下:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">RUN \</div><div class="line"> DEBIAN_FRONTEND=noninteractive apt-get update &amp;&amp; \</div><div class="line"> DEBIAN_FRONTEND=noninteractive apt-get -y install wget curl git emacs&amp;&amp; \</div><div class="line"> DEBIAN_FRONTEND=noninteractive apt-get -y autoremove &amp;&amp; \</div><div class="line"> DEBIAN_FRONTEND=noninteractive git <span class="built_in">clone</span> https://github.com/syl20bnr/spacemacs ~/.emacs.d &amp;&amp; \</div><div class="line"> DEBIAN_FRONTEND=noninteractive <span class="built_in">echo</span> <span class="string">"export SHELL=/bin/bash"</span> &gt;&gt; ~/.bashrc &amp;&amp; \</div><div class="line"> ...</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">RUN \</span><br><span class="line"> DEBIAN_FRONTEND=noninteractive apt-get update &amp;&amp; \</span><br><span class="line"> DEBIAN_FRONTEND=noninteractive apt-get -y install wget curl git emacs&amp;&amp; \</span><br><span class="line"> DEBIAN_FRONTEND=noninteractive apt-get -y autoremove &amp;&amp; \</span><br><span class="line"> DEBIAN_FRONTEND=noninteractive git <span class="built_in">clone</span> https://github.com/syl20bnr/spacemacs ~/.emacs.d &amp;&amp; \</span><br><span class="line"> DEBIAN_FRONTEND=noninteractive <span class="built_in">echo</span> <span class="string">"export SHELL=/bin/bash"</span> &gt;&gt; ~/.bashrc &amp;&amp; \</span><br><span class="line"> ...</span><br></pre></td></tr></table></figure>
 <h1 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h1><p>为什么官方Ubuntu Docker镜像没有将SHELL加到环境变量里?</p>
 <ol>
 <li><p>有一点很明确,Docker不同于虚拟机,它的镜像文件确实需要保持精简,只需为容器保留必要的linux核心功能就可以了.</p>
 <p>Docker官方也给出了,<code>-env</code>的选项命令,用于自行进行环境变量配置.<br>在Dockerfile中也可以使用<code>ENV</code>进行环境变量的配置,我们的Dockerfile可以写成如下的形式.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">RUN \</div><div class="line"> ...</div><div class="line"> DEBIAN_FRONTEND=noninteractive ENV SHELL /bin/bash</div><div class="line"> ...</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">RUN \</span><br><span class="line"> ...</span><br><span class="line"> DEBIAN_FRONTEND=noninteractive ENV SHELL /bin/bash</span><br><span class="line"> ...</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>那么,这个Docker镜像连<code>$SHELL</code>,<code>$BASH</code>等环境变量都省略了,是否还有其他功能被阉割了呢?</p>
 <p>确实是的,问题还很多.</p>
 <p>比如Docker下的ubuntu有一个很大的问题,它的<code>PID1</code>是<code>bash</code>!</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">root@0d9e754629e0:/<span class="comment"># ps</span></div><div class="line">  PID TTY          TIME CMD</div><div class="line">    1 ?        00:00:00 bash</div><div class="line">   37 ?        00:00:00 ps</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root@0d9e754629e0:/<span class="comment"># ps</span></span><br><span class="line">  PID TTY          TIME CMD</span><br><span class="line">    1 ?        00:00:00 bash</span><br><span class="line">   37 ?        00:00:00 ps</span><br></pre></td></tr></table></figure>
 <p>而完整的系统应该是<code>init</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">lizorn@lizorn:/etc$ ps aux</div><div class="line">USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND</div><div class="line">root         1  0.0  0.0 185604  6388 ?        Ss   10:39   0:01 /sbin/init splash</div><div class="line">root         2  0.0  0.0      0     0 ?        S    10:39   0:00 [kthreadd]</div></pre></td></tr></table></figure>
-<p><code>PID1 init</code>是系统所有进程的祖先,同时它还负责接收和处理僵尸进程,<a href="https://blog.phusion.nl/2015/01/20/docker-and-the-pid-1-zombie-reaping-problem/" target="_blank" rel="external">the PID 1 zombie reaping problem</a>.</p>
-<p>这个问题会导致docker-ubuntu系统有可能产生无法回收的僵尸进程,造成内存孤岛,浪费系统性能.需要额外的补丁程序来完成<code>PID1</code>任务的回收工作,修复该问题的轮子已经具备,你可以直接使用<a href="https://github.com/phusion/baseimage-docker" target="_blank" rel="external">phusion的baseimage</a>来制作Docker基础镜像文件.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lizorn@lizorn:/etc$ ps aux</span><br><span class="line">USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND</span><br><span class="line">root         1  0.0  0.0 185604  6388 ?        Ss   10:39   0:01 /sbin/init splash</span><br><span class="line">root         2  0.0  0.0      0     0 ?        S    10:39   0:00 [kthreadd]</span><br></pre></td></tr></table></figure>
+<p><code>PID1 init</code>是系统所有进程的祖先,同时它还负责接收和处理僵尸进程,<a href="https://blog.phusion.nl/2015/01/20/docker-and-the-pid-1-zombie-reaping-problem/" target="_blank" rel="noopener">the PID 1 zombie reaping problem</a>.</p>
+<p>这个问题会导致docker-ubuntu系统有可能产生无法回收的僵尸进程,造成内存孤岛,浪费系统性能.需要额外的补丁程序来完成<code>PID1</code>任务的回收工作,修复该问题的轮子已经具备,你可以直接使用<a href="https://github.com/phusion/baseimage-docker" target="_blank" rel="noopener">phusion的baseimage</a>来制作Docker基础镜像文件.</p>
 </li>
 </ol>
 <h1 id="附录-linux-环境变量"><a href="#附录-linux-环境变量" class="headerlink" title="附录: linux 环境变量"></a>附录: linux 环境变量</h1><h2 id="shell变量-amp-用户变量"><a href="#shell变量-amp-用户变量" class="headerlink" title="shell变量&amp;用户变量"></a>shell变量&amp;用户变量</h2><ul>
@@ -461,12 +548,22 @@
 
       
     </div>
+
+    
+      
+
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -522,9 +619,484 @@
   </article>
 
 
+  </div>
 
-    <div class="post-spread">
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
       
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/res/avatar.png" alt="lizorn">
+            
+              <p class="site-author-name" itemprop="name">lizorn</p>
+              <p class="site-description motion-element" itemprop="description">想法永远是错的，除非事实证明它是对的。</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">68</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">89</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:mail@lizorn.com" title="E-Mail &rarr; mailto:mail@lizorn.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="/about/" title="关于我 &rarr; /about/"><i class="fa fa-fw fa-user"></i>关于我</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/LiZoRN/" title="GitHub &rarr; https://github.com/LiZoRN/" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="/res/weixin.jpg" title="微信 &rarr; /res/weixin.jpg"><i class="fa fa-fw fa-weixin"></i>微信</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#起因"><span class="nav-number">1.</span> <span class="nav-text">起因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#疑问"><span class="nav-number">3.</span> <span class="nav-text">疑问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录-linux-环境变量"><span class="nav-number">4.</span> <span class="nav-text">附录: linux 环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#shell变量-amp-用户变量"><span class="nav-number">4.1.</span> <span class="nav-text">shell变量&amp;用户变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-shell环境初始化流程"><span class="nav-number">4.2.</span> <span class="nav-text">linux shell环境初始化流程</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lizorn  Hosted by Coding Pages</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+      <div>
         
   <script>
     window._bd_share_config = {
@@ -551,252 +1123,15 @@
   with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
 </script>
 
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
-    
-      <div id="vcomments"></div>
-    
-  </div>
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          
-            <img class="site-author-image" itemprop="image"
-              src="/res/avatar.png"
-              alt="lizorn" />
-          
-            <p class="site-author-name" itemprop="name">lizorn</p>
-            <p class="site-description motion-element" itemprop="description"></p>
-        </div>
-
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-            
-              <a href="/archives/">
-            
-                <span class="site-state-item-count">68</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">19</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">89</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
-          </div>
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="mailto:valeera@foxmail.com" target="_blank" title="E-Mail">
-                  
-                    <i class="fa fa-fw fa-envelope"></i></a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="/about/" target="_blank" title="关于我">
-                  
-                    <i class="fa fa-fw fa-user"></i></a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/LiZoRN/" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i></a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="/res/weixin.jpg" target="_blank" title="微信">
-                  
-                    <i class="fa fa-fw fa-weixin"></i></a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#起因"><span class="nav-number">1.</span> <span class="nav-text">起因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#疑问"><span class="nav-number">3.</span> <span class="nav-text">疑问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录-linux-环境变量"><span class="nav-number">4.</span> <span class="nav-text">附录: linux 环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#shell变量-amp-用户变量"><span class="nav-number">4.1.</span> <span class="nav-text">shell变量&用户变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-shell环境初始化流程"><span class="nav-number">4.2.</span> <span class="nav-text">linux shell环境初始化流程</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">临渊羡鱼</span>
-  <div class="powered-by">  
-  </div>
-  <span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
-
-  
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
-    
-      <span class="post-meta-item-text">Site words total count&#58;</span>
-    
-    <span title="Site words total count">90.1k</span>
-  
-</div>
-
-
-
-
-
-
-
-
-
-        
-<div class="busuanzi-count">
-  <script async src="http://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  
-    <span class="site-uv">
-      <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
-    </span>
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
-    </span>
-  
-</div>
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
       </div>
     
 
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -810,7 +1145,6 @@
 
 
 
-  
 
 
 
@@ -820,74 +1154,6 @@
 
 
 
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
-
-
-
-  
-  
-
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
 
 
 
@@ -897,8 +1163,55 @@
 
 
   
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
-  <script type="text/javascript">
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=6.7.0"></script>
+
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  
+
+
+  
+
+  <script>
     // Popup Window;
     var isfetched = false;
     var isXml = true;
@@ -947,6 +1260,8 @@
         .css('overflow', 'hidden');
       $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
 
+      
+
       $.ajax({
         url: path,
         dataType: isXml ? "xml" : "json",
@@ -980,8 +1295,9 @@
                 var title = data.title.trim();
                 var titleInLowerCase = title.toLowerCase();
                 var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
                 var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
                 var indexOfTitle = [];
                 var indexOfContent = [];
                 // only match articles with not empty titles
@@ -1150,9 +1466,9 @@
               })
             };
             if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
             } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
             } else {
               resultItems.sort(function (resultLeft, resultRight) {
                 if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
@@ -1231,5 +1547,19 @@
 
   
 
-</body>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":50,"height":100},"mobile":{"show":true}});</script></body>
 </html>

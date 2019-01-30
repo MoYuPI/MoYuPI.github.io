@@ -2,14 +2,23 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 
 
@@ -17,65 +26,77 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/favicon.ico?v=6.7.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
   
-  
-  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
 
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="区块链,blockchain,Ethereum,以太坊," />
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="临渊羡鱼" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
-
-
-
-
-
-
-<meta name="description" content="以太网是区块链2.0技术，可以使用智能合约来实现多种业务场景">
+  <meta name="description" content="以太网是区块链2.0技术，可以使用智能合约来实现多种业务场景">
 <meta name="keywords" content="区块链,blockchain,Ethereum,以太坊">
 <meta property="og:type" content="article">
 <meta property="og:title" content="区块链导论:以太坊（Ethereum）">
@@ -93,37 +114,20 @@
 
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '5.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+  <link rel="alternate" href="/atom.xml" title="临渊羡鱼" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="http://zfeiyu.com/2018/05/22/blockchain-introduce-2/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
   };
 </script>
-
-
-
-  <link rel="canonical" href="http://zfeiyu.com/2018/05/22/blockchain-introduce-2/"/>
-
-
-
-
 
   <title>区块链导论:以太坊（Ethereum） | 临渊羡鱼</title>
   
@@ -132,7 +136,8 @@
 
 
 
-  <script type="text/javascript">
+
+  <script>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -145,9 +150,37 @@
 
 
 
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -157,25 +190,28 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">临渊羡鱼</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
         <h1 class="site-subtitle" itemprop="description">丝禽藏荷香，锦鲤绕岛影。</h1>
       
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -183,64 +219,103 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-            关于
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-            标签
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-talks">
-          <a href="/talks" rel="section">
-            
-            talks
-          </a>
-        </li>
-      
+          
+          <li class="menu-item menu-item-about">
 
+    
+    
+    
+
+    
+
+    <a href="/about/" rel="section">关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+
+    
+
+    <a href="/tags/" rel="section">标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+
+    
+
+    <a href="/categories/" rel="section">分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+
+    
+
+    <a href="/archives/" rel="section">归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-talks">
+
+    
+    
+    
+
+    
+
+    <a href="/talks/" rel="section">talks</a>
+
+  </li>
+
+      
       
         <li class="menu-item menu-item-search">
           
             <a href="javascript:;" class="popup-trigger">
           
-            
-            搜索
-          </a>
+            搜索</a>
         </li>
       
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -255,9 +330,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -271,12 +344,20 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
 
@@ -289,20 +370,22 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://zfeiyu.com/2018/05/22/blockchain-introduce-2/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lizorn">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="想法永远是错的，除非事实证明它是对的。">
       <meta itemprop="image" content="/res/avatar.png">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="临渊羡鱼">
     </span>
 
@@ -311,11 +394,20 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">区块链导论:以太坊（Ethereum）</h2>
+          <h2 class="post-title" itemprop="name headline">区块链导论:以太坊（Ethereum）
+
+              
+            
+          </h2>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -323,18 +415,35 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-22T14:30:00+08:00">
-                2018-05-22
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-22 14:30:00" itemprop="dateCreated datePublished" datetime="2018-05-22T14:30:00+08:00">2018-05-22</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-05-26 16:55:57" itemprop="dateModified" datetime="2018-05-26T16:55:57+08:00">2018-05-26</time>
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -345,11 +454,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/开发者手册/" itemprop="url" rel="index">
-                    <span itemprop="name">开发者手册</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/开发者手册/" itemprop="url" rel="index"><span itemprop="name">开发者手册</span></a></span>
 
                 
                 
@@ -359,6 +464,7 @@
 
           
             
+            
           
 
           
@@ -366,36 +472,17 @@
 
           
             <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
             </span>
           
 
           
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,292
-                </span>
-              
-
-              
-
-              
-            </div>
-          
 
           
-              <div class="post-description">
-                  以太网是区块链2.0技术，可以使用智能合约来实现多种业务场景
-              </div>
+            <div class="post-description">以太网是区块链2.0技术，可以使用智能合约来实现多种业务场景</div>
           
 
         </div>
@@ -405,7 +492,7 @@
     
     
     
-    <div class="post-body han-init-context" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       
       
@@ -418,17 +505,17 @@
 <li>熟悉Ethereum DAPP开发框架:<code>Truffle</code></li>
 <li>Truffle DAPP开发和调试</li>
 </ol>
-<h1 id="以太坊开发环境搭建"><a href="#以太坊开发环境搭建" class="headerlink" title="以太坊开发环境搭建"></a>以太坊开发环境搭建</h1><p>安装区块链仿真环境(<a href="http://truffleframework.com/ganache/" target="_blank" rel="external">ganache</a>)、<code>solidity编译器</code>、<code>web3</code>、<code>truffle</code>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g ganache-cli solc web3 truffle</div></pre></td></tr></table></figure>
+<h1 id="以太坊开发环境搭建"><a href="#以太坊开发环境搭建" class="headerlink" title="以太坊开发环境搭建"></a>以太坊开发环境搭建</h1><p>安装区块链仿真环境(<a href="http://truffleframework.com/ganache/" target="_blank" rel="noopener">ganache</a>)、<code>solidity编译器</code>、<code>web3</code>、<code>truffle</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g ganache-cli solc web3 truffle</span><br></pre></td></tr></table></figure>
 <h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><ul>
 <li>Atom</li>
 </ul>
 <p>安装<code>linter-solidity</code>插件。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ apm install linter</div><div class="line">$ apm install linter-solidity</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ apm install linter</span><br><span class="line">$ apm install linter-solidity</span><br></pre></td></tr></table></figure>
 <ul>
-<li>ethereum客户端<br>这里使用<a href="https://github.com/MetaMask/metamask-extension/releases" target="_blank" rel="external">Metamask</a>,下载对应的浏览器版本，安装到浏览器的插件里。</li>
+<li>ethereum客户端<br>这里使用<a href="https://github.com/MetaMask/metamask-extension/releases" target="_blank" rel="noopener">Metamask</a>,下载对应的浏览器版本，安装到浏览器的插件里。</li>
 </ul>
-<p>选择<code>Custom RPC</code>加入本地<code>ganche私有链</code>-“<a href="http://127.0.0.1:7545&quot;。" target="_blank" rel="external">http://127.0.0.1:7545&quot;。</a></p>
+<p>选择<code>Custom RPC</code>加入本地<code>ganche私有链</code>-“<a href="http://127.0.0.1:7545&quot;。" target="_blank" rel="noopener">http://127.0.0.1:7545&quot;。</a></p>
 <h2 id="开启环境"><a href="#开启环境" class="headerlink" title="开启环境"></a>开启环境</h2><ul>
 <li>开启仿真环境ganache</li>
 </ul>
@@ -450,55 +537,55 @@
 <h2 id="Truffle-开发部署合约"><a href="#Truffle-开发部署合约" class="headerlink" title="Truffle 开发部署合约"></a>Truffle 开发部署合约</h2><ol>
 <li>创建工程</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir fibonacci</div><div class="line">cd fibonacci</div><div class="line">truffle init</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir fibonacci</span><br><span class="line">cd fibonacci</span><br><span class="line">truffle init</span><br></pre></td></tr></table></figure>
 <p>工程目录结构如下：<br><code>app/</code> - 你的应用文件运行的默认目录。这里面包括推荐的javascript文件和css样式文件目录，但你可以完全决定如何使用这些目录。<br><code>contract/</code> - Truffle默认的合约文件存放地址。<br><code>migrations/</code> - 存放发布脚本文件<br><code>test/</code> - 用来测试应用和合约的测试文件<br><code>truffle.js</code> - Truffle的配置文件</p>
 <ol>
 <li>编写一个基础智能合约</li>
 </ol>
 <p>创建一个合约<code>contracts/Fibonacci.sol</code>:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">pragma solidity ^<span class="number">0.4</span><span class="number">.22</span>;</div><div class="line"></div><div class="line">contract Fibonacci &#123;</div><div class="line"></div><div class="line">uint[] fibseries;</div><div class="line">  <span class="comment">// n = how many in the series to return</span></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">generateFib</span>(<span class="params">uint n</span>) <span class="title">public</span> </span>&#123;</div><div class="line">    <span class="comment">// set 1st and 2nd entries</span></div><div class="line">    fibseries.push(<span class="number">1</span>);</div><div class="line">    fibseries.push(<span class="number">1</span>);</div><div class="line">    <span class="comment">// generate subsequent entries</span></div><div class="line">    <span class="keyword">for</span> (uint i=<span class="number">2</span>; i &lt; n ; i++) &#123;</div><div class="line">      fibseries.push(fibseries[i<span class="number">-1</span>] + fibseries[i<span class="number">-2</span>]);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">pragma solidity ^<span class="number">0.4</span><span class="number">.22</span>;</span><br><span class="line"></span><br><span class="line">contract Fibonacci &#123;</span><br><span class="line"></span><br><span class="line">uint[] fibseries;</span><br><span class="line">  <span class="comment">// n = how many in the series to return</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">generateFib</span>(<span class="params">uint n</span>) <span class="title">public</span> </span>&#123;</span><br><span class="line">    <span class="comment">// set 1st and 2nd entries</span></span><br><span class="line">    fibseries.push(<span class="number">1</span>);</span><br><span class="line">    fibseries.push(<span class="number">1</span>);</span><br><span class="line">    <span class="comment">// generate subsequent entries</span></span><br><span class="line">    <span class="keyword">for</span> (uint i=<span class="number">2</span>; i &lt; n ; i++) &#123;</span><br><span class="line">      fibseries.push(fibseries[i<span class="number">-1</span>] + fibseries[i<span class="number">-2</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><code>generateFib</code>:生成<code>Fibonacci（斐波纳契）</code>数列，公式<code>fib(n)=fib(n-1)+fib(n-2)</code>。</p>
 <ol>
 <li>创建一个新的部署文件<code>migrations/2_deploy_contracts.js</code>。</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Fibonacci = artifacts.require(<span class="string">"Fibonacci"</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">deployer</span>) </span>&#123;</div><div class="line">  deployer.deploy(Fibonacci);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Fibonacci = artifacts.require(<span class="string">"Fibonacci"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">deployer</span>) </span>&#123;</span><br><span class="line">  deployer.deploy(Fibonacci);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <ol>
 <li><p>启动<code>Ganache</code></p>
 </li>
 <li><p>修改工程目录下的<code>truffle.js</code></p>
 </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">  networks: &#123;</div><div class="line">    development: &#123;</div><div class="line">      host: &quot;127.0.0.1&quot;,</div><div class="line">      port: 7545,</div><div class="line">      network_id: &quot;*&quot;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  networks: &#123;</span><br><span class="line">    development: &#123;</span><br><span class="line">      host: &quot;127.0.0.1&quot;,</span><br><span class="line">      port: 7545,</span><br><span class="line">      network_id: &quot;*&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <ol>
-<li>编译并植入合约<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">truffle compile</div><div class="line">truffle migrate</div><div class="line"></div><div class="line">Using network &apos;development&apos;.</div><div class="line"></div><div class="line">Running migration: 1_initial_migration.js</div><div class="line">  Deploying Migrations...</div><div class="line">  ... 0x97f35c60501091e10315febe0d2f1d8a59cb413c38cc7c2b3538263a7c67d0bf</div><div class="line">  Migrations: 0xf7f433a4a2f9bf3f364bb96abe6a07778a61e095</div><div class="line">Saving successful migration to network...</div><div class="line">  ... 0x17b700e3a580ddd28d7bb7110c33f5a8c94b8875c99138d466f8625056a47cd9</div><div class="line">Saving artifacts...</div><div class="line">Running migration: 2_deploy_contracts.js</div><div class="line">  Deploying Fibonacci...</div><div class="line">  ... 0xd1f02be04a76df173456b48777d740f65248cd5870c4e22c058cc6f658dc2f9e</div><div class="line">  Fibonacci: 0xc9554c5818dac7e79dc398d85c4789b90618c5b7</div><div class="line">Saving successful migration to network...</div><div class="line">  ... 0xb987be952d829ca21a909e2f558abdae84cf6afe0c83c2070ab2ba8319f79672</div><div class="line">Saving artifacts...</div></pre></td></tr></table></figure>
+<li>编译并植入合约<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">truffle compile</span><br><span class="line">truffle migrate</span><br><span class="line"></span><br><span class="line">Using network &apos;development&apos;.</span><br><span class="line"></span><br><span class="line">Running migration: 1_initial_migration.js</span><br><span class="line">  Deploying Migrations...</span><br><span class="line">  ... 0x97f35c60501091e10315febe0d2f1d8a59cb413c38cc7c2b3538263a7c67d0bf</span><br><span class="line">  Migrations: 0xf7f433a4a2f9bf3f364bb96abe6a07778a61e095</span><br><span class="line">Saving successful migration to network...</span><br><span class="line">  ... 0x17b700e3a580ddd28d7bb7110c33f5a8c94b8875c99138d466f8625056a47cd9</span><br><span class="line">Saving artifacts...</span><br><span class="line">Running migration: 2_deploy_contracts.js</span><br><span class="line">  Deploying Fibonacci...</span><br><span class="line">  ... 0xd1f02be04a76df173456b48777d740f65248cd5870c4e22c058cc6f658dc2f9e</span><br><span class="line">  Fibonacci: 0xc9554c5818dac7e79dc398d85c4789b90618c5b7</span><br><span class="line">Saving successful migration to network...</span><br><span class="line">  ... 0xb987be952d829ca21a909e2f558abdae84cf6afe0c83c2070ab2ba8319f79672</span><br><span class="line">Saving artifacts...</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="console-debug"><a href="#console-debug" class="headerlink" title="console debug"></a>console debug</h2><p>我们可以直接使用<a href="http://remix.ethereum.org" target="_blank" rel="external">remix ide</a>，调试非常的方便。<br>这里我们虐一下自己，使用<code>Truffle Console</code>来进行调试。</p>
+<h2 id="console-debug"><a href="#console-debug" class="headerlink" title="console debug"></a>console debug</h2><p>我们可以直接使用<a href="http://remix.ethereum.org" target="_blank" rel="noopener">remix ide</a>，调试非常的方便。<br>这里我们虐一下自己，使用<code>Truffle Console</code>来进行调试。</p>
 <ol>
 <li><p>进入console</p>
 <p> <code>truffle console</code></p>
 </li>
 <li><p>调用合约</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">truffle(development)&gt; Fibonacci.deployed().then(function(instance)&#123;return instance.generateFib(10);&#125;);</div><div class="line">&#123; tx: &apos;0x0d10a3f875548131fdad0a27f916af5575fcf6ee47085e9d625d695eb2c11583&apos;,</div><div class="line">  receipt: </div><div class="line">   &#123; transactionHash: &apos;0x0d10a3f875548131fdad0a27f916af5575fcf6ee47085e9d625d695eb2c11583&apos;,</div><div class="line">     transactionIndex: 0,</div><div class="line">     blockHash: &apos;0x7596a7239811b8586a2c60a9fad19d41ea8bb3be46e8ed3b8ebbfaf4c477b707&apos;,</div><div class="line">     blockNumber: 5,</div><div class="line">     gasUsed: 298373,</div><div class="line">     cumulativeGasUsed: 298373,</div><div class="line">     contractAddress: null,</div><div class="line">     logs: [],</div><div class="line">     status: &apos;0x01&apos;,</div><div class="line">     logsBloom: &apos;0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&apos; &#125;,</div><div class="line">  logs: [] &#125;</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">truffle(development)&gt; Fibonacci.deployed().then(function(instance)&#123;return instance.generateFib(10);&#125;);</span><br><span class="line">&#123; tx: &apos;0x0d10a3f875548131fdad0a27f916af5575fcf6ee47085e9d625d695eb2c11583&apos;,</span><br><span class="line">  receipt: </span><br><span class="line">   &#123; transactionHash: &apos;0x0d10a3f875548131fdad0a27f916af5575fcf6ee47085e9d625d695eb2c11583&apos;,</span><br><span class="line">     transactionIndex: 0,</span><br><span class="line">     blockHash: &apos;0x7596a7239811b8586a2c60a9fad19d41ea8bb3be46e8ed3b8ebbfaf4c477b707&apos;,</span><br><span class="line">     blockNumber: 5,</span><br><span class="line">     gasUsed: 298373,</span><br><span class="line">     cumulativeGasUsed: 298373,</span><br><span class="line">     contractAddress: null,</span><br><span class="line">     logs: [],</span><br><span class="line">     status: &apos;0x01&apos;,</span><br><span class="line">     logsBloom: &apos;0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&apos; &#125;,</span><br><span class="line">  logs: [] &#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>调试<code>transaction</code></p>
 <ol>
 <li><p>先attache一条<code>transaction</code>，id为<code>transactionHash</code>值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">truffle(development)&gt; debug 0x0d10a3f875548131fdad0a27f916af5575fcf6ee47085e9d625d695eb2c11583</div><div class="line">Compiling ./contracts/Fibonacci.sol...</div><div class="line">Compiling ./contracts/Migrations.sol...</div><div class="line"></div><div class="line">Gathering transaction data...</div><div class="line"></div><div class="line">Addresses affected:</div><div class="line"> 0xc9554c5818dac7e79dc398d85c4789b90618c5b7 - Fibonacci</div><div class="line"></div><div class="line">Commands:</div><div class="line">(enter) last command entered (step next)</div><div class="line">(o) step over, (i) step into, (u) step out, (n) step next</div><div class="line">(;) step instruction, (p) print instruction, (h) print this help, (q) quit</div><div class="line">(b) toggle breakpoint, (c) continue until breakpoint</div><div class="line">(+) add watch expression (`+:&lt;expr&gt;`), (-) remove watch expression (-:&lt;expr&gt;)</div><div class="line">(?) list existing watch expressions</div><div class="line">(v) print variables and values, (:) evaluate expression - see `v`</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">truffle(development)&gt; debug 0x0d10a3f875548131fdad0a27f916af5575fcf6ee47085e9d625d695eb2c11583</span><br><span class="line">Compiling ./contracts/Fibonacci.sol...</span><br><span class="line">Compiling ./contracts/Migrations.sol...</span><br><span class="line"></span><br><span class="line">Gathering transaction data...</span><br><span class="line"></span><br><span class="line">Addresses affected:</span><br><span class="line"> 0xc9554c5818dac7e79dc398d85c4789b90618c5b7 - Fibonacci</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line">(enter) last command entered (step next)</span><br><span class="line">(o) step over, (i) step into, (u) step out, (n) step next</span><br><span class="line">(;) step instruction, (p) print instruction, (h) print this help, (q) quit</span><br><span class="line">(b) toggle breakpoint, (c) continue until breakpoint</span><br><span class="line">(+) add watch expression (`+:&lt;expr&gt;`), (-) remove watch expression (-:&lt;expr&gt;)</span><br><span class="line">(?) list existing watch expressions</span><br><span class="line">(v) print variables and values, (:) evaluate expression - see `v`</span><br></pre></td></tr></table></figure>
 <p>Commands即为调试命令行。</p>
 </li>
 <li><p>watch（<code>+:</code>）变量,按<code>n</code>逐行进行跟踪。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">debug(development:0x0d10a3f8...)&gt; +:i</div><div class="line">8</div><div class="line">debug(development:0x0d10a3f8...)&gt; +:fibseries</div><div class="line">[ 1, 1, 2, 3, 5, 8, 13, 21 ]</div><div class="line">debug(development:0x0d10a3f8...)&gt; n</div><div class="line"></div><div class="line">Fibonacci.sol:</div><div class="line"></div><div class="line">14:     // generate subsequent entries</div><div class="line">15:     for (uint i=2; i &lt; n ; i++) &#123;</div><div class="line">16:       fibseries.push(fibseries[i-1] + fibseries[i-2]);</div><div class="line">                                     ^                    </div><div class="line"></div><div class="line">:i</div><div class="line">  8</div><div class="line"></div><div class="line">:fibseries</div><div class="line">  [ 1, 1, 2, 3, 5, 8, 13, 21 ]</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">debug(development:0x0d10a3f8...)&gt; +:i</span><br><span class="line">8</span><br><span class="line">debug(development:0x0d10a3f8...)&gt; +:fibseries</span><br><span class="line">[ 1, 1, 2, 3, 5, 8, 13, 21 ]</span><br><span class="line">debug(development:0x0d10a3f8...)&gt; n</span><br><span class="line"></span><br><span class="line">Fibonacci.sol:</span><br><span class="line"></span><br><span class="line">14:     // generate subsequent entries</span><br><span class="line">15:     for (uint i=2; i &lt; n ; i++) &#123;</span><br><span class="line">16:       fibseries.push(fibseries[i-1] + fibseries[i-2]);</span><br><span class="line">                                     ^                    </span><br><span class="line"></span><br><span class="line">:i</span><br><span class="line">  8</span><br><span class="line"></span><br><span class="line">:fibseries</span><br><span class="line">  [ 1, 1, 2, 3, 5, 8, 13, 21 ]</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
 <li><p>异常信息调试</p>
 <ol>
 <li><p>修改以下合约代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">for (uint i=1; i &lt; n ; i++) &#123;</div><div class="line">...</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">for (uint i=1; i &lt; n ; i++) &#123;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>重新编译部署合约</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">debug(development:0x65bb45af...)&gt; compile --all</div><div class="line"></div><div class="line">Transaction completed successfully.</div><div class="line">truffle(development)&gt; migrate --reset</div><div class="line">Compiling ./contracts/Fibonacci.sol...</div><div class="line">Writing artifacts to ./build/contracts</div><div class="line"></div><div class="line">Using network &apos;development&apos;.</div><div class="line"></div><div class="line">Running migration: 1_initial_migration.js</div><div class="line">  Replacing Migrations...</div><div class="line">  ... 0x26fdc5c20b9f44e96e537e0b8474f867d7bd7d27ad7172b004c858d2dceb6f99</div><div class="line">  Migrations: 0xd0ea55247c6035375c6e284a60946cd35550ced2</div><div class="line">Saving successful migration to network...</div><div class="line">  ... 0x0ad76d3073b05161327fc1f7dbd1c521360c305af872ff12b7f59befb73dfbd2</div><div class="line">Saving artifacts...</div><div class="line">Running migration: 2_deploy_contracts.js</div><div class="line">  Replacing Fibonacci...</div><div class="line">  ... 0x93ee91146a3a5fd23dad1e77249870c0edeb5cf6cd78cb7c9db6aab24f538634</div><div class="line">  Fibonacci: 0x090b1fd13ee19ec7f8f3175ca54d5165a443c694</div><div class="line">Saving successful migration to network...</div><div class="line">  ... 0xbeb0d613fa72c67ecf720833a4985244a91b0d0dea1c36fc23195e00e7fd8c18</div><div class="line">Saving artifacts...</div><div class="line">truffle(development)&gt; Fibonacci.deployed().then(function(instance)&#123;return instance.generateFib(10);&#125;);</div><div class="line">Error: VM Exception while processing transaction: invalid opcode</div><div class="line">    at XMLHttpRequest._onHttpResponseEnd (/home/lizorn/.nvm/versions/node/v10.0.0/lib/node_modules/truffle/build/webpack:/~/xhr2/lib/xhr2.js:509:1)</div><div class="line">    at XMLHttpRequest._setReadyState (/home/lizorn/.nvm/versions/node/v10.0.0/lib/node_modules/truffle/build/webpack:/~/xhr2/lib/xhr2.js:354:1)</div><div class="line">    at XMLHttpRequestEventTarget.dispatchEvent (/home/lizorn/.nvm/versions/node/v10.0.0/lib/node_modules/truffle/build/webpack:/~/xhr2/lib/xhr2.js:64:1)</div><div class="line">    at XMLHttpRequest.request.onreadystatechange (/home/lizorn/.nvm/versions/node/v10.0.0/lib/node_modules/truffle/build/webpack:/~/web3/lib/web3/httpprovider.js:128:1)</div><div class="line">    at /home/lizorn/.nvm/versions/node/v10.0.0/lib/node_modules/truffle/build/webpack:/~/truffle-provider/wrapper.js:134:1</div><div class="line">    at /home/lizorn/.nvm/versions/node/v10.0.0/lib/node_modules/truffle/build/webpack:/~/web3/lib/web3/requestmanager.js:86:1</div><div class="line">    at Object.InvalidResponse (/home/lizorn/.nvm/versions/node/v10.0.0/lib/node_modules/truffle/build/webpack:/~/web3/lib/web3/errors.js:38:1)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">debug(development:0x65bb45af...)&gt; compile --all</span><br><span class="line"></span><br><span class="line">Transaction completed successfully.</span><br><span class="line">truffle(development)&gt; migrate --reset</span><br><span class="line">Compiling ./contracts/Fibonacci.sol...</span><br><span class="line">Writing artifacts to ./build/contracts</span><br><span class="line"></span><br><span class="line">Using network &apos;development&apos;.</span><br><span class="line"></span><br><span class="line">Running migration: 1_initial_migration.js</span><br><span class="line">  Replacing Migrations...</span><br><span class="line">  ... 0x26fdc5c20b9f44e96e537e0b8474f867d7bd7d27ad7172b004c858d2dceb6f99</span><br><span class="line">  Migrations: 0xd0ea55247c6035375c6e284a60946cd35550ced2</span><br><span class="line">Saving successful migration to network...</span><br><span class="line">  ... 0x0ad76d3073b05161327fc1f7dbd1c521360c305af872ff12b7f59befb73dfbd2</span><br><span class="line">Saving artifacts...</span><br><span class="line">Running migration: 2_deploy_contracts.js</span><br><span class="line">  Replacing Fibonacci...</span><br><span class="line">  ... 0x93ee91146a3a5fd23dad1e77249870c0edeb5cf6cd78cb7c9db6aab24f538634</span><br><span class="line">  Fibonacci: 0x090b1fd13ee19ec7f8f3175ca54d5165a443c694</span><br><span class="line">Saving successful migration to network...</span><br><span class="line">  ... 0xbeb0d613fa72c67ecf720833a4985244a91b0d0dea1c36fc23195e00e7fd8c18</span><br><span class="line">Saving artifacts...</span><br><span class="line">truffle(development)&gt; Fibonacci.deployed().then(function(instance)&#123;return instance.generateFib(10);&#125;);</span><br><span class="line">Error: VM Exception while processing transaction: invalid opcode</span><br><span class="line">    at XMLHttpRequest._onHttpResponseEnd (/home/lizorn/.nvm/versions/node/v10.0.0/lib/node_modules/truffle/build/webpack:/~/xhr2/lib/xhr2.js:509:1)</span><br><span class="line">    at XMLHttpRequest._setReadyState (/home/lizorn/.nvm/versions/node/v10.0.0/lib/node_modules/truffle/build/webpack:/~/xhr2/lib/xhr2.js:354:1)</span><br><span class="line">    at XMLHttpRequestEventTarget.dispatchEvent (/home/lizorn/.nvm/versions/node/v10.0.0/lib/node_modules/truffle/build/webpack:/~/xhr2/lib/xhr2.js:64:1)</span><br><span class="line">    at XMLHttpRequest.request.onreadystatechange (/home/lizorn/.nvm/versions/node/v10.0.0/lib/node_modules/truffle/build/webpack:/~/web3/lib/web3/httpprovider.js:128:1)</span><br><span class="line">    at /home/lizorn/.nvm/versions/node/v10.0.0/lib/node_modules/truffle/build/webpack:/~/truffle-provider/wrapper.js:134:1</span><br><span class="line">    at /home/lizorn/.nvm/versions/node/v10.0.0/lib/node_modules/truffle/build/webpack:/~/web3/lib/web3/requestmanager.js:86:1</span><br><span class="line">    at Object.InvalidResponse (/home/lizorn/.nvm/versions/node/v10.0.0/lib/node_modules/truffle/build/webpack:/~/web3/lib/web3/errors.js:38:1)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>此处由于数组越界，控制窗口并没有返回transaction的ID，我们可以通过查看<code>Ganache</code>的<code>Logs</code>，找到对应的<code>Transaction</code>，然后按之前的方式进行调试。</p>
 </li>
@@ -508,12 +595,22 @@
 
       
     </div>
+
+    
+      
+
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -551,8 +648,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/22/blockchain-introduce-ethereum-voting/" rel="prev" title="区块链导论:以太坊DAPP（投票应用）">
-                区块链导论:以太坊DAPP（投票应用） <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/22/blockchain-introduce-ethereum-pet-shop/" rel="prev" title="区块链导论:以太坊DAPP（宠物店应用）">
+                区块链导论:以太坊DAPP（宠物店应用） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -569,9 +666,484 @@
   </article>
 
 
+  </div>
 
-    <div class="post-spread">
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
       
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/res/avatar.png" alt="lizorn">
+            
+              <p class="site-author-name" itemprop="name">lizorn</p>
+              <p class="site-description motion-element" itemprop="description">想法永远是错的，除非事实证明它是对的。</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">68</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">89</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:mail@lizorn.com" title="E-Mail &rarr; mailto:mail@lizorn.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="/about/" title="关于我 &rarr; /about/"><i class="fa fa-fw fa-user"></i>关于我</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/LiZoRN/" title="GitHub &rarr; https://github.com/LiZoRN/" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="/res/weixin.jpg" title="微信 &rarr; /res/weixin.jpg"><i class="fa fa-fw fa-weixin"></i>微信</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#以太坊开发环境搭建"><span class="nav-number">1.</span> <span class="nav-text">以太坊开发环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IDE"><span class="nav-number">1.1.</span> <span class="nav-text">IDE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启环境"><span class="nav-number">1.2.</span> <span class="nav-text">开启环境</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Truffle"><span class="nav-number">2.</span> <span class="nav-text">Truffle</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Truffle-开发部署合约"><span class="nav-number">2.1.</span> <span class="nav-text">Truffle 开发部署合约</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#console-debug"><span class="nav-number">2.2.</span> <span class="nav-text">console debug</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lizorn  Hosted by Coding Pages</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+      <div>
         
   <script>
     window._bd_share_config = {
@@ -598,252 +1170,15 @@
   with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
 </script>
 
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
-    
-      <div id="vcomments"></div>
-    
-  </div>
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          
-            <img class="site-author-image" itemprop="image"
-              src="/res/avatar.png"
-              alt="lizorn" />
-          
-            <p class="site-author-name" itemprop="name">lizorn</p>
-            <p class="site-description motion-element" itemprop="description"></p>
-        </div>
-
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-            
-              <a href="/archives/">
-            
-                <span class="site-state-item-count">68</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">19</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">89</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
-          </div>
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="mailto:valeera@foxmail.com" target="_blank" title="E-Mail">
-                  
-                    <i class="fa fa-fw fa-envelope"></i></a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="/about/" target="_blank" title="关于我">
-                  
-                    <i class="fa fa-fw fa-user"></i></a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/LiZoRN/" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i></a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="/res/weixin.jpg" target="_blank" title="微信">
-                  
-                    <i class="fa fa-fw fa-weixin"></i></a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#以太坊开发环境搭建"><span class="nav-number">1.</span> <span class="nav-text">以太坊开发环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IDE"><span class="nav-number">1.1.</span> <span class="nav-text">IDE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启环境"><span class="nav-number">1.2.</span> <span class="nav-text">开启环境</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Truffle"><span class="nav-number">2.</span> <span class="nav-text">Truffle</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Truffle-开发部署合约"><span class="nav-number">2.1.</span> <span class="nav-text">Truffle 开发部署合约</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#console-debug"><span class="nav-number">2.2.</span> <span class="nav-text">console debug</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">临渊羡鱼</span>
-  <div class="powered-by">  
-  </div>
-  <span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
-
-  
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
-    
-      <span class="post-meta-item-text">Site words total count&#58;</span>
-    
-    <span title="Site words total count">90.1k</span>
-  
-</div>
-
-
-
-
-
-
-
-
-
-        
-<div class="busuanzi-count">
-  <script async src="http://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  
-    <span class="site-uv">
-      <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
-    </span>
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
-    </span>
-  
-</div>
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
       </div>
     
 
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -857,7 +1192,6 @@
 
 
 
-  
 
 
 
@@ -867,74 +1201,6 @@
 
 
 
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
-
-
-
-  
-  
-
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
 
 
 
@@ -944,8 +1210,55 @@
 
 
   
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
-  <script type="text/javascript">
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=6.7.0"></script>
+
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  
+
+
+  
+
+  <script>
     // Popup Window;
     var isfetched = false;
     var isXml = true;
@@ -994,6 +1307,8 @@
         .css('overflow', 'hidden');
       $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
 
+      
+
       $.ajax({
         url: path,
         dataType: isXml ? "xml" : "json",
@@ -1027,8 +1342,9 @@
                 var title = data.title.trim();
                 var titleInLowerCase = title.toLowerCase();
                 var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
                 var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
                 var indexOfTitle = [];
                 var indexOfContent = [];
                 // only match articles with not empty titles
@@ -1197,9 +1513,9 @@
               })
             };
             if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
             } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
             } else {
               resultItems.sort(function (resultLeft, resultRight) {
                 if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
@@ -1278,5 +1594,19 @@
 
   
 
-</body>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":50,"height":100},"mobile":{"show":true}});</script></body>
 </html>
