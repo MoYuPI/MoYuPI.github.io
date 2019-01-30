@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -72,7 +72,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Muse',
     version: '6.7.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
@@ -466,6 +466,18 @@
           
             
             
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <a href="/2016/03/10/learning-jquery-lesson/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2016/03/10/learning-jquery-lesson/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -555,8 +567,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/06/ubuntu_env/" rel="next" title="Ubuntu的爱">
-                <i class="fa fa-chevron-left"></i> Ubuntu的爱
+              <a href="/2016/03/10/songci-1/" rel="next" title="宴山亭·北行见杏花">
+                <i class="fa fa-chevron-left"></i> 宴山亭·北行见杏花
               </a>
             
           </div>
@@ -565,8 +577,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/03/10/email_management/" rel="prev" title="邮件管理,outlook的邮箱设置">
-                邮件管理,outlook的邮箱设置 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/03/10/fusioncharts_cracker/" rel="prev" title="FusionCharts Suite XT去水印">
+                FusionCharts Suite XT去水印 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -588,6 +600,10 @@
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
 
   
 
@@ -1153,7 +1169,6 @@
 
 
 
-
   
   <script src="/js/src/scrollspy.js?v=6.7.0"></script>
 <script src="/js/src/post-details.js?v=6.7.0"></script>
@@ -1168,6 +1183,35 @@
 
 
   
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'rQ8OGfe9xd0QnUQQJLpYksWo-gzGzoHsz',
+    appKey: 'vEqVehf8ixuyXHHzTBIbmBo8',
+    placeholder: '吼一下!',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+</script>
+
+
 
 
   

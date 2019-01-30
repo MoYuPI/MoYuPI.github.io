@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -72,7 +72,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Muse',
     version: '6.7.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
@@ -464,6 +464,18 @@
           
             
             
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <a href="/2016/01/05/chan/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2016/01/05/chan/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -499,7 +511,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/res/img/chan/cha.jpg" rel="gallery_cjrin2mgw000hgrs6unk3j8zx" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/res/img/chan/cha.jpg" rel="gallery_cjrio7jnl000j51s6f5k1jcaw" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/res/img/chan/cha.jpg" itemprop="contentUrl">
               </a>
             
@@ -611,8 +623,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2011/12/08/stand-by-the-first-winner/" rel="next" title="站在秋末冬至的隘口">
-                <i class="fa fa-chevron-left"></i> 站在秋末冬至的隘口
+              <a href="/2016/01/05/book-list/" rel="next" title="2016年书单">
+                <i class="fa fa-chevron-left"></i> 2016年书单
               </a>
             
           </div>
@@ -621,8 +633,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/01/05/book-list/" rel="prev" title="2016年书单">
-                2016年书单 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/02/15/data_crush/" rel="prev" title="Data Crush">
+                Data Crush <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -644,6 +656,10 @@
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
 
   
 
@@ -1209,7 +1225,6 @@
 
 
 
-
   
   <script src="/js/src/scrollspy.js?v=6.7.0"></script>
 <script src="/js/src/post-details.js?v=6.7.0"></script>
@@ -1224,6 +1239,35 @@
 
 
   
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'rQ8OGfe9xd0QnUQQJLpYksWo-gzGzoHsz',
+    appKey: 'vEqVehf8ixuyXHHzTBIbmBo8',
+    placeholder: '吼一下!',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+</script>
+
+
 
 
   

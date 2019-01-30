@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -72,7 +72,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Muse',
     version: '6.7.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
@@ -579,9 +579,9 @@
 
       <h3 class="post-title">
         
-          <a class="post-title-link" href="/2016/02/15/data_crush/" itemprop="url">
+          <a class="post-title-link" href="/2016/02/15/big_data/" itemprop="url">
             
-              <span itemprop="name">Data Crush</span>
+              <span itemprop="name">决战大数据</span>
             
           </a>
         
@@ -605,9 +605,9 @@
 
       <h3 class="post-title">
         
-          <a class="post-title-link" href="/2016/02/15/big_data/" itemprop="url">
+          <a class="post-title-link" href="/2016/02/15/data_crush/" itemprop="url">
             
-              <span itemprop="name">决战大数据</span>
+              <span itemprop="name">Data Crush</span>
             
           </a>
         
@@ -1171,7 +1171,6 @@
 
 
 
-
   
 
   
@@ -1182,6 +1181,35 @@
 
 
   
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'rQ8OGfe9xd0QnUQQJLpYksWo-gzGzoHsz',
+    appKey: 'vEqVehf8ixuyXHHzTBIbmBo8',
+    placeholder: '吼一下!',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+</script>
+
+
 
 
 
